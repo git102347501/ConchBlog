@@ -96,13 +96,13 @@ md-card{
     margin: 30px 20px 20px 20px;
 }
 .main_photo_img{
-    width: 100%;
-    transition:width 1s,height 1s;
+    padding-left: 0px;
+    transition:width 1s,padding-left 1s;
 }
 .main_photo_imgs{
-    width:0px;
-    height: 0px;
-    transition:width 2s,height 2s;
+    width: 0px;
+    padding-left: 200px;
+    transition:width 1s,padding-left 1s;
 }
 .main_ship{
     margin: 30px 30px 20px 30px;

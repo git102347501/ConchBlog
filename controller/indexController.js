@@ -78,10 +78,6 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$interval','$rootSco
     $scope.photos = "main_photo_imgs";
     $scope.disMask = function () {
         $scope.photo="main_photo_imgs";
-        $scope.photos="main_photo_img";
     }
-    $scope.disMasks = function () {
-        $scope.photo="main_photo_img";
-        $scope.photos="main_photo_imgs";
-    }
+
 }]);
