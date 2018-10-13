@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magical Conch</title>
+    <link rel="stylesheet" href="css/import/angular-material.min.css">
+    <link rel="stylesheet" href="css/import/animate.min.css">
+    <link rel="stylesheet" href="css/import/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-aria.min.js"></script>
+    <script src="js/angular-messages.min.js"></script>
+    <script src="js/angular-material.min.js"></script>
+    <script src="js/angular-touch.min.js"></script>
+    <script src="js/angular-cookies.min.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/ocLazyLoad.min.js"></script>
+    <script src="js/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+    <script src="directive/indexDirective.js"></script>
+
+    <script src="js/canvas/index_vendors.js"></script>
+    <script src="js/canvas/canvas_index.js"></script>
+
+    <script src="controller/indexController.js"></script>
+    <script src="router/indexRouter.js"></script>
+
+
+
+</head>
+<body ng-app="conch">
+<div class="con_title headline-bg index-headline-bg wavesWapper">
+    <canvas id="waves" class="waves"></canvas>
+    <div class="conchhead">
+        <img src="https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/me.webp" alt="">
+    </div>
+    <div class="conchhead_p">
+        <p>Magical Conch</p>
+    </div>
+</div>
+<div class="con_tent">
+    <div class="con_nav" layout="row" layout-align="center start">
+        <md-content ng-controller="indexController">
+            <md-nav-bar
+                    md-no-ink-bar="disableInkBar"
+                    md-selected-nav-item="currentNavItem"
+                    nav-bar-aria-label="navigation links">
+                <md-nav-item  md-nav-sref="{{me.url}}" ng-repeat="me in navlist">
+                    {{me.name}}
+                </md-nav-item>
+            </md-nav-bar>
+        </md-content>
+    </div>
+
+    <ui-view>
+        <index></index>
+    </ui-view>
+</div>
+    <div class="con_bottom" layout="column">
+    <div class="con_bottom_tail" layout="row" layout-sm="column" layout-xs="column" layout-fill flex="100">
+        <div class="con_bottom_panel" flex flex-sm>
+            <h4>Contact Information</h4>
+            <p>Address：上海市嘉定区东方明珠</p>
+            <p>Tel：151653435456</p>
+            <p>Email：15151515@qq.com</p>
+        </div>
+        <div class="con_bottom_panel" flex>
+            <h4>Recent Situation</h4>
+            <p>Learn：AngularJS,Nodejs,NetCore...</p>
+            <p>Hobby：音乐，轮滑</p>
+            <p>Else：无</p>
+        </div>
+        <div class="con_bottom_panel" flex>
+            <h4>Leaving a Message</h4>
+            <p>如果本站某些资源涉及版权，您可以通过在线留言或者邮箱联系到我，我会在第一时间进行处理。如果您有不错的建议和沟通意愿，我也很期望能和您获得进一步的交流。</p>
+        </div>
+    </div>
+    <div class="con_bottom_end" flex="100" layout="row" layout-align="center center">
+        <p >Copyright © 2018,晋ICP备17001123号-3</p>
+    </div>
+</div>
+</body>
+</html>
