@@ -1,0 +1,41 @@
+<div id="menu" md-whiteframe="1" >
+    <div class="conchMenu" ng-mouseenter="openMenu()" ng-style="menuStyle">
+        <div class="blog_title" layout ="row" layout-align ="center center">
+            <h4>博文列表</h4>
+        </div>
+        <div class="conchTool">
+            <md-input-container class="menuQuery">
+                <label>搜索博文</label>
+                <input ng-model="user.title">
+            </md-input-container>
+        </div>
+
+        <div ng-repeat="item in menulist">
+            <md-menu-item>
+                <md-button ng-click="openNav(item)">
+                <span>
+                    <!--<md-tooltip md-direction="right">{{item.name}}</md-tooltip>-->
+                    <md-icon
+                            md-svg-src="{{item.ico}}"
+                            class="menuIco"
+                            aria-label="Cake">
+                    </md-icon>
+                </span>
+                    <span>{{item.name}}</span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-repeat="items in item.menu" class="conchNav" ng-style="item.nav">
+                <md-button ng-style="item.nav">
+                        <span class="navMenu">
+                            <md-icon
+                                    md-svg-src="{{items.ico}}"
+                                    class="menuIco"
+                                    aria-label="Cake">
+                            </md-icon>
+                        </span>
+                    <span>{{items.name}}</span>
+                </md-button>
+            </md-menu-item>
+        </div>
+    </div>
+</div>

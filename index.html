@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/import/animate.min.css">
     <link rel="stylesheet" href="css/import/bootstrap.min.css">
 
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/import/index.css">
 
     <script src="js/angular.min.js"></script>
     <script src="js/angular-animate.min.js"></script>
@@ -28,8 +28,6 @@
     <script src="controller/indexController.js"></script>
     <script src="router/indexRouter.js"></script>
 
-
-
 </head>
 <body ng-app="conch">
 <div class="con_title headline-bg index-headline-bg wavesWapper">
@@ -42,7 +40,7 @@
     </div>
 </div>
 <div class="con_tent">
-    <div class="con_nav" layout="row" layout-align="center start">
+    <div class="con_nav" layout="row" layout-align="center start" ng-class="navstyle">
         <md-content ng-controller="indexController">
             <md-nav-bar
                     md-no-ink-bar="disableInkBar"
@@ -54,10 +52,12 @@
             </md-nav-bar>
         </md-content>
     </div>
+    <div class="view">
+        <ui-view>
+            <index></index>
+        </ui-view>
+    </div>
 
-    <ui-view>
-        <index></index>
-    </ui-view>
 </div>
     <div class="con_bottom" layout="column">
     <div class="con_bottom_tail" layout="row" layout-sm="column" layout-xs="column" layout-fill flex="100">

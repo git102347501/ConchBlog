@@ -1,0 +1,143 @@
+#blog{
+    min-height: 500px;
+    min-width: 600px;
+    width: 100%;
+    display: flex;
+}
+span{
+    color: black;
+}
+.menu{
+    height: 100%;
+    margin:10px 0px 10px 10px;
+    width: 300px;
+}
+.blog{
+    flex: 1;
+    margin: 10px;
+}
+.blog_body{
+    width: 100%;
+    height: 500px;
+    margin-bottom: 15px;
+}
+.blog_nav{
+    height: 45px;
+    border-bottom: 1px solid #D3D3D3;
+}
+.blog_nav_title{
+    background: transparent;
+    line-height: 40px
+}
+.blog_matter{
+    display: flex;
+    flex-direction:column;
+}
+.blog_heard{
+    width:100%;
+    height: 65px;
+}
+.blog_heard h3{
+    margin: 0px;
+    padding: 5px 0px 0px 30px;
+    line-height: 65px;
+}
+
+.blog_news{
+    width:100%;
+    height: 45px;
+    max-height: 45px;
+    line-height: 35px;
+    padding: 5px 0px 0px 30px;
+}
+.blog_news span{
+    font-size: 13px !important;
+}
+.blog_content{
+    width: 100%;
+    min-height: 300px;
+    background: white;
+    display: flex;
+}
+.blog_loading{
+    justify-content:center;
+    width: 100%;
+}
+.blog_loading span{
+    font-size: 18px;
+    margin-right: 25px;
+}
+
+.blog_tool{
+    height: 45px;
+    width: 100%;
+    border-top: 1px solid #D3D3D3;
+}
+.blog_commend{
+    margin-bottom: 15x;
+    height: 200px;
+    width: 100%;
+}
+.blog_title{
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border-bottom: 1px solid #D3D3D3;
+}
+.blog_list_title{
+    width: 100%;
+    padding-left: 20px;
+    background: transparent;
+    border-bottom: 1px solid #D3D3D3;
+}
+.blog_comment_area{
+    width: 100% ;
+    padding: 10px 18px 5px 18px;
+}
+.blog_comment_discuss{
+    width: 100%;
+    height: 130px;
+}
+.blog_comment_sub{
+    height: 55px;
+}
+.blog_comment_submit{
+    margin: 5px 10px 5px 5px;
+}
+.blog_list_user{
+    margin:5px 0px 0px 20px;
+}
+.blog_list{
+
+}
+.blog_new{
+    margin-top: 10px;
+    padding: 0px;
+    height: 200px;
+    width: 100%;
+}
+.blog_comment{
+    height: 300px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.blog_commentlist{
+    padding: 0px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.blog_commentlist_list{
+    height: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #aaa;
+}
+.blog_list_null{
+    width: 100%;
+    display: flex;
+}
+.blog_commentlist_heard{
+    padding: 15px 10px 15px 10px;
+}
+.blog_commentlist_content{
+    padding-left: 5px;
+}

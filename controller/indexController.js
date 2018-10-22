@@ -80,4 +80,13 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$interval','$rootSco
         $scope.photo="main_photo_imgs";
     }
 
+    $scope.navstyle ="";
+    $(window).scroll(function () {
+        var st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);
+        if (st >= 400) {
+            $scope.navstyle ={"position": "fixed", "top":"0"};
+        }else{
+            $scope.navstyle ="";
+        }
+    });
 }]);

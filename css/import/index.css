@@ -73,6 +73,7 @@ nav{
 }
 .con_tent{
     z-index: 1;
+    width: 100%;
 }
 .con_bottom{
     padding: 15px 0px 0px 0px;
@@ -116,4 +117,8 @@ nav{
 .con_bottom3{
     padding: 15px;
     background: chartreuse;
+}
+.view{
+    height: 100%;
+    width: 100%;
 }
