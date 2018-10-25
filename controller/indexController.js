@@ -74,13 +74,10 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$interval','$rootSco
    //  }, 1000);
 
    // $scope.timer.then();
-    $scope.photo = "main_photo_img";
-    $scope.photos = "main_photo_imgs";
-    $scope.disMask = function () {
-        $scope.photo="main_photo_imgs";
-    }
 
     $scope.navstyle ="";
+
+
     $(window).scroll(function () {
         var st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);
         if (st >= 400) {
@@ -89,4 +86,13 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$interval','$rootSco
             $scope.navstyle ="";
         }
     });
+
+    $scope.showMask = function(ev){
+        if(ev){
+            $scope.main_photo_style ={"display":"block"};
+        }else{
+            $scope.main_photo_style ={"display":"none"};
+        }
+    }
+    $scope.main_photo_style ={"width":"0px"};
 }]);

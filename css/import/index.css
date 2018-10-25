@@ -52,7 +52,7 @@ nav{
     margin: 0px;
     padding: 0px;
 }
-.conchhead_p{
+.conchhead_net{
     font-size: 28px;
     font-family:"Calibri";
     width: 100%;
@@ -63,7 +63,7 @@ nav{
     top:32%;
     transform: translate(-50%,-50%); /*自己的50% */
 }
-.conchhead_p p{
+.conchhead_net p{
     background: #666;
     -webkit-background-clip: text;
     -moz-background-clip: text;

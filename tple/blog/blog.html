@@ -87,17 +87,45 @@
             <div class="blog_list_title" layout ="row" layout-align ="start center">
                 <span><h4>评论列表</h4></span>
             </div>
+            <!--无回复内容-->
             <div class="blog_list_null" layout="row" layout-align="center center" ng-show="commentlist.length<1">
                 <span><p>喵了个咪的，竟然没人回复！</p></span>
             </div>
-            <div class="col-lg-12 blog_commentlist_list" ng-repeat="item in commentlist" ng-click="null">
-                <div class="col-lg-12 blog_commentlist_heard">
-                    <span><img src="{{item.head}}" alt="" style="height: 40px;width:40px"></span><span style="padding-left: 20px;color:#337ab7">{{item.name}}</span>
-                    <span class="pull-right">{{($index+1)}}楼 2018-10-20 23:11 <a href="">回复</a></span>
+            <!--评论列表-->
+            <div class="col-lg-12 blog_commentlist_list" ng-repeat="item in commentlist" ng-show="commentlist.length>0">
+                <div>
+                    <div class="col-lg-12 blog_commentlist_heard">
+                        <span><img src="{{item.head}}" alt="" style="height: 40px;width:40px"></span><span style="padding-left: 20px;color:#337ab7">{{item.name}}</span>
+                        <span class="pull-right">
+                            <span>{{($index+1)}}楼</span>
+                            <span>{{item.date}}</span>
+                            <a href="">回复</a>
+                        </span>
+                    </div>
+                    <div class="col-lg-12 blog_commentlist_content">
+                        <p>{{item.content}}</p>
+                    </div>
                 </div>
-                <div class="col-lg-12 blog_commentlist_content">
-                    <p>{{item.content}}</p>
+                <div class="col-lg-12" style="display: flex">
+                    <div style="border-right: 2px solid #aaa;width: 20px">
+
+                    </div>
+                    <div class="blog_commentlist_Reply">
+                        <div ng-repeat="rep in item.reply">
+                            <div class="col-lg-12 blog_commentReply_heard">
+                                <span><img src="{{rep.head}}" alt="" style="height: 30px;width:30px;margin-right: 10px"></span><span style="color:#337ab7">{{rep.name}}&nbsp@{{item.name}}</span>
+                                <span class="pull-right">
+                                    <span>{{($index+1)}}楼</span>
+                                    <span>{{item.date}}</span>
+                                </span>
+                            </div>
+                            <div class="col-lg-12 blog_commentlist_content">
+                                <p>{{rep.content}}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

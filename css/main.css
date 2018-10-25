@@ -93,16 +93,23 @@ md-card{
     background: black;
 }
 .main_photo{
-    margin: 30px 20px 20px 20px;
+    margin: 0px;
+    padding: 0px;
 }
 .main_photo_img{
-    padding-left: 0px;
-    transition:width 1s,padding-left 1s;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
 }
-.main_photo_imgs{
-    width: 0px;
-    padding-left: 200px;
-    transition:width 1s,padding-left 1s;
+.main_photo_mask{
+    display: none;
+    position: relative;
+    top: 0px;
+    left: -374px;
+    background: rgba(0,0,0,0.5);
+    transition:width 1s;
+    z-index:100111;
 }
 .main_ship{
     margin: 30px 30px 20px 30px;
