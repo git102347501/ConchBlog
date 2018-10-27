@@ -14,16 +14,23 @@ conch.config(["$provide", "$compileProvider", "$controllerProvider", "$filterPro
 conch.directive('index',function(){
     return{
         restrict:'E',
-        templateUrl:'tple/index/main.html',
+        templateUrl:'view/index/main.html',
         replace : true,
         controller:'indexController'
     }
 });
-
+//主页照片
+conch.directive('mainPhoto',function () {
+    return{
+        restrict:'E',
+        templateUrl:'view/index/tple/mainPhoto.html',
+        replace : true
+    }
+});
 conch.directive('conchmenu',function () {
     return{
         restrict:'E',
-        templateUrl:'tple/blog/blogmenu.html',
+        templateUrl:'view/blog/blogmenu.html',
         replace : true,
         controller:"blogController"
     }

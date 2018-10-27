@@ -2,12 +2,12 @@ conch.config(['$stateProvider','$httpProvider',function ($stateProvider) {
     $stateProvider
         .state('index',{
             url: '/index',
-            templateUrl: 'tple/index/main.html',
+            templateUrl: 'view/index/main.html',
             controller:'indexController'
         })
         .state('blog',{
             url: '/blog',
-            templateUrl: 'tple/blog/blog.html',
+            templateUrl: 'view/blog/blog.html',
             controller:'blogController',
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -17,7 +17,7 @@ conch.config(['$stateProvider','$httpProvider',function ($stateProvider) {
         })
         .state('life',{
             url: '/life',
-            templateUrl: 'tple/life/life.html',
+            templateUrl: 'view/life/life.html',
             controller:'lifeController',
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -27,7 +27,7 @@ conch.config(['$stateProvider','$httpProvider',function ($stateProvider) {
         })
         .state('resume',{
             url: '/resume',
-            templateUrl: 'tple/resume/resume.html',
+            templateUrl: 'view/resume/resume.html',
             controller:'resumeController',
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {

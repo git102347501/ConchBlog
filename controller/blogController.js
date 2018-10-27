@@ -2,8 +2,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
     //加载资源
     $ocLazyLoad.load([
         'css/blog/blog.css',
-        'css/blog/blogmenu.css',
-        'directive/blogDirective.js'
+        'css/blog/blogmenu.css'
     ]);
     //当前博文评论列表
     $scope.commentlist =[

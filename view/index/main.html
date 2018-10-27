@@ -118,12 +118,7 @@
             </h3>
         </div>
         <div class="main_photo" layout="row">
-            <div flex="25">
-                <img ng-mouseenter="showMask(true)" src="https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/me.webp" alt="" class="main_photo_img">
-            </div>
-            <div flex="25" class="main_photo_mask" ng-style="main_photo_style" ng-mouseleave="showMask(false)">
-                <a href="" style="z-index: 22222">asdasdsada</a>
-            </div>
+            <main-photo ng-repeat="photo in photoList"></main-photo>
         </div>
     </div>
 
