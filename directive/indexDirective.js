@@ -19,7 +19,7 @@ conch.directive('index',function(){
         controller:'indexController'
     }
 });
-//主页照片
+//主页-照片模块
 conch.directive('mainPhoto',function () {
     return{
         restrict:'E',
@@ -27,6 +27,31 @@ conch.directive('mainPhoto',function () {
         replace : true
     }
 });
+//主页-消息模块
+conch.directive('conchDynamic',function () {
+    return{
+        restrict:'E',
+        templateUrl:'view/index/tple/mainDynamic.html',
+        replace : true
+    }
+});
+//主页-博文模块
+conch.directive('conchBlog',function () {
+    return{
+        restrict:'E',
+        templateUrl:'view/index/tple/mainBlog.html',
+        replace : true
+    }
+});
+//主页-友链模块
+conch.directive('conchShiplink',function () {
+    return{
+        restrict:'E',
+        templateUrl:'view/index/tple/mainShiplink.html',
+        replace : true
+    }
+});
+//博客-左侧菜单
 conch.directive('conchmenu',function () {
     return{
         restrict:'E',

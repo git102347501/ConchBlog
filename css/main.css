@@ -30,7 +30,7 @@ md-list{
     text-shadow: 0 4px 4px rgba(255,255,255,0.5);
 }
 .main_dynamic_tit{
-    margin: 10px 0px 10px 80px;
+    margin: 15px;
     width: 80px;
     min-width: 80px;
     height: 80px;
@@ -52,38 +52,43 @@ md-divider{
     border: 0px;
 }
 md-card{
-    background: #F0FFF0;
+    margin: 10px;
 }
 .gradual_card{
-    background: -moz-linear-gradient(top, #F5FFFA, #F0FFF0); /* Firefox */
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #BFEFFF)); /* Saf4+, Chrome */
+    min-width: 200px;
+    min-height: 160px;
 }
 .md-list-item-panel{
-    width: 80%;
+    width: 100%;
     border-radius:15px;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-left: 40px;
+    padding:15px 30px 5px 30px;
     background-image: -moz-linear-gradient(top, #8fa1ff, #3757fa); /* Firefox */
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #BFEFFF), color-stop(1, #C6E2FF)); /* Saf4+, Chrome */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c6ff00', endColorstr='#538300', GradientType='0'); /* IE*/
     box-shadow: 4px 4px 5px #F4F4F4;
 }
-.md-list-item-panel h4{
+.md-list-item-panel span{
     font-size: 16px;
     padding: 5px 0px 5px 0px;
     font-weight: bold;
+    color: #3D3D3D;
 }
 .md-list-item-panel p{
     font-size: 14px;
-    padding: 5px 0px 5px 0px;
+    padding: 8px 0px 0px 0px;
+    font-family: STSong;
 }
 .md-list-item-panel span{
-    margin-left: 10px;
+    margin-right: 10px;
     padding-bottom: 2px;
 }
 .main_blog{
     margin: 30px 40px 0px 20px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
 }
 .main_dynamic{
     text-align: left;
@@ -93,12 +98,18 @@ md-card{
     background: black;
 }
 .main_photo{
-    margin:25px 0px 0px 0px;
+    margin:0px;
     padding: 0px;
     position: relative;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.main_phtot_title{
+    margin-bottom: 20px;
 }
 .main_photo_img{
-    height: 300px;
+    height: 240px;
 }
 .main_photo_mask{
     display: none;
@@ -125,5 +136,8 @@ md-card{
     word-break:break-all;
 }
 .main_ship{
-    margin: 30px 30px 20px 30px;
+    margin: 30px 30px 0px 30px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
 }

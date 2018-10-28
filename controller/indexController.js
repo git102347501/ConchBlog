@@ -1,12 +1,37 @@
 conch.controller('indexController',['$scope','$ocLazyLoad','$interval','$rootScope','$timeout',function ($scope,$ocLazyLoad,$interval,$rootScope,$timeout) {
-
+    //加载控制器资源
     $ocLazyLoad.load("css/main.css");
+
+    $scope.blogList=[
+        {
+            "title":"AngularJS开篇",
+            "date":"2018-10-11 23:25:25",
+            "brief":"事实上，如果从一开始谈WEB，我对于WEB的认知，仅仅是停留在静态页上面的.那个时代，属于Table布局，网络三剑客的时代。",
+        },
+        {
+            "title":"AngularJS开篇",
+            "date":"2018-10-11 23:25:25",
+            "brief":"事实上，如果从一开始谈WEB，我对于WEB的认知，仅仅是停留在静态页上面的.那个时代，属于Table布局，网络三剑客的时代。",
+        },
+        {
+            "title":"AngularJS开篇",
+            "date":"2018-10-11 23:25:25",
+            "brief":"事实上，如果从一开始谈WEB，我对于WEB的认知，仅仅是停留在静态页上面的.那个时代，属于Table布局，网络三剑客的时代。",
+        },
+        {
+            "title":"AngularJS开篇",
+            "date":"2018-10-11 23:25:25",
+            "brief":"事实上，如果从一开始谈WEB，我对于WEB的认知，仅仅是停留在静态页上面的.那个时代，属于Table布局，网络三剑客的时代。",
+        }
+    ];
+    //导航信息对象
     $scope.navlist = [
         {"name":"INDEX","url":"index"},
         {"name":"LIFE","url":"life"},
         {"name":"BLOG","url":"blog"},
         {"name":"RESUME","url":"resume"},
     ]
+    //发布消息列表
     $scope.dynamic =[
         {
             "title":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/me.webp",
@@ -25,68 +50,31 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$interval','$rootSco
             "notes":"如果发现本站有侵权资源，请及时通过站内信或者邮箱联系到我，我会第一时间处理！"
         }
     ]
+    //友情链接列表
     $scope.shiplink=[
         {
-            "title":"www.baidu.com/img/baidu_jgylogo3.gif",
+            "img":"img/baidu.png",
             "name":"百度",
             "url":"http://www.baidu.com"
         },
         {
-            "title":"www.baidu.com/img/baidu_jgylogo3.gif",
+            "img":"img/baidu.png",
             "name":"百度",
             "url":"http://www.baidu.com"
         },
         {
-            "title":"www.baidu.com/img/baidu_jgylogo3.gif",
+            "img":"img/baidu.png",
             "name":"百度",
             "url":"http://www.baidu.com"
         },
         {
-            "title":"www.baidu.com/img/baidu_jgylogo3.gif",
+            "img":"img/baidu.png",
             "name":"百度",
             "url":"http://www.baidu.com"
-        },{
-            "title":"www.baidu.com/img/baidu_jgylogo3.gif",
-            "name":"百度",
-            "url":"http://www.baidu.com"
-        },{
-            "title":"www.baidu.com/img/baidu_jgylogo3.gif",
-            "name":"百度",
-            "url":"http://www.baidu.com"
-        },{
-            "title":"www.baidu.com/img/baidu_jgylogo3.gif",
-            "name":"百度",
-            "url":"http://www.baidu.com"
-        },
-    ]
-   // $scope.panelstyle=['main_panel1','main_panel2','main_panel3']
-   //  function RandomNum(Min,Max){
-   //      var Range = Max - Min;
-   //      var Rand = Math.random();
-   //      var num = Min + Math.round(Rand * Range);
-   //      return num;
-   //  }
-   //
-   //  $scope.timer = $interval( function(){
-   //      for (var i=0;i<3;i++) {
-   //          $scope.panelstyle[i] = "main_title main_panel"+RandomNum(0,2).toString();
-   //      }
-   //  }, 1000);
-
-   // $scope.timer.then();
-
-    $scope.navstyle ="";
-
-
-    $(window).scroll(function () {
-        var st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);
-        if (st >= 400) {
-            $scope.navstyle ={"position": "fixed", "top":"0"};
-        }else{
-            $scope.navstyle ="";
         }
-    });
+    ]
 
+    //主页照片信息列表
     $scope.photoList=[
         {
             "id":"1",
@@ -121,6 +109,7 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$interval','$rootSco
             "fontstyle":{"display":"none"}
         }
     ]
+    //主页照片遮罩层弹出和收缩
     $scope.showMask = function(pho,ev){
         if(ev){
             pho.style.display="block";

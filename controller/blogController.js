@@ -4,6 +4,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
         'css/blog/blog.css',
         'css/blog/blogmenu.css'
     ]);
+
     //当前博文评论列表
     $scope.commentlist =[
         {

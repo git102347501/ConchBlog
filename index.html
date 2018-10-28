@@ -30,6 +30,7 @@
 
 </head>
 <body ng-app="conch">
+<!--顶部头像-->
 <div class="con_title headline-bg index-headline-bg wavesWapper">
     <canvas id="waves" class="waves"></canvas>
     <div class="conchhead">
@@ -39,6 +40,7 @@
         <p>Magical Conch</p>
     </div>
 </div>
+<!--导航条-->
 <div class="con_tent">
     <div class="con_nav" layout="row" layout-align="center start" ng-class="navstyle">
         <md-content ng-controller="indexController">
@@ -52,13 +54,15 @@
             </md-nav-bar>
         </md-content>
     </div>
+    <!--主视图-->
     <div class="view">
         <ui-view>
             <index></index>
         </ui-view>
     </div>
 </div>
-    <div class="con_bottom" layout="column">
+<!--底部信息栏-->
+<div class="con_bottom" layout="column">
     <div class="con_bottom_tail" layout="row" layout-sm="column" layout-xs="column" layout-fill flex="100">
         <div class="con_bottom_panel" flex flex-sm>
             <h4>Contact Information</h4>
