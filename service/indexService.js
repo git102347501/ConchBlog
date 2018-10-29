@@ -1,6 +1,6 @@
-conch.service('httpCore',['$http','$q','$cookieStore','$state',function ($http,$q,$cookieStore,$state) {
+conch.service('HttpCore',['$http','$q','$cookieStore','$state',function ($http,$q,$cookieStore,$state) {
     //服务地址
-    var serviceUrl = "http://localhost:51957/api/";
+    var serviceUrl = "http://localhost:31126/api/";
 
     //发送请求
     this.PostPlus = function (url,data) {
@@ -19,7 +19,7 @@ conch.service('httpCore',['$http','$q','$cookieStore','$state',function ($http,$
         $http({
             headers:{'Content-Type':'application/x-www-form-urlencoded','Authorization':'Bearer '+ tokey},
             method:'post',
-            url: serverurl + url,
+            url: serviceUrl + url,
             data: date
         }).then(function successCallback(responce) {
             console.log(responce);

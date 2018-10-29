@@ -2,8 +2,7 @@ conch.config(['$stateProvider','$httpProvider',function ($stateProvider) {
     $stateProvider
         .state('index',{
             url: '/index',
-            templateUrl: 'view/index/main.html',
-            controller:'indexController'
+            templateUrl: 'view/index/main.html'
         })
         .state('blog',{
             url: '/blog',

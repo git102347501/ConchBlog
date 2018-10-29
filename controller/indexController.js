@@ -1,7 +1,9 @@
-conch.controller('indexController',['$scope','$ocLazyLoad','$interval','$rootScope','$timeout',function ($scope,$ocLazyLoad,$interval,$rootScope,$timeout) {
+conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr',
+    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr) {
     //加载控制器资源
     $ocLazyLoad.load("css/main.css");
-
+    //博客个人信息
+    $scope.blogUser="";
     $scope.blogList=[
         {
             "title":"AngularJS开篇",
@@ -73,7 +75,6 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$interval','$rootSco
             "url":"http://www.baidu.com"
         }
     ]
-
     //主页照片信息列表
     $scope.photoList=[
         {
@@ -133,5 +134,35 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$interval','$rootSco
             },400);
         }
     }
+
+    //初始化
+    $scope.Initialization = function () {
+        $scope.getUser();
+    };
+
+    //获取用户信息
+    $scope.getUser = function(){
+        var response = HttpCore.PostPlus('Config/GetUser',null);
+        response.then(function(resp){
+            if(resp.data !=null && resp.data.status == 1){
+                $scope.blogUser = resp.data.data;
+            }else{
+                if(resp.data!=null){
+                    toastr.error(resp.data.msg);
+                }else{
+                    toastr.error("获取博主信息失败！");
+                }
+            }
+        },function(resp){
+            toastr.error("获取博主信息失败！");
+        })
+    };
+
+    //获取博文信息
+    $scope.getBlogList = function () {
+
+    };
+
+    $scope.Initialization();
 
 }]);
