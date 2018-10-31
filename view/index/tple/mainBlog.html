@@ -2,13 +2,13 @@
     <md-card class="blog_card">
         <md-card-title>
             <md-card-title-text>
-                <span class="blog_card_span">{{blog.title}}</span>
-                <span class="label label-default pull-left" style="max-width: 220px;margin-top: 8px">发布日期：{{blog.date}}</span>
+                <span class="blog_card_span">{{blog.blogTitle}}</span>
+                <span class="label label-default pull-left" style="max-width: 220px;margin-top: 8px">发布日期：{{blog.blogCreateDate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
             <p>
-                {{blog.brief}}
+                {{blog.blogBrief}}
             </p>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">

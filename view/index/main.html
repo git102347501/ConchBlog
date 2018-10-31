@@ -43,8 +43,13 @@
                 友情链接
             </h3>
         </div>
-        <div class="main_ship">
+        <div class="main_ship" ng-show="shiplink.length>0">
             <conch-shiplink ng-repeat="ship in shiplink"></conch-shiplink>
+        </div>
+        <div class="main_ship" ng-show="shiplink.length<1">
+            <span style="width: 100%;font-size: 18px;margin-top: 20px">
+                <md-icon md-svg-src="fonts/myfonts/cry.svg" style="color: black;margin-right: 10px;"></md-icon>竟然没人跟我友链！嘤嘤嘤......
+            </span>
         </div>
     </div>
 </div>

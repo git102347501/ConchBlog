@@ -1,5 +1,5 @@
 <div id="menu" md-whiteframe="1" >
-    <div class="conchMenu" ng-mouseenter="openMenu()" ng-style="menuStyle">
+    <div class="conchMenu">
         <div class="blog_title" layout ="row" layout-align ="center center">
             <h4>博文列表</h4>
         </div>
@@ -12,11 +12,11 @@
 
         <div ng-repeat="item in menulist">
             <md-menu-item>
-                <md-button ng-click="openNav(item)">
+                <md-button ng-click="openNav(menuNavstyle[$index])">
                 <span>
                     <!--<md-tooltip md-direction="right">{{item.name}}</md-tooltip>-->
                     <md-icon
-                            md-svg-src="{{item.ico}}"
+                            md-svg-src="fonts/myfonts/Article.svg"
                             class="menuIco"
                             aria-label="Cake">
                     </md-icon>
@@ -24,11 +24,11 @@
                     <span>{{item.name}}</span>
                 </md-button>
             </md-menu-item>
-            <md-menu-item ng-repeat="items in item.menu" class="conchNav" ng-style="item.nav">
-                <md-button ng-style="item.nav">
+            <md-menu-item ng-repeat="items in item.menu" class="conchNav" ng-style="menuNavstyle[$parent.$index]">
+                <md-button ng-style="menuNavstyle[$parent.$index]">
                         <span class="navMenu">
                             <md-icon
-                                    md-svg-src="{{items.ico}}"
+                                    md-svg-src="fonts/myfonts/file.svg"
                                     class="menuIco"
                                     aria-label="Cake">
                             </md-icon>

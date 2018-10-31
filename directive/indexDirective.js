@@ -55,7 +55,6 @@ conch.directive('conchmenu',function () {
     return{
         restrict:'E',
         templateUrl:'view/blog/blogmenu.html',
-        replace : true,
-        controller:"blogController"
+        replace : true
     }
 });
