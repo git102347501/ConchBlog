@@ -1,4 +1,4 @@
-var conch = angular.module('conch', ['ngMaterial','ngCookies','ui.bootstrap','ngMessages','ui.router','oc.lazyLoad','toastr']);
+var conch = angular.module('conch', ['ngMaterial','ngCookies','ngSanitize','ui.bootstrap','ngAnimate','ngMessages','ui.router','oc.lazyLoad','toastr']);
 //按需加载配置
 conch.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvider",
     function ($provide, $compileProvider, $controllerProvider, $filterProvider) {
@@ -9,7 +9,20 @@ conch.config(["$provide", "$compileProvider", "$controllerProvider", "$filterPro
         conch.service = $provide.service;
         conch.constant = $provide.constant;
     }]);
-
+//弹窗配置
+conch.config(function(toastrConfig) {
+    angular.extend(toastrConfig, {
+        autoDismiss: false,
+        containerId: 'toast-container',
+        maxOpened: 0,
+        newestOnTop: true,
+        positionClass: 'toast-top-center',
+        preventDuplicates: false,
+        timeOut:2000,
+        preventOpenDuplicates: false,
+        target: 'body'
+    });
+});
 //主页
 conch.directive('index',function(){
     return{

@@ -18,7 +18,6 @@ span{
 }
 .blog_body{
     width: 100%;
-    height: 500px;
     margin-bottom: 15px;
 }
 .blog_nav{
@@ -42,7 +41,9 @@ span{
     padding: 5px 0px 0px 30px;
     line-height: 65px;
 }
-
+.blog_batter{
+    margin: 10px 29px 5px 29px;
+}
 .blog_news{
     width:100%;
     height: 45px;
@@ -62,6 +63,17 @@ span{
 .blog_loading{
     justify-content:center;
     width: 100%;
+    min-height: 80px;
+}
+.blog_listloading{
+    justify-content:center;
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    font-size: 16px;
+}
+.blog_listloading span{
+    font-size: 14px;
+    margin-right: 15px;
 }
 .blog_loading span{
     font-size: 18px;
@@ -75,7 +87,6 @@ span{
 }
 .blog_commend{
     margin-bottom: 15x;
-    height: 200px;
     width: 100%;
 }
 .blog_title{
@@ -113,7 +124,6 @@ span{
 .blog_new{
     margin-top: 10px;
     padding: 0px;
-    height: 200px;
     width: 100%;
 }
 .blog_comment{

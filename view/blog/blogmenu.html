@@ -9,33 +9,39 @@
                 <input ng-model="user.title">
             </md-input-container>
         </div>
-
-        <div ng-repeat="item in menulist">
-            <md-menu-item>
-                <md-button ng-click="openNav(menuNavstyle[$index])">
-                <span>
-                    <!--<md-tooltip md-direction="right">{{item.name}}</md-tooltip>-->
-                    <md-icon
-                            md-svg-src="fonts/myfonts/Article.svg"
-                            class="menuIco"
-                            aria-label="Cake">
-                    </md-icon>
-                </span>
-                    <span>{{item.name}}</span>
-                </md-button>
-            </md-menu-item>
-            <md-menu-item ng-repeat="items in item.menu" class="conchNav" ng-style="menuNavstyle[$parent.$index]">
-                <md-button ng-style="menuNavstyle[$parent.$index]">
-                        <span class="navMenu">
-                            <md-icon
-                                    md-svg-src="fonts/myfonts/file.svg"
-                                    class="menuIco"
-                                    aria-label="Cake">
-                            </md-icon>
-                        </span>
-                    <span>{{items.name}}</span>
-                </md-button>
-            </md-menu-item>
+        <div>
+            <div ng-show="readbloglist" ng-repeat="item in menulist">
+                <md-menu-item>
+                    <md-button ng-click="openNav(menuNavstyle[$index])">
+                    <span>
+                        <!--<md-tooltip md-direction="right">{{item.name}}</md-tooltip>-->
+                        <md-icon
+                                md-svg-src="fonts/myfonts/Article.svg"
+                                class="menuIco"
+                                aria-label="Cake">
+                        </md-icon>
+                    </span>
+                        <span>{{item.name}}</span>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-repeat="items in item.menu" class="conchNav" ng-style="menuNavstyle[$parent.$index]">
+                    <md-button ng-style="menuNavstyle[$parent.$index]" ng-click="getBlog(items)">
+                            <span class="navMenu">
+                                <md-icon
+                                        md-svg-src="fonts/myfonts/file.svg"
+                                        class="menuIco"
+                                        aria-label="Cake">
+                                </md-icon>
+                            </span>
+                        <span>{{items.name}}</span>
+                    </md-button>
+                </md-menu-item>
+            </div>
+            <div ng-show="!readbloglist" class="blog_listloading" layout="row" layout-align="center center" ng-show="!readBlogcomm">
+                <span>正在加载博文列表</span>
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
         </div>
+
     </div>
 </div>
