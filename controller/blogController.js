@@ -15,42 +15,22 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
     $scope.readbloglist = false;
     //读取最新列表对象
     $scope.readBlogNew=false;
+    //读取博文评论对象
+    $scope.readBlogcommlist=false;
     //当前博文评论列表
-    $scope.commentlist =[
-        {
-            "name":"匿名",
-            "head":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp",
-            "content":"写的真不错！",
-            "date":"2018-01-01 1:11:58",
-            "reply":[{
-                "name":"匿名",
-                "head":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp",
-                "content":"哈哈，我也是这么觉得",
-                "date":"2018-01-01 1:11:58"
-            },{
-                "name":"匿名",
-                "head":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp",
-                "content":"哈哈，我也是这么觉得",
-                "date":"2018-01-01 1:11:58"
-            },{
-                "name":"匿名",
-                "head":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp",
-                "content":"哈哈，我也是这么觉得",
-                "date":"2018-01-01 1:11:58"
-            }]
-        }, {
-            "name":"神奇的海螺",
-            "head":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp",
-            "content":"写的真不错！",
-            "date":"2018-01-01 1:11:58",
-            "reply":[{
-                "name":"匿名",
-                "head":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp",
-                "content":"哈哈，我也是这么觉得",
-                "date":"2018-01-01 1:11:58"
-            }]
+    $scope.commentlist =[];
+    //发表评论对象
+    $scope.setComment={
+        "usvalidate":{
+            "commentMain":"",
+            "commentIndex":"",
+            "commentDate":"",
+            "commentHeard":"",
+            "commentName":"",
+            "commentContent":""
         },
-    ];
+        "data":""
+    };
     //当前推荐博文列表
     $scope.commlist=[];
     //当前最新更新博文列表
@@ -164,15 +144,37 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
 
     //加载博文评论列表
     $scope.getBlogCommentList = function(index){
+        $scope.readBlogcommlist=false;
         var responce = HttpCore.PostPlus("Blog/BlogCommList",{"data":index});
         responce.then(function (resp) {
             if(resp.data && resp.data.status==1){
                 $scope.commentlist = resp.data.data;
+                $scope.readBlogcommlist=true;
             }
         },function () {
 
         })
     }
+
+    //获取验证码
+    $scope.getValidateImg = function(){
+
+    };
+
+    //发布评论
+    $scope.setComment = function(){
+        if(!$scope.setComment.usvalidate || angular.equals({},$scope.setComment.usvalidate.commentContent)){
+            toastr.warning("请输入评论内容！");return;
+        }
+        if(!$scope.setComment || !$scope.setComment.data){
+            toastr.warning("请输入验证码！");return;
+        }
+        //赋值评论属性
+        $scope.setComment.usvalidate.commentIndex = $scope.blog.blogID;
+        $scope.setComment.usvalidate.commentHeard = "https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp";
+        $scope.setComment.usvalidate.commentName = "匿名";
+        HttpCore.superPost("Blog/BlogComment",$scope.setComment,"发表评论成功！","发表评论失败！");
+    };
 
     $scope.Initialization();
 }]);

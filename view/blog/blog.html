@@ -103,19 +103,23 @@
                 <h4>发表评论</h4>
             </div>
             <div class="blog_list_user">
-                <md-button class="md-fab md-mini" aria-label="Eat cake">
-                    <md-icon  md-svg-src="demoIco"></md-icon>
+                <md-button class="md-fab md-mini" style="background: #F0F0F0" aria-label="Eat cake">
+                    <span class="glyphicon glyphicon-user" style="color: #2f96b4"></span>
                 </md-button>
+                <span>匿名用户</span>
             </div>
             <div class="blog_comment_area">
-                <textarea class="blog_comment_discuss" placeholder="请在此输入您的评论内容，严禁讨论敏感话题！" aria-invalid="false" style=""></textarea>
+                <textarea ng-model="setComment.usvalidate.commentContent" class="form-control blog_comment_discuss" rows="4" placeholder="请在此输入您的评论内容，严禁讨论敏感话题！" aria-invalid="false" style=""></textarea>
             </div>
-            <div class="blog_comment_sub pull-right">
+            <div class="blog_comment_sub" layout="row" layout-align="end center">
                 <span class="blog_comment_submit">
                     <img src="data:image/jpg;base64,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" alt="">
                 </span>
                 <span class="blog_comment_submit">
-                     <md-button class="md-raised md-primary">发表评论</md-button>
+                     <input type="text" ng-model="setComment.usvalidate.data" class="form-control" id="name" placeholder="输入验证码">
+                </span>
+                <span class="blog_comment_submit">
+                     <md-button class="md-raised md-primary" ng-click="setComment()">发表评论</md-button>
                 </span>
             </div>
         </div>
@@ -125,12 +129,12 @@
                 <span><h4>评论列表</h4></span>
             </div>
             <!--无回复内容-->
-            <div class="blog_list_null" layout="row" layout-align="center center" ng-show="commentlist.length<1">
-                <span><p>喵了个咪的，竟然没人回复！</p></span>
+            <div class="blog_list_null" layout="row" layout-align="center center" ng-show="readBlogcommlist && commentlist.length<1">
+                <span><md-icon md-svg-src="fonts/myfonts/cry.svg" style="color: black;margin-right: 10px;"></md-icon>喵了个咪的，竟然没人回复！</span>
             </div>
             <!--评论列表-->
             <div>
-                <div class="col-lg-12 blog_commentlist_list" ng-repeat="item in commentlist" ng-show="commentlist.length>0">
+                <div class="col-lg-12 blog_commentlist_list" ng-repeat="item in commentlist" ng-show="readBlogcommlist">
                     <div>
                         <div class="col-lg-12 blog_commentlist_heard">
                             <span><img src="{{item.commentHeard}}" alt="" style="height: 40px;width:40px"></span><span style="padding-left: 20px;color:#337ab7">{{item.commentName}}</span>
@@ -165,7 +169,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="blog_loading" layout="row" layout-align="center center">
+                <div class="blog_loading" layout="row" layout-align="center center" ng-show="!readBlogcommlist">
                     <span>正在加载评论列表</span>
                     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
                 </div>

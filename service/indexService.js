@@ -2,6 +2,23 @@ conch.service('HttpCore',['$http','$q','$cookieStore','$state','$httpParamSerial
     //服务地址
     var serviceUrl = "http://localhost:31126/api/";
 
+    this.superPost = function(url,data,success,error){
+        var response = this.PostPlus(url,data);
+        response.then(function (resp) {
+            if(resp.data && resp.status){
+                toastr.success(success);
+            }else{
+                if(resp.data && resp.data.msg){
+                    toastr.warning(resp.data.msg);
+                }else{
+                    toastr.error(error);
+                }
+            }
+        },function () {
+            toastr.error(error);
+        })
+    };
+
     //发送请求
     this.PostPlus = function (url,data) {
         var deferred = $q.defer(); // 声明延后执行，表示要去监控后面的执行
