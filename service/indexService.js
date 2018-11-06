@@ -1,4 +1,5 @@
-conch.service('HttpCore',['$http','$q','$cookieStore','$state','$httpParamSerializerJQLike',function ($http,$q,$cookieStore,$state,$httpParamSerializerJQLike) {
+conch.service('HttpCore',['$http','$q','$cookieStore','$state','$httpParamSerializerJQLike','toastr',
+    function ($http,$q,$cookieStore,$state,$httpParamSerializerJQLike,toastr) {
     //服务地址
     var serviceUrl = "http://localhost:31126/api/";
 

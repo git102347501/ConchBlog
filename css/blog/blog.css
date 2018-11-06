@@ -167,3 +167,8 @@ span{
     flex:1;
     padding: 0px 0px 0px 10px;
 }
+.validateImg{
+    border: 1px solid #aaaaaa;
+    width: 84px;height:34px;
+
+}
