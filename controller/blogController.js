@@ -43,10 +43,6 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
         "commentName":"",
         "commentContent":""
     };
-    //发表评论验证码
-    $scope.setCommentValue="";
-    //回复评论验证码
-    $scope.setReplyCommentValue="";
     //当前推荐博文列表
     $scope.commlist=[];
     //当前最新更新博文列表
@@ -159,8 +155,9 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
     }
 
     //回复评论
-    $scope.replyComments= function(ev){
+    $scope.replyComments= function(ev,index){
         ev.value=!ev.value;
+        $scope.setreplyCommentValidate.commentIndex = index;
         if(!$scope.replyValidateImg){
             $scope.getValidateImg(false);
         }
@@ -191,7 +188,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
             $scope.setCommentValue="";
         }else{
             $scope.replyValidateImg ="";
-            $scope.setReplyCommentValue="";
+            $scope.setreplyCommentvalue="";
         }
         var responce = HttpCore.PostPlus("Validate/ReadImage",{"data":4});
         responce.then(function (resp) {
@@ -206,17 +203,14 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
     };
 
     //发布评论
-    $scope.setComment = function(index){
+    $scope.setComment = function(index,commentvalue){
         var commentvalidate;//评论信息对象
-        var commentvalue;//验证码值
         var commentimg;//验证码图片
         if(index<0){
             commentvalidate =$scope.setCommentValidate;
-            commentvalue =$scope.setCommentValue;
             commentimg = $scope.validateImg;
         }else{
             commentvalidate =$scope.setreplyCommentValidate;
-            commentvalue =$scope.setReplyCommentValue;
             commentimg = $scope.replyValidateImg;
         }
         if(!commentvalidate || !commentvalidate.commentContent || commentvalidate.commentContent.length<1){
@@ -226,7 +220,6 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
             toastr.warning("请输入验证码！");return;
         }
         //赋值评论属性
-        commentvalidate.commentIndex = index;
         commentvalidate.commentMain = $scope.blog.id;
         commentvalidate.commentHeard = "https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp";
         commentvalidate.commentName = "匿名";

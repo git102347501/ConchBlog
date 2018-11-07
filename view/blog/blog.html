@@ -119,7 +119,7 @@
                      <input type="text" ng-model="setCommentValue" class="form-control" id="comment" placeholder="输入验证码，不区分大小写">
                 </span>
                 <span class="blog_comment_submit">
-                     <md-button class="md-raised md-primary" ng-click="setComment(-1)">发表评论</md-button>
+                     <md-button class="md-raised md-primary" ng-click="setComment(-1,setCommentValue)">发表评论</md-button>
                 </span>
             </div>
         </div>
@@ -141,7 +141,7 @@
                             <span class="pull-right">
                             <span>{{($index+1)}}楼</span>
                             <span>{{item.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
-                            <a href="" ng-click="replyComments(replyComment[$index])">回复</a>
+                            <a href="" ng-click="replyComments(replyComment[$index],item.commentID)">回复</a>
                         </span>
                         </div>
                         <div class="col-lg-12 blog_commentlist_content">
@@ -169,10 +169,23 @@
                         </div>
                     </div>
                     <div class="col-lg-12" ng-show="replyComment[$index].value">
-                        <conch-comm></conch-comm>
+                        <div class="blog_comment_area">
+                            <textarea ng-model="setreplyCommentValidate.commentContent" class="form-control blog_comment_discuss" rows="4" placeholder="@{{item.commentName}} 请在此输入您的回复内容，严禁讨论敏感话题！" aria-invalid="false" style=""></textarea>
+                        </div>
+                        <div class="blog_comment_sub" layout="row" layout-align="end center">
+                            <span class="blog_comment_submit">
+                                <img src="data:image/jpg;base64,{{replyValidateImg.img}}" alt="验证码" class="validateImg switch" ng-click="getValidateImg()">
+                            </span>
+                            <span class="blog_comment_submit">
+                                 <input type="text" ng-model="setreplyCommentvalue" class="form-control" id="replycomment" placeholder="输入验证码，不区分大小写">
+                            </span>
+                            <span class="blog_comment_submit">
+                                 <md-button class="md-raised md-primary" ng-click="setComment($parent.$index,setreplyCommentvalue)">发表评论</md-button>
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="blog_loading" layout="row" layout-align="center center" ng-show="!readBlogcommlist">
+                <div class="blog_loading" layout="row" layout-align="center center" ng-if="!readBlogcommlist">
                     <span>正在加载评论列表</span>
                     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
                 </div>
