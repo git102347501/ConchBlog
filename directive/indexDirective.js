@@ -71,3 +71,13 @@ conch.directive('conchmenu',function () {
         replace : true
     }
 });
+//博客-评论回复
+conch.directive('conchComm',function () {
+    return{
+        scope:false,
+        restrict:'E',
+        templateUrl:'view/blog/blogcomm.html',
+        replace : true
+    }
+});
+

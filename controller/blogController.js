@@ -19,8 +19,12 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
     $scope.readBlogcommlist=false;
     //验证码图片
     $scope.validateImg;
+    //回复验证码图片
+    $scope.replyValidateImg;
     //当前博文评论列表
     $scope.commentlist =[];
+    //回复状态列表
+    $scope.replyComment=[];
     //发表评论对象
     $scope.setCommentValidate={
         "commentMain":"",
@@ -30,8 +34,19 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
         "commentName":"",
         "commentContent":""
     };
+    //发表回复评论对象
+    $scope.setreplyCommentValidate={
+        "commentMain":"",
+        "commentIndex":"",
+        "commentDate":"",
+        "commentHeard":"",
+        "commentName":"",
+        "commentContent":""
+    };
     //发表评论验证码
     $scope.setCommentValue="";
+    //回复评论验证码
+    $scope.setReplyCommentValue="";
     //当前推荐博文列表
     $scope.commlist=[];
     //当前最新更新博文列表
@@ -52,7 +67,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
     $scope.Initialization = function(){
         $scope.getblogList();
         $scope.getNewBloglist();
-        $scope.getValidateImg();//获取验证码
+        $scope.getValidateImg(true);//获取验证码
     };
 
     //加载博文左侧列表
@@ -143,13 +158,25 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
         })
     }
 
+    //回复评论
+    $scope.replyComments= function(ev){
+        ev.value=!ev.value;
+        if(!$scope.replyValidateImg){
+            $scope.getValidateImg(false);
+        }
+    };
+
     //加载博文评论列表
     $scope.getBlogCommentList = function(index){
+        $scope.replyComment=[];
         $scope.readBlogcommlist=false;
         var responce = HttpCore.PostPlus("Blog/BlogCommList",{"data":index});
         responce.then(function (resp) {
             if(resp.data && resp.data.status==1){
                 $scope.commentlist = resp.data.data;
+                for (var i=0;i< $scope.commentlist.length;i++) {
+                    $scope.replyComment.push({"value":false});
+                }
                 $scope.readBlogcommlist=true;
             }
         },function () {
@@ -157,42 +184,63 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
         })
     }
 
-    //获取验证码
-    $scope.getValidateImg = function(){
-        $scope.validateImg ="";
-        $scope.setCommentValue="";
+    //获取验证码 真发表，假回复
+    $scope.getValidateImg = function(model){
+        if(model){
+            $scope.validateImg ="";
+            $scope.setCommentValue="";
+        }else{
+            $scope.replyValidateImg ="";
+            $scope.setReplyCommentValue="";
+        }
         var responce = HttpCore.PostPlus("Validate/ReadImage",{"data":4});
         responce.then(function (resp) {
             if(resp.data && resp.data.status==1){
-                $scope.validateImg = resp.data.data;
+                if(model){
+                    $scope.validateImg = resp.data.data;
+                }else{
+                    $scope.replyValidateImg = resp.data.data;
+                }
             }
         });
     };
 
     //发布评论
     $scope.setComment = function(index){
-        if(!$scope.setCommentValidate || !$scope.setCommentValidate.commentContent || $scope.setCommentValidate.commentContent.length<1){
+        var commentvalidate;//评论信息对象
+        var commentvalue;//验证码值
+        var commentimg;//验证码图片
+        if(index<0){
+            commentvalidate =$scope.setCommentValidate;
+            commentvalue =$scope.setCommentValue;
+            commentimg = $scope.validateImg;
+        }else{
+            commentvalidate =$scope.setreplyCommentValidate;
+            commentvalue =$scope.setReplyCommentValue;
+            commentimg = $scope.replyValidateImg;
+        }
+        if(!commentvalidate || !commentvalidate.commentContent || commentvalidate.commentContent.length<1){
             toastr.warning("请输入评论内容！");return;
         }
-        if($scope.setCommentValue.length<1){
+        if(commentvalue.length<1){
             toastr.warning("请输入验证码！");return;
         }
         //赋值评论属性
-        $scope.setCommentValidate.commentIndex = index;
-        $scope.setCommentValidate.commentMain = $scope.blog.id;
-        $scope.setCommentValidate.commentHeard = "https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp";
-        $scope.setCommentValidate.commentName = "匿名";
-        var usvali ={"name":$scope.setCommentValue,"index":$scope.validateImg.index};
-        var responce = HttpCore.PostPlus("Blog/BlogComment",{data:{usvalidate:usvali,data:$scope.setCommentValidate}});
+        commentvalidate.commentIndex = index;
+        commentvalidate.commentMain = $scope.blog.id;
+        commentvalidate.commentHeard = "https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp";
+        commentvalidate.commentName = "匿名";
+        var usvali ={"name":commentvalue,"index":commentimg.index};
+        var responce = HttpCore.PostPlus("Blog/BlogComment",{data:{ usvalidate:usvali,data:commentvalidate}});
         responce.then(function (resp) {
             if(resp.data && resp.data.status==1){
                 toastr.success("发表评论成功！");
                 //清空评论内容
-                $scope.setCommentValidate.commentContent="";
+                commentvalidate.commentContent="";
                 //刷新评论列表
                 $scope.getBlogCommentList($scope.blog.id);
                 //重新获取验证码
-                $scope.getValidateImg();
+                $scope.getValidateImg(index<0);
             }else{
                 if(resp.data && resp.data.msg){
                     toastr.warning(resp.data.msg);
@@ -204,6 +252,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
             toastr.warning("发表评论失败！");
         });
     };
+
 
     $scope.Initialization();
 }]);

@@ -113,10 +113,10 @@
             </div>
             <div class="blog_comment_sub" layout="row" layout-align="end center">
                 <span class="blog_comment_submit">
-                    <img src="data:image/jpg;base64,{{validateImg.img}}" alt="验证码" class="validateImg switch">
+                    <img src="data:image/jpg;base64,{{validateImg.img}}" alt="验证码" class="validateImg switch" ng-click="getValidateImg(true)">
                 </span>
                 <span class="blog_comment_submit">
-                     <input type="text" ng-model="setCommentValue" class="form-control" id="name" placeholder="输入验证码，不区分大小写">
+                     <input type="text" ng-model="setCommentValue" class="form-control" id="comment" placeholder="输入验证码，不区分大小写">
                 </span>
                 <span class="blog_comment_submit">
                      <md-button class="md-raised md-primary" ng-click="setComment(-1)">发表评论</md-button>
@@ -141,7 +141,7 @@
                             <span class="pull-right">
                             <span>{{($index+1)}}楼</span>
                             <span>{{item.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
-                            <a href="">回复</a>
+                            <a href="" ng-click="replyComments(replyComment[$index])">回复</a>
                         </span>
                         </div>
                         <div class="col-lg-12 blog_commentlist_content">
@@ -167,6 +167,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-lg-12" ng-show="replyComment[$index].value">
+                        <conch-comm></conch-comm>
                     </div>
                 </div>
                 <div class="blog_loading" layout="row" layout-align="center center" ng-show="!readBlogcommlist">
