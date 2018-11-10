@@ -1,0 +1,23 @@
+<div class="blog_matter">
+    <!--博文标题-->
+    <div class="blog_heard" ng-show="readblog">
+        <h3>{{blog.name}}</h3>
+    </div>
+    <!--博文信息-->
+    <div class="blog_news" ng-show="readblog">
+        <span class="label label-default">发布时间：{{blog.creatDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+        <span class="label label-info">浏览次数：{{blog.visit?blog.visit:0}}</span>
+    </div>
+    <!--博文内容-->
+    <div ng-show="!readblog" class="blog_content">
+        <div class="blog_loading" layout="row" layout-align="center center">
+            <span>正在加载博文</span>
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+    </div>
+    <div ng-show="readblog">
+        <div class="blog_batter" ng-bind-html="blog.batter">
+
+        </div>
+    </div>
+</div>

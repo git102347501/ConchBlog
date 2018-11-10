@@ -1,7 +1,9 @@
-conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr',
-    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr) {
+conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$mdDialog','$cookieStore',
+    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$mdDialog,$cookieStore) {
     //加载控制器资源
     $ocLazyLoad.load("css/main.css");
+    //登录信息
+    $scope.user='';
     //博客个人信息
     $scope.blogUser="";
     //首页博文信息
@@ -70,6 +72,27 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         $scope.getPhotoList();
     };
 
+    //登录
+    $scope.login = function (ev) {
+        $mdDialog.show({
+            controller: function ($scope, $mdDialog) {
+                $scope.hide = function() {
+                    $mdDialog.hide();
+                };
+                $scope.cancel = function() {
+                    $mdDialog.cancel();
+                };
+                $scope.answer = function(answer) {
+                    $mdDialog.hide(answer);
+                };
+            },
+            templateUrl: 'view/index/tple/login.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true
+        });
+    };
+
     //获取用户信息
     $scope.getUser = function(){
         var response = HttpCore.PostPlus('Config/GetUser',null);
@@ -134,6 +157,12 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         })
     }
 
-    $scope.Initialization();
+    //登录回调
+    $rootScope.$on('login',function (data,args) {
+        if(args){
+            $scope.user = $cookieStore.get("user");
+        }
+    });
 
+    $scope.Initialization();
 }]);

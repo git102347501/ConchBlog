@@ -7,6 +7,8 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
     ]);
     //当前博文
     $scope.blog;
+    //编辑博文对象
+    $scope.editBlog;
     //读取推荐列表
     $scope.readBlogcomm=false;
     //读取博文对象
@@ -246,6 +248,25 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
         });
     };
 
+    //编辑博文
+    $scope.editblog = function(){
+        //按需加载控件
+        $ocLazyLoad.load('ckeditor/ckeditor.js');
 
+        $state.go("blog.edit");
+
+        if(edit==false){
+            $scope.editBlog.blogID = $scope.blog.id;
+            $scope.editBlog.blogBody = $scope.blog.batter;
+            $scope.editBlog.blogCate = $scope.blog.cate;
+            $scope.editBlog.blogTitle = $scope.blog.name;
+            $scope.editBlog.blogDate = $scope.blog.creatDate;
+        }
+        //等待控件加载完，载入内容
+        $timeout(function(){
+            CKEDITOR.replace('editor1');
+            CKEDITOR.instances.editor1.setData($scope.editBlog.blogBody);
+        },1000);
+    };
     $scope.Initialization();
 }]);

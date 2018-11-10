@@ -1,0 +1,37 @@
+<div class="blog_matter">
+    <!--博文标题-->
+    <div layout-gt-xs="row">
+        <md-input-container>
+            <label>博文标题</label>
+            <input ng-model="blog.name">
+        </md-input-container>
+    </div>
+    <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>博文类别</label>
+            <md-select ng-model="edit_blog.blogClass" required>
+                <md-option ng-repeat="li in bllist" value="{{li.id}}">
+                    {{li.name}}
+                </md-option>
+            </md-select>
+            <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">必须选择博文类别</div>
+            </div>
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>博文标签</label>
+            <input name="postalCode" ng-model="edit_blog.blogCate" placeholder="12345" md-maxlength="50">
+        </md-input-container>
+    </div>
+    <!--博文内容-->
+    <div id="blogeditbody" class="col-lg-12">
+        <div class="blog_body">
+            <textarea name="editor1" id="editor1" ng-model="edit_blog.blogBody"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-xs btn-default pull-right" type="button" ng-click="Saveblog(false)">取消编辑</button>
+        <button class="btn btn-xs btn-primary pull-right" type="button" ng-click="Saveblog(true)">保存修改</button>
+    </div>
+</div>

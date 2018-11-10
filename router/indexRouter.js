@@ -14,6 +14,19 @@ conch.config(['$stateProvider','$httpProvider',function ($stateProvider) {
                 }]
             }
         })
+        .state('blog.matter',{
+            url: '/blog.matter',
+            templateUrl: 'view/blog/blogMatter.html'
+        })
+        .state('blog.edit',{
+            url: '/blog.edit',
+            templateUrl: 'view/blog/blogEdit.html',
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load('ckeditor/ckeditor.js');
+                }]
+            }
+        })
         .state('life',{
             url: '/life',
             templateUrl: 'view/life/life.html',
