@@ -1,5 +1,5 @@
-conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$mdDialog','$cookieStore',
-    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$mdDialog,$cookieStore) {
+conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$mdDialog','$cookieStore','$rootScope',
+    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$mdDialog,$cookieStore,$rootScope) {
     //加载控制器资源
     $ocLazyLoad.load("css/main.css");
     //登录信息
@@ -16,7 +16,7 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         {"name":"RESUME","url":"resume"},
     ]
     //发布消息列表
-    $scope.dynamic =[
+    $scope.dynamicList =[
         {
             "title":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/me.webp",
             "what":"发表博文：我的Net之路",
@@ -33,7 +33,9 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
             "who":"2018-10-18 22:21:25",
             "notes":"如果发现本站有侵权资源，请及时通过站内信或者邮箱联系到我，我会第一时间处理！"
         }
-    ]
+    ];
+    //发布动态对象
+    $scope.dynamicEdit="";
     //友情链接列表
     $scope.shiplink=[];
     //主页照片遮罩样式列表
@@ -70,6 +72,7 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         $scope.getUser();
         $scope.getBlogList();
         $scope.getPhotoList();
+        $scope.getDynamicList();
     };
 
     //登录
@@ -108,6 +111,43 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
             }
         },function(resp){
             toastr.error("获取博主信息失败！");
+        })
+    };
+
+    //获取动态列表
+    $scope.getDynamicList = function(){
+        var response = HttpCore.PostPlus('Dynamic/QueryDynamicList',{"data":$scope.dynamicEdit});
+        response.then(function(resp){
+            if(resp.data !=null && resp.data.status == 1){
+                $scope.dynamicList = resp.data.data;
+            }else{
+                if(resp.data!=null){
+                    toastr.error(resp.data.msg);
+                }else{
+                    toastr.error("获取动态列表失败！");
+                }
+            }
+        },function(resp){
+            toastr.error("获取动态列表失败！");
+        })
+    };
+
+    //发布个人动态
+    $scope.setDynamic = function(){
+        var response = HttpCore.PostPlus('Dynamic/AddDynamic',null);
+        response.then(function(resp){
+            if(resp.data !=null && resp.data.status == 1){
+                toastr.success("发布动态成功！");
+                $scope.getDynamicList();
+            }else{
+                if(resp.data!=null){
+                    toastr.error(resp.data.msg);
+                }else{
+                    toastr.error("获取动态列表失败！");
+                }
+            }
+        },function(resp){
+            toastr.error("获取动态列表失败！");
         })
     };
 

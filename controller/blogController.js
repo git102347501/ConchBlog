@@ -1,5 +1,5 @@
-conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval','HttpCore','toastr',
-    function ($scope,$ocLazyLoad,$timeout,$interval,HttpCore,toastr) {
+conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval','HttpCore','toastr','$state','$q',
+    function ($scope,$ocLazyLoad,$timeout,$interval,HttpCore,toastr,$state,$q) {
     //加载资源
     $ocLazyLoad.load([
         'css/blog/blog.css',
@@ -7,8 +7,17 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
     ]);
     //当前博文
     $scope.blog;
+    //编辑模式
+    $scope.editModel;
     //编辑博文对象
-    $scope.editBlog;
+    $scope.editBlog={
+        "blogID":"",
+        "blogBody":"",
+        "blogCate":"",
+        "blogTitle":"",
+        "blogDate":"",
+        "blogClass":""
+    };
     //读取推荐列表
     $scope.readBlogcomm=false;
     //读取博文对象
@@ -60,16 +69,32 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
         }else{
             ev.height="0px";
         }
-    }
+    };
 
+    //初始化
     $scope.Initialization = function(){
-        $scope.getblogList();
+        //加载博文左侧列表
+        $scope.getblogList().then(function () {
+            $scope.loadDefaultBlog();//加载首个博文内容
+        });
         $scope.getNewBloglist();
         $scope.getValidateImg(true);//获取验证码
     };
 
+    //加载首个博文
+    $scope.loadDefaultBlog = function(){
+        if($scope.menulist && $scope.menulist.length>0){
+            //默认加载首个博文
+            var defaultlist = $scope.menulist.find(c=> c.menu && c.menu.length>0)
+            if(defaultlist){
+                $scope.getBlog(defaultlist.menu[0].id);
+            }
+        }
+    };
     //加载博文左侧列表
     $scope.getblogList=function () {
+        var deferred = $q.defer();
+
         $scope.readbloglist =false;
         var response = HttpCore.PostPlus('Blog/BlogMenu',null);
         response.then(function(resp){
@@ -81,9 +106,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
                     $scope.menuNavstyle.push({"height":"0px"});
                 }
                 $scope.readbloglist =true;
-                if($scope.menulist && $scope.menulist.length>0){
-                    $scope.getBlog($scope.menulist[0].menu[0]);
-                }
+                return deferred.resolve(true);
             }else{
                 if(resp.data!=null){
                     toastr.error(resp.data.msg);
@@ -94,28 +117,21 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
         },function(resp){
             toastr.error("获取博主信息失败！");
         })
+        return deferred.promise;
     }
 
     //加载博文
-    $scope.getBlog = function(ev){
+    $scope.getBlog = function(index){
         //赋值读取博文正文状态，显示加载区域
         $scope.readblog = false;
-        //赋值当前读取博文对象
-        $scope.blog={
-            "id":ev.id,
-            "name":ev.name,
-            "cate":ev.cate && ev.cate.indexOf(",")>0?ev.cate.split(","):ev.cate,
-            "creatDate":ev.creatDate,
-            "visit":ev.visit,
-            "batter":"",
-        };
-        $scope.getcommlist(ev.id);
-        $scope.getBlogCommentList(ev.id);
-        var response = HttpCore.PostPlus("Blog/BlogBody",{"data":ev.id});
+
+        $scope.getcommlist(index);
+        $scope.getBlogCommentList(index);
+
+        var response = HttpCore.PostPlus("Blog/BlogBody",{"data":index});
         response.then(function (resp) {
             if(resp.data && resp.data.status==1 && resp.data.data){
-                $scope.blog.batter = resp.data.data.blogBatter;
-                $scope.blog.visit = resp.data.data.blogVisit;
+                $scope.blog = resp.data.data;
                 //赋值读取博文正文状态，显示博文
                 $scope.readblog = true;
             }else{
@@ -209,7 +225,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
         var commentvalidate;//评论信息对象
         var commentimg;//验证码图片
         if(index<0){
-            commentvalidate =$scope.setCommentValidate;
+            commentvalidate = $scope.setCommentValidate;
             commentimg = $scope.validateImg;
         }else{
             commentvalidate =$scope.setreplyCommentValidate;
@@ -222,7 +238,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
             toastr.warning("请输入验证码！");return;
         }
         //赋值评论属性
-        commentvalidate.commentMain = $scope.blog.id;
+        commentvalidate.commentMain = $scope.blog.blogID;
         commentvalidate.commentHeard = "https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp";
         commentvalidate.commentName = "匿名";
         var usvali ={"name":commentvalue,"index":commentimg.index};
@@ -233,7 +249,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
                 //清空评论内容
                 commentvalidate.commentContent="";
                 //刷新评论列表
-                $scope.getBlogCommentList($scope.blog.id);
+                $scope.getBlogCommentList($scope.blog.blogID);
                 //重新获取验证码
                 $scope.getValidateImg(index<0);
             }else{
@@ -250,23 +266,46 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
 
     //编辑博文
     $scope.editblog = function(){
-        //按需加载控件
-        $ocLazyLoad.load('ckeditor/ckeditor.js');
-
         $state.go("blog.edit");
 
-        if(edit==false){
-            $scope.editBlog.blogID = $scope.blog.id;
-            $scope.editBlog.blogBody = $scope.blog.batter;
-            $scope.editBlog.blogCate = $scope.blog.cate;
-            $scope.editBlog.blogTitle = $scope.blog.name;
-            $scope.editBlog.blogDate = $scope.blog.creatDate;
-        }
+        $scope.editBlog.blogID = $scope.blog.blogID;
+        $scope.editBlog.blogBody = $scope.blog.blogBatter;
+        $scope.editBlog.blogCate = $scope.blog.blogCate.split(',') ;
+        $scope.editBlog.blogTitle = $scope.blog.blogTitle;
+        $scope.editBlog.blogDate = $scope.blog.blogCreatDate;
+        $scope.editBlog.blogClass = $scope.blog.blogClass;
+
         //等待控件加载完，载入内容
         $timeout(function(){
             CKEDITOR.replace('editor1');
             CKEDITOR.instances.editor1.setData($scope.editBlog.blogBody);
-        },1000);
+        },400);
     };
+
+    //取消编辑
+    $scope.closeEdit = function(){
+        $state.go("blog.matter");
+    };
+
+    //保存博文
+    $scope.saveBlog = function(){
+        var blogvalues = CKEDITOR.instances.editor1.getData();
+        $scope.editBlog.blogBody = blogvalues;
+        $scope.editBlog.blogCate = $scope.editBlog.blogCate.toString();
+        var response =  HttpCore.PostPlus($scope.editModel? 'Blog/AddBlog':'Blog/UpdateBlog',$scope.editBlog);
+        response.then(function(resp){
+            if(resp.data !=null && resp.data.status ==1){
+                $state.go("blog.matter");
+                toastr.success("保存成功！");
+                //跳转到视图
+                $scope.getblogList();
+                $scope.getBlog($scope.blog.blogID);
+            }else{
+                toastr.error("保存失败！");
+            }
+        },function(resp){
+            toastr.error("保存失败！");
+        });
+    }
     $scope.Initialization();
 }]);

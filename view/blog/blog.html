@@ -9,7 +9,7 @@
             </div>
             <div class="blog_list" ng-show="readBlogcomm">
                 <md-menu-item ng-repeat="items in commlist" class="conchNav">
-                    <md-button ng-click="getBlog(items)">
+                    <md-button ng-click="getBlog(items.id)">
                         <span>
                             <md-icon
                                     md-svg-src="fonts/myfonts/file.svg"
@@ -34,7 +34,7 @@
             <div class="blog_list">
                 <div class="blog_list" ng-show="readBlogNew">
                     <md-menu-item ng-repeat="items in newlist" class="conchNav">
-                        <md-button ng-click="getBlog(items)">
+                        <md-button ng-click="getBlog(items.id)">
                         <span>
                             <md-icon
                                     md-svg-src="fonts/myfonts/file.svg"

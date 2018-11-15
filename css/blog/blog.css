@@ -29,6 +29,9 @@ span{
     background: transparent;
     line-height: 40px
 }
+.blog_edit{
+    padding: 20px 10px 10px 10px;
+}
 .blog_matter{
     display: flex;
     flex-direction:column;
@@ -36,6 +39,9 @@ span{
 .blog_heard{
     width:100%;
     height: 65px;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
 }
 .blog_heard h3{
     margin: 0px;

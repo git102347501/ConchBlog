@@ -1,16 +1,16 @@
-<div class="blog_matter">
+<div class="blog_edit">
     <!--博文标题-->
-    <div layout-gt-xs="row">
-        <md-input-container>
+    <div layout="row">
+        <md-input-container flex>
             <label>博文标题</label>
-            <input ng-model="blog.name">
+            <input ng-model="editBlog.blogTitle">
         </md-input-container>
     </div>
-    <div layout-gt-sm="row">
-        <md-input-container class="md-block" flex-gt-sm>
-            <label>博文类别</label>
-            <md-select ng-model="edit_blog.blogClass" required>
-                <md-option ng-repeat="li in bllist" value="{{li.id}}">
+    <div layout="row" layout-xs="column">
+        <md-input-container flex-lg="30" flex-md="45" flex-sm="50" flex-xs="100">
+            <label>类别</label>
+            <md-select ng-model="editBlog.blogClass" required>
+                <md-option ng-repeat="li in menulist" value="{{li.id}}">
                     {{li.name}}
                 </md-option>
             </md-select>
@@ -18,20 +18,18 @@
                 <div ng-message="required" class="my-message">必须选择博文类别</div>
             </div>
         </md-input-container>
-
-        <md-input-container class="md-block" flex-gt-sm>
-            <label>博文标签</label>
-            <input name="postalCode" ng-model="edit_blog.blogCate" placeholder="12345" md-maxlength="50">
-        </md-input-container>
+        <md-chips ng-model="editBlog.blogCate" readonly="ctrl.readonly" md-removable="ctrl.removable"
+                  flex-lg="70" flex-md="55" flex-sm="50" flex-xs="100">
+        </md-chips>
     </div>
     <!--博文内容-->
-    <div id="blogeditbody" class="col-lg-12">
+    <div layout="row">
         <div class="blog_body">
-            <textarea name="editor1" id="editor1" ng-model="edit_blog.blogBody"></textarea>
+            <textarea name="editor1" id="editor1" ng-model="editBlog.blogBody"></textarea>
         </div>
     </div>
-    <div class="row">
-        <button class="btn btn-xs btn-default pull-right" type="button" ng-click="Saveblog(false)">取消编辑</button>
-        <button class="btn btn-xs btn-primary pull-right" type="button" ng-click="Saveblog(true)">保存修改</button>
+    <div layout="row" layout-align="end center">
+        <md-button class="md-raised" ng-click="closeEdit()">取消编辑</md-button>
+        <md-button class="md-raised md-primary" ng-click="saveBlog()">保存修改</md-button>
     </div>
 </div>
