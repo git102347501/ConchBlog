@@ -1,5 +1,5 @@
-conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval','HttpCore','toastr','$state','$q',
-    function ($scope,$ocLazyLoad,$timeout,$interval,HttpCore,toastr,$state,$q) {
+conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$state','$q','$rootScope',
+    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$state,$q,$rootScope) {
     //加载资源
     $ocLazyLoad.load([
         'css/blog/blog.css',
@@ -306,6 +306,12 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','$interval'
         },function(resp){
             toastr.error("保存失败！");
         });
-    }
+    };
+
+    //注销回调
+    $rootScope.$on('logon',function (data,args) {
+        $scope.user = null;
+    });
+
     $scope.Initialization();
 }]);

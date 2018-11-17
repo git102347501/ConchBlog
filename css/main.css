@@ -118,8 +118,7 @@ md-card{
     position: absolute;
     top: 0px;
     left:0px;
-    background-image: -moz-linear-gradient(top, #8fa1ff, #3757fa); /* Firefox */
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #63B8FF), color-stop(1, #3757fa)); /* Saf4+, Chrome */
+    background-color: rgba(0, 0, 0, 0.5);;
     transition:height 0.5s,transform 0.5s;
     z-index:111;
     height: 0px;
@@ -132,10 +131,12 @@ md-card{
     text-align: center;
     font-family:SansSerif;
     padding:5px 0px 10px 0px;
+    color:white;
 }
 .main_photo_body{
     word-wrap:break-word;
     word-break:break-all;
+    color:white;
 }
 .main_ship{
     text-align: center;

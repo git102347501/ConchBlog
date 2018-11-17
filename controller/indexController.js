@@ -3,7 +3,7 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
     //加载控制器资源
     $ocLazyLoad.load("css/main.css");
     //登录信息
-    $scope.user='';
+    $scope.user= $cookieStore.get("user");
     //博客个人信息
     $scope.blogUser="";
     //首页博文信息
@@ -14,28 +14,16 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         {"name":"LIFE","url":"life"},
         {"name":"BLOG","url":"blog"},
         {"name":"RESUME","url":"resume"},
-    ]
-    //发布消息列表
-    $scope.dynamicList =[
-        {
-            "title":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/me.webp",
-            "what":"发表博文：我的Net之路",
-            "who":"2018-10-18 22:21:25",
-            "notes":"从一开始学习Net的时候，其实本意并非是看重这门语言，而是觉得......"
-        },{
-            "title":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/me.webp",
-            "what":"上传6张照片到相集：岛国收藏",
-            "who":"2018-10-18 22:21:25",
-            "notes":"让我悄咪咪的收藏一下各位老师的照片，嘿嘿嘿......"
-        },{
-            "title":"https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/me.webp",
-            "what":"发表个人说说：公告，版权相关！",
-            "who":"2018-10-18 22:21:25",
-            "notes":"如果发现本站有侵权资源，请及时通过站内信或者邮箱联系到我，我会第一时间处理！"
-        }
     ];
+    $scope.dynamicTarget=["个人动态","网站公告","重要通知"]
+    //发布消息列表
+    $scope.dynamicList =[];
     //发布动态对象
-    $scope.dynamicEdit="";
+    $scope.dynamicEdit={
+        "dynamicTitle":"",
+        "dynamicTarget":"个人动态",
+        "dynamicContext":""
+    };
     //友情链接列表
     $scope.shiplink=[];
     //主页照片遮罩样式列表
@@ -116,7 +104,7 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
 
     //获取动态列表
     $scope.getDynamicList = function(){
-        var response = HttpCore.PostPlus('Dynamic/QueryDynamicList',{"data":$scope.dynamicEdit});
+        var response = HttpCore.PostPlus('Dynamic/QueryDynamicList',null);
         response.then(function(resp){
             if(resp.data !=null && resp.data.status == 1){
                 $scope.dynamicList = resp.data.data;
@@ -134,10 +122,17 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
 
     //发布个人动态
     $scope.setDynamic = function(){
-        var response = HttpCore.PostPlus('Dynamic/AddDynamic',null);
+        $scope.dynamicEdit.dynamicAction="发布";
+        $scope.dynamicEdit.dynamicTarget="个人动态";
+        var response = HttpCore.PostPlus('Dynamic/AddDynamic',{"data":$scope.dynamicEdit});
         response.then(function(resp){
             if(resp.data !=null && resp.data.status == 1){
                 toastr.success("发布动态成功！");
+                $scope.dynamicEdit={
+                    "dynamicTitle":"",
+                    "dynamicTarget":"个人动态",
+                    "dynamicContext":""
+                };
                 $scope.getDynamicList();
             }else{
                 if(resp.data!=null){
@@ -202,6 +197,10 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         if(args){
             $scope.user = $cookieStore.get("user");
         }
+    });
+    //注销回调
+    $rootScope.$on('logon',function (data,args) {
+        $scope.user = null;
     });
 
     $scope.Initialization();

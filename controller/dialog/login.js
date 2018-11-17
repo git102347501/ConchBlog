@@ -1,5 +1,6 @@
 conch.controller('loginController',['$scope','$http','HttpCore','$mdDialog','$rootScope','$cookieStore','toastr',
     function ($scope,$http,HttpCore,$mdDialog,$rootScope,$cookieStore,toastr) {
+        $scope.users = $cookieStore.get("user");
         //登录用户信息
         $scope.user={
             "userAccount":'',
@@ -9,7 +10,7 @@ conch.controller('loginController',['$scope','$http','HttpCore','$mdDialog','$ro
         //登录验证码图片
         $scope.checkimgs;
         //验证码数据
-        $scope.valiValue;
+        $scope.valiValue="";
 
         //登录
         $scope.Login = function () {
@@ -27,6 +28,13 @@ conch.controller('loginController',['$scope','$http','HttpCore','$mdDialog','$ro
             },function(resp){
                 toastr.error("登录失败！");
             });
+        };
+
+        //注销
+        $scope.Cancellation = function(){
+            $cookieStore.remove("user");
+            $rootScope.$emit('logon',true);
+            $mdDialog.cancel();
         };
 
         //获取验证码

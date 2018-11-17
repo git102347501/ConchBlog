@@ -4,14 +4,14 @@
         <div class="bubble" hide-xs>
 
         </div>
-        <div class="md-list-item-panel md-list-item-text" layout="column" layout-align="center start">
+        <div class="md-list-item-panel" layout="column" layout-align="center start">
             <div style="margin-bottom: 6px" layout="row" layout-align="start center">
-                <span style="color: #4D4D4D">{{item.dynamicDate|date:"yyyy-MM-dd hh:mm:ss"}}</span>
+                <span style="color: #483D8B;">{{item.dynamicDate|pastdate}}</span>
                 <span>{{item.dynamicAction}}{{item.dynamicTarget}}:</span>
                 <span style="color:darkred">{{item.dynamicTitle}}</span>
             </div>
             <div>
-                <p ng-show="item.dynamicContext" style="font-size: 16px">{{item.dynamicContext}}</p>
+                <p ng-show="item.dynamicContext" style="font-size: 14px">{{item.dynamicContext}}</p>
             </div>
         </div>
     </md-list-item>

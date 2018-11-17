@@ -10,6 +10,43 @@
             <md-content>
                 <md-list>
                     <conch-dynamic ng-repeat="item in dynamicList"></conch-dynamic>
+                    <div ng-if="user.userToken">
+                        <md-list-item class="md-4-line">
+                            <img class="main_dynamic_tit" ng-src="https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/me.webp" class="md-avatar" hide-xs>
+                            <div class="bubble" hide-xs>
+
+                            </div>
+                            <div class="md-list-item-panel" style="padding: 20px 15px 10px 15px;display: flex;flex-direction:column">
+                                <div flex="100" layout="row" layout-sm="column" layout-xs="column">
+                                    <!--标题-->
+                                    <md-input-container flex-lg="80" flex-md="70" flex-sm="100" flex-xs="100" style="margin: 3px 0px 0px 0px">
+                                        <label>标题</label>
+                                        <input ng-model="dynamicEdit.dynamicTitle" maxlength="55" required>
+                                    </md-input-container>
+                                    <md-input-container flex-lg="20" flex-md="30" flex-sm="100" flex-xs="100" style="margin: 0px">
+                                        <label>动态类型</label>
+                                        <md-select ng-model="dynamicEdit.dynamicTarget" required>
+                                            <md-option ng-repeat="target in dynamicTarget" value="{{target}}">
+                                                {{target}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                               <div flex="100" layout="column" layout-align="center end">
+                                   <!--内容-->
+                                   <md-input-container style="width: 100%;margin: 0px">
+                                       <label>正文</label>
+                                       <textarea ng-model="dynamicEdit.dynamicContext" md-maxlength="250" rows="3" md-select-on-focus required></textarea>
+                                   </md-input-container>
+                                   <md-button class="md-raised md-primary" ng-click="setDynamic()">
+                                       <span class="glyphicon glyphicon-send" style="color: white"></span>
+                                       发布动态
+                                   </md-button>
+                               </div>
+
+                            </div>
+                        </md-list-item>
+                    </div>
                 </md-list>
             </md-content>
         </div>

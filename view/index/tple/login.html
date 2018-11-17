@@ -1,6 +1,6 @@
 <md-dialog aria-label="Mango (Fruit)" ng-controller="loginController" style="max-height: 300px;"
            flex-xl="25" flex-lg="25" flex-md="30" flex-sm="40" flex-xs="100">
-    <form name="userForm" ng-cloak autocomplete="off">
+    <form name="userForm" ng-cloak autocomplete="off" ng-if="!users.userToken">
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <h2>登录</h2>
@@ -27,13 +27,12 @@
             </div>
             <div layout="row" flex="100" style="display: flex; flex-direction:row-reverse">
                <md-input-container flex="40">
-                    <input type="text" name="usercheck" ng-model="valiValue" placeholder="输入验证码" required>
+                    <input type="text" name="usercheck" ng-model="$parent.valiValue" placeholder="输入验证码" required>
                     <div ng-messages="userForm.usercheck.$error" role="alert" multiple>
-                        <div ng-message="required" class="my-message">请输入验证码！</div>
+                        <div ng-message="required" class="my-message">请输入验证码</div>
                     </div>
                 </md-input-container>
-                <img  src="data:image/jpg;base64,{{checkimgs.img}}" alt="" style="margin: 20px 10px 0px 5px;max-width: 80px;height: 30px;border: 1px solid #aaaaaa" ng-click="getValidateImg()">
-
+                <img src="data:image/jpg;base64,{{checkimgs.img}}" alt="" style="margin: 20px 10px 0px 5px;max-width: 80px;height: 30px;border: 1px solid #aaaaaa" ng-click="getValidateImg()">
             </div>
         </div>
 
@@ -47,4 +46,31 @@
             </md-button>
         </md-dialog-actions>
     </form>
+    <div layout="column" layout="center center" ng-if="users.userToken">
+        <div style="margin: 5px">
+            <h4 style="text-align: center">用户信息</h4>
+        </div>
+        <md-list>
+            <md-list-item ng-click="#">
+                <span style="font-weight: bold">用户名称：</span>
+                <span>{{users.userName}}</span>
+            </md-list-item>
+            <md-list-item ng-click="#">
+                <span style="font-weight: bold">用户邮箱：</span>
+                <span>{{users.userEmail}}</span>
+            </md-list-item>
+            <md-list-item ng-click="#">
+                <span style="font-weight: bold">用户电话：</span>
+                <span>{{users.userTel}}</span>
+            </md-list-item>
+        </md-list>
+        <md-dialog-actions layout="row">
+            <md-button class="md-raised" ng-click="answer('')">
+                退出
+            </md-button>
+            <md-button class="md-raised md-primary" ng-click="Cancellation()">
+                注销
+            </md-button>
+        </md-dialog-actions>
+    </div>
 </md-dialog>
