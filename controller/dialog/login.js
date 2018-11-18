@@ -1,5 +1,5 @@
-conch.controller('loginController',['$scope','$http','HttpCore','$mdDialog','$rootScope','$cookieStore','toastr',
-    function ($scope,$http,HttpCore,$mdDialog,$rootScope,$cookieStore,toastr) {
+conch.controller('loginController',['$scope','HttpCore','$mdDialog','$rootScope','$cookieStore','toastr',
+    function ($scope,HttpCore,$mdDialog,$rootScope,$cookieStore,toastr) {
         $scope.users = $cookieStore.get("user");
         //登录用户信息
         $scope.user={

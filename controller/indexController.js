@@ -1,5 +1,5 @@
-conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$mdDialog','$cookieStore','$rootScope',
-    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$mdDialog,$cookieStore,$rootScope) {
+conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$cookieStore','$rootScope','DiaLog',
+    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$cookieStore,$rootScope,DiaLog) {
     //加载控制器资源
     $ocLazyLoad.load("css/main.css");
     //登录信息
@@ -65,23 +65,7 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
 
     //登录
     $scope.login = function (ev) {
-        $mdDialog.show({
-            controller: function ($scope, $mdDialog) {
-                $scope.hide = function() {
-                    $mdDialog.hide();
-                };
-                $scope.cancel = function() {
-                    $mdDialog.cancel();
-                };
-                $scope.answer = function(answer) {
-                    $mdDialog.hide(answer);
-                };
-            },
-            templateUrl: 'view/index/tple/login.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose:true
-        });
+        DiaLog.showAdvanced(ev,'view/index/tple/login.html');
     };
 
     //获取用户信息

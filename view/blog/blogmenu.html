@@ -1,7 +1,29 @@
 <div id="menu" md-whiteframe="1" >
     <div class="conchMenu">
-        <div class="blog_title" layout ="row" layout-align ="center center">
+        <div class="blog_title" layout ="row" layout-align ="center center" style="position:relative">
             <h4>博文列表</h4>
+            <div layout="row" layout-align="center center" style="z-index: 2;position:absolute;left:245px;top:0" ng-if="user.userToken">
+                <md-fab-speed-dial md-direction="down" class="md-fling" ng-cloak>
+                    <md-fab-trigger>
+                        <md-button class="md-fab md-warn md-mini" style="margin-top: 3px;margin-bottom: 3px" aria-label="菜单">
+                            <md-tooltip md-direction="right">操作菜单</md-tooltip>
+                            <span class="glyphicon glyphicon-menu-hamburger" style="color: white"></span>
+                        </md-button>
+                    </md-fab-trigger>
+
+                    <md-fab-actions>
+                        <md-button class="md-fab md-raised md-mini" ng-click="editCate($event)" style="margin: 2px;background: #9B703F;" aria-label="添加类别">
+                            <md-tooltip md-direction="right">管理类别</md-tooltip>
+                            <span class="glyphicon glyphicon-th-list" style="color: white"></span>
+                        </md-button>
+
+                        <md-button class="md-fab md-raised md-mini" style="margin: 2px;background: #333333" aria-label="添加博文">
+                            <md-tooltip md-direction="right">添加博文</md-tooltip>
+                            <span class="glyphicon glyphicon-plus" style="color: white"></span>
+                        </md-button>
+                    </md-fab-actions>
+                </md-fab-speed-dial>
+            </div>
         </div>
         <div class="conchTool">
             <md-input-container class="menuQuery">
@@ -13,26 +35,26 @@
             <div ng-show="readbloglist" ng-repeat="item in menulist">
                 <md-menu-item>
                     <md-button ng-click="openNav(menuNavstyle[$index])">
-                    <span>
-                        <!--<md-tooltip md-direction="right">{{item.name}}</md-tooltip>-->
-                        <md-icon
-                                md-svg-src="fonts/myfonts/Article.svg"
-                                class="menuIco"
-                                aria-label="Cake">
-                        </md-icon>
-                    </span>
+                        <span>
+                            <!--<md-tooltip md-direction="right">{{item.name}}</md-tooltip>-->
+                            <md-icon
+                                    md-svg-src="fonts/myfonts/Article.svg"
+                                    class="menuIco"
+                                    aria-label="Cake">
+                            </md-icon>
+                        </span>
                         <span>{{item.name}}</span>
                     </md-button>
                 </md-menu-item>
                 <md-menu-item ng-repeat="items in item.menu" class="conchNav" ng-style="menuNavstyle[$parent.$index]">
-                    <md-button ng-style="menuNavstyle[$parent.$index]" ng-click="getBlog(items)">
-                            <span class="navMenu">
-                                <md-icon
-                                        md-svg-src="fonts/myfonts/file.svg"
-                                        class="menuIco"
-                                        aria-label="Cake">
-                                </md-icon>
-                            </span>
+                    <md-button ng-style="menuNavstyle[$parent.$index]" ng-click="getBlog(items.id)">
+                        <span class="navMenu">
+                            <md-icon
+                                    md-svg-src="fonts/myfonts/file.svg"
+                                    class="menuIco"
+                                    aria-label="Cake">
+                            </md-icon>
+                        </span>
                         <span>{{items.name}}</span>
                     </md-button>
                 </md-menu-item>

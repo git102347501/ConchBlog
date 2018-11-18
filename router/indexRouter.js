@@ -1,4 +1,5 @@
-conch.config(['$stateProvider','$httpProvider',function ($stateProvider) {
+conch.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlRouterProvider) {
+    $urlRouterProvider.otherwise('/index');
     $stateProvider
         .state('index',{
             url: '/index',
@@ -6,6 +7,9 @@ conch.config(['$stateProvider','$httpProvider',function ($stateProvider) {
         })
         .state('blog',{
             url: '/blog',
+            params:{
+                blogID:''
+            },
             templateUrl: 'view/blog/blog.html',
             controller:'blogController',
             resolve: {

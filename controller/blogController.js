@@ -1,5 +1,5 @@
-conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$state','$q','$rootScope',
-    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$state,$q,$rootScope) {
+conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$state','$q','$rootScope','$stateParams','DiaLog',
+    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$state,$q,$rootScope,$stateParams,DiaLog) {
     //加载资源
     $ocLazyLoad.load([
         'css/blog/blog.css',
@@ -73,12 +73,26 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
 
     //初始化
     $scope.Initialization = function(){
+        var param = $stateParams.blogID;
         //加载博文左侧列表
         $scope.getblogList().then(function () {
-            $scope.loadDefaultBlog();//加载首个博文内容
+            if(param){
+                $scope.getBlog(param);
+            }else{
+                $scope.loadDefaultBlog();//加载首个博文内容
+            }
         });
         $scope.getNewBloglist();
         $scope.getValidateImg(true);//获取验证码
+    };
+
+    //编辑博文菜单
+    $scope.editCate = function(ev){
+        $ocLazyLoad.load("controller/dialog/blogcateDialog.js");
+        $timeout(function () {
+            DiaLog.showAdvanced(ev,"view/blog/blogCate.html");
+        },500);
+
     };
 
     //加载首个博文
