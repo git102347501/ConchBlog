@@ -8,6 +8,8 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
     $scope.blogUser="";
     //首页博文信息
     $scope.blogList=[];
+    //读取博文信息进度
+    $scope.readBlogList=false;
     //导航信息对象
     $scope.navlist = [
         {"name":"INDEX","url":"index"},
@@ -18,6 +20,8 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
     $scope.dynamicTarget=["个人动态","网站公告","重要通知"]
     //发布消息列表
     $scope.dynamicList =[];
+    //读取动态列表进度
+    $scope.readDynamic=false;
     //发布动态对象
     $scope.dynamicEdit={
         "dynamicTitle":"",
@@ -26,10 +30,14 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
     };
     //友情链接列表
     $scope.shiplink=[];
+    //读取友联进度
+    $scope.readShipList=false;
     //主页照片遮罩样式列表
     $scope.photpVisble=[];
     //主页照片信息列表
     $scope.photoList=[];
+    //读取照片列表
+    $scope.readPhotoList=false;
     //主页照片遮罩层弹出和收缩
     $scope.showMask = function(pho,ev){
         if(ev){
@@ -88,10 +96,12 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
 
     //获取动态列表
     $scope.getDynamicList = function(){
+        $scope.readDynamic = false;
         var response = HttpCore.PostPlus('Dynamic/QueryDynamicList',null);
         response.then(function(resp){
             if(resp.data !=null && resp.data.status == 1){
                 $scope.dynamicList = resp.data.data;
+                $scope.readDynamic = true;
             }else{
                 if(resp.data!=null){
                     toastr.error(resp.data.msg);
@@ -132,10 +142,12 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
 
     //获取博文信息
     $scope.getBlogList = function () {
+        $scope.readBlogList=false;
         var response = HttpCore.PostPlus('Blog/BlogSyn',null);
         response.then(function(resp){
             if(resp.data !=null && resp.data.status == 1){
                 $scope.blogList = resp.data.data;
+                $scope.readBlogList=true;
             }else{
                 if(resp.data!=null){
                     toastr.error(resp.data.msg);
@@ -150,11 +162,12 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
 
     //获取相集信息
     $scope.getPhotoList = function(){
+        $scope.readPhotoList=false;
         var response = HttpCore.PostPlus('Photo/AlbumIndexLi',null);
         response.then(function(resp){
             if(resp.data !=null && resp.data.status == 1){
                 $scope.photoList = resp.data.data;
-
+                $scope.readPhotoList = true;
                 //加入相集遮罩层样式
                 $scope.photpVisble =[];
                 for (var i=0;i< $scope.photoList.length;i++){
@@ -164,6 +177,7 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
                         "fontstyle":{"display":"none"}
                     })
                 }
+
             }else{
                 if(resp.data!=null){
                     toastr.error(resp.data.msg);

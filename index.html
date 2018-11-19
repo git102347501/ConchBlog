@@ -41,7 +41,8 @@
     <div class="con_title headline-bg index-headline-bg wavesWapper">
         <canvas id="waves" class="waves"></canvas>
         <div class="conchhead">
-            <img src="{{blogUser.userHeard}}" alt="博主帅照" ng-click="login($event)">
+            <img ng-show="blogUser.userHeard" src="{{blogUser.userHeard}}" alt="博主帅照" ng-click="login($event)">
+            <img ng-show="!blogUser.userHeard" src="fonts/myfonts/heard.svg" alt="博主帅照" ng-click="login($event)">
         </div>
         <div class="conchhead_net">
             <p>{{blogUser.userNickname}}</p>
