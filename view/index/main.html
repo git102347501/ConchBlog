@@ -60,15 +60,148 @@
     <div class="main_title main_panel">
         <div>
             <h3>
-                最新博文
+                个人博文
             </h3>
         </div>
-        <div class="main_blog" layout="row">
-            <conch-blog ng-show="readBlogList" ng-repeat="blog in blogList"></conch-blog>
-            <div ng-show="!readBlogList" class="conch_loding" layout="row" layout-align="center center">
-                <span style="margin-right: 20px">正在加载博文列表</span>
-                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        <div class="main_blog" layout="row" layout-sm="column" layout-xs="column">
+            <!--<conch-blog ng-show="readBlogList" ng-repeat="blog in blogList"></conch-blog>-->
+            <div flex-xl="20" flex-lg="20" flex-md="30" flex-sm="100" flex-xs="100" style="padding-right: 10px">
+                <md-subheader class="md-no-sticky">博文类别</md-subheader>
+                <md-list flex style="">
+                    <md-list-item class="md-1-line" ng-click="null" style="border-bottom: 1px solid #E8E8E8">
+                        <div class="md-list-item-text" layout="column">
+                            Net开发
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-1-line"  ng-click="null" style="border-bottom: 1px solid #E8E8E8">
+                        <div class="md-list-item-text" layout="column">
+                            Net开发
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-1-line"  ng-click="null" style="border-bottom: 1px solid #E8E8E8">
+                        <div class="md-list-item-text" layout="column">
+                            Net开发
+                        </div>
+                    </md-list-item>
+                </md-list>
             </div>
+            <div flex-xl="80" flex-lg="80" flex-md="70" flex-sm="100" flex-xs="100">
+                <md-content>
+                    <md-tabs md-dynamic-height md-border-bottom>
+                        <md-tab label="最新更新">
+                            <md-list flex>
+                                <md-list-item class="md-1-line" ng-click="null" style="border-bottom: 1px solid #E8E8E8">
+                                    <div class="md-list-item-text" layout="column">
+                                        <div style="padding-top:5px;">
+                                            <h4 style="font-weight: bold">我的net之旅</h4>
+                                        </div>
+                                        <div style="color:#8E8E8E">
+                                            我很欣慰，能够结交很多业内的挚友，他们就像是指明灯一样时时刻刻为我指引前进的方向。 但是路还是要自己走的，我很清楚自己要面对的是什么
+                                        </div>
+                                        <div>
+                                            <span class="glyphicon glyphicon-calendar" style="padding-right: 5px;color: #5B5B5B"></span>
+                                            <span style="padding-right: 15px;color: #5B5B5B">2018-11-05 22:55:25</span>
+                                            <span class="glyphicon glyphicon-eye-open" style="padding-right: 5px;color: #5B5B5B"></span>
+                                            <span style="padding-right: 15px;color: #5B5B5B">11</span>
+                                            <span class="glyphicon glyphicon-comment" style="padding-right: 5px;color: #5B5B5B"></span>
+                                            <span>55</span>
+                                        </div>
+                                    </div>
+                                </md-list-item>
+                                <md-list-item class="md-1-line" ng-click="null" style="border-bottom: 1px solid #E8E8E8">
+                                    <div class="md-list-item-text" layout="column">
+                                        <div style="padding-top:5px;">
+                                            <h4 style="font-weight: bold">我的net之旅</h4>
+                                        </div>
+                                        <div style="color:#8E8E8E">
+                                            我很欣慰，能够结交很多业内的挚友，他们就像是指明灯一样时时刻刻为我指引前进的方向。 但是路还是要自己走的，我很清楚自己要面对的是什么
+                                        </div>
+                                        <div>
+                                            <span class="glyphicon glyphicon-calendar" style="padding-right: 5px;color: #5B5B5B"></span>
+                                            <span style="padding-right: 15px;color: #5B5B5B">2018-11-05 22:55:25</span>
+                                            <span class="glyphicon glyphicon-eye-open" style="padding-right: 5px;color: #5B5B5B"></span>
+                                            <span style="padding-right: 15px;color: #5B5B5B">11</span>
+                                            <span class="glyphicon glyphicon-comment" style="padding-right: 5px;color: #5B5B5B"></span>
+                                            <span>55</span>
+                                        </div>
+                                    </div>
+                                </md-list-item>
+                                <md-list-item class="md-1-line" ng-click="null" style="border-bottom: 1px solid #E8E8E8">
+                                    <div class="md-list-item-text" layout="column">
+                                        <div style="padding-top:5px;">
+                                            <h4 style="font-weight: bold">我的net之旅</h4>
+                                        </div>
+                                        <div style="color:#8E8E8E">
+                                            我很欣慰，能够结交很多业内的挚友，他们就像是指明灯一样时时刻刻为我指引前进的方向。 但是路还是要自己走的，我很清楚自己要面对的是什么
+                                        </div>
+                                        <div>
+                                            <span class="glyphicon glyphicon-calendar" style="padding-right: 5px;color: #5B5B5B"></span>
+                                            <span style="padding-right: 15px;color: #5B5B5B">2018-11-05 22:55:25</span>
+                                            <span class="glyphicon glyphicon-eye-open" style="padding-right: 5px;color: #5B5B5B"></span>
+                                            <span style="padding-right: 15px;color: #5B5B5B">11</span>
+                                            <span class="glyphicon glyphicon-comment" style="padding-right: 5px;color: #5B5B5B"></span>
+                                            <span>55</span>
+                                        </div>
+                                    </div>
+                                </md-list-item>
+                            </md-list>
+                        </md-tab>
+                        <md-tab label="热门推荐">
+                            <md-list flex>
+                                <md-list-item class="md-1-line" ng-click="null">
+                                    <div class="md-list-item-text" layout="column">
+                                        <div>
+                                            <h4>我的net之旅</h4>
+                                            <span class="label label-default pull-left">发布日期：2018-01-01 22:22:25</span>
+                                        </div>
+                                        <p>我很欣慰，能够结交很多业内的挚友，他们就像是指明灯一样时时刻刻为我指引前进的方向。 但是路还是要自己走的，我很清楚自己要面对的是什么</p>
+                                    </div>
+                                </md-list-item>
+                                <md-list-item class="md-1-line" ng-click="null">
+                                    <div class="md-list-item-text" layout="column">
+                                        <h4>我的net之旅</h4>
+                                        <p>我很欣慰，能够结交很多业内的挚友，他们就像是指明灯一样时时刻刻为我指引前进的方向。 但是路还是要自己走的，我很清楚自己要面对的是什么</p>
+                                    </div>
+                                </md-list-item>
+                                <md-list-item class="md-1-line" ng-click="null">
+                                    <div class="md-list-item-text" layout="column">
+                                        <h4>我的net之旅</h4>
+                                        <p>我很欣慰，能够结交很多业内的挚友，他们就像是指明灯一样时时刻刻为我指引前进的方向。 但是路还是要自己走的，我很清楚自己要面对的是什么</p>
+                                    </div>
+                                </md-list-item>
+                            </md-list>
+                        </md-tab>
+                        <md-tab label="人气排行">
+                            <md-list flex>
+                                <md-list-item class="md-1-line" ng-click="null">
+                                    <div class="md-list-item-text" layout="column">
+                                        <h5>我的net之旅</h5>
+                                        <p>我很欣慰，能够结交很多业内的挚友，他们就像是指明灯一样时时刻刻为我指引前进的方向。 但是路还是要自己走的，我很清楚自己要面对的是什么</p>
+                                    </div>
+                                </md-list-item>
+                                <md-list-item class="md-1-line" ng-click="null">
+                                    <div class="md-list-item-text" layout="column">
+                                        <h5>我的net之旅</h5>
+                                        <p>我很欣慰，能够结交很多业内的挚友，他们就像是指明灯一样时时刻刻为我指引前进的方向。 但是路还是要自己走的，我很清楚自己要面对的是什么</p>
+                                    </div>
+                                </md-list-item>
+                                <md-list-item class="md-1-line" ng-click="null">
+                                    <div class="md-list-item-text" layout="column">
+                                        <h5>我的net之旅</h5>
+                                        <p>我很欣慰，能够结交很多业内的挚友，他们就像是指明灯一样时时刻刻为我指引前进的方向。 但是路还是要自己走的，我很清楚自己要面对的是什么</p>
+                                    </div>
+                                </md-list-item>
+                            </md-list>
+                        </md-tab>
+                    </md-tabs>
+                </md-content>
+            </div>
+
+            <!--<div ng-show="!readBlogList" class="conch_loding" layout="row" layout-align="center center">-->
+                <!--<span style="margin-right: 20px">正在加载博文列表</span>-->
+                <!--<md-progress-circular md-mode="indeterminate"></md-progress-circular>-->
+            <!--</div>-->
+
         </div>
     </div>
     <!--个人相册-->
