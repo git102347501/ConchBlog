@@ -39,7 +39,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     //发表评论对象
     $scope.setCommentValidate={
         "commentMain":"",
-        "commentIndex":"",
+        "commentIndex":-1,
         "commentDate":"",
         "commentHeard":"",
         "commentName":"",

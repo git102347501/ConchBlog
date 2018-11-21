@@ -17,6 +17,14 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         {"name":"BLOG","url":"blog"},
         {"name":"RESUME","url":"resume"},
     ];
+    $scope.blogKind=["最新更新","热门推荐","人气排行"];
+    //首页博文查询条件
+    $scope.queryBrief = {
+        "model":0,
+        "cate":0
+    };
+    //首页博文类别列表
+    $scope.blogCatelist=[];
     $scope.dynamicTarget=["个人动态","网站公告","重要通知"]
     //发布消息列表
     $scope.dynamicList =[];
@@ -66,7 +74,7 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
     //初始化
     $scope.Initialization = function () {
         $scope.getUser();
-        $scope.getBlogList();
+        $scope.getBlogCate();
         $scope.getPhotoList();
         $scope.getDynamicList();
     };
@@ -139,11 +147,44 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
             toastr.error("获取动态列表失败！");
         })
     };
+    //设置博文查询模式
+    $scope.setQueryBlogModel = function(model){
+        $scope.queryBrief.model = model;
+        $scope.getBlogList();
+    };
+    //设置博文查询类别
+    $scope.setQueryBlogCate = function(model){
+        $scope.queryBrief.cate = model;
+        $scope.getBlogList();
+    };
+    //获取博文类别列表
+    $scope.getBlogCate = function(){
 
-    //获取博文信息
+        var response = HttpCore.PostPlus('Blog/BlogCate',null);
+        response.then(function(resp){
+            if(resp.data !=null && resp.data.status == 1){
+                $scope.blogCatelist = resp.data.data;
+                if($scope.blogCatelist.length>0){
+                    $scope.queryBrief.cate = $scope.blogCatelist[0].id;
+                    //获取第一个类别的最新更新博文列表
+                    $scope.getBlogList();
+                }
+            }else{
+                if(resp.data!=null){
+                    toastr.error(resp.data.msg);
+                }else{
+                    toastr.error("获取博文类别失败！");
+                }
+            }
+        },function(){
+            toastr.error("获取博文类别失败！");
+        })
+    };
+
+    //获取博文列表信息
     $scope.getBlogList = function () {
         $scope.readBlogList=false;
-        var response = HttpCore.PostPlus('Blog/BlogSyn',null);
+        var response = HttpCore.PostPlus('Blog/BlogSyn',{data:$scope.queryBrief});
         response.then(function(resp){
             if(resp.data !=null && resp.data.status == 1){
                 $scope.blogList = resp.data.data;
