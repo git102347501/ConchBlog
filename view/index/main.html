@@ -1,4 +1,52 @@
 <div id="main">
+   <!-- 博文推荐-->
+    <div class="main_title main_panel">
+        <div>
+            <h3>
+                个人博文
+            </h3>
+        </div>
+        <div class="main_blog" layout="row" layout-sm="column" layout-xs="column">
+            <!--<conch-blog ng-show="readBlogList" ng-repeat="blog in blogList"></conch-blog>-->
+            <div flex-xl="20" flex-lg="20" flex-md="30" flex-sm="100" flex-xs="100" style="padding-right: 10px">
+                <md-subheader class="md-no-sticky">博文类别</md-subheader>
+                <md-list flex ng-show="readBlogCate">
+                    <md-list-item class="md-1-line main_blog_item" ng-repeat="item in blogCatelist" ng-click="setQueryBlogCate(item.id)">
+                        <div class="md-list-item-text" layout="column">
+                            {{item.name}}
+                        </div>
+                    </md-list-item>
+                </md-list>
+                <div ng-show="!readBlogCate" class="conch_loding" layout="row" layout-align="center center">
+                    <span style="margin-right: 20px">正在加载博文类别</span>
+                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                </div>
+            </div>
+            <div flex-xl="80" flex-lg="80" flex-md="70" flex-sm="100" flex-xs="100" layout="column" layout="center center">
+                <md-content>
+                    <md-tabs md-dynamic-height md-border-bottom>
+                        <md-tab ng-repeat="item in blogKind" label="{{item}}" ng-click="setQueryBlogModel($index)">
+                            <conch-blog ng-show="readBlogList"></conch-blog>
+                        </md-tab>
+                    </md-tabs>
+                </md-content>
+                <div class="main_blog_null" ng-show="blogList.length==0 && readBlogList">
+                    <span class="glyphicon glyphicon-sunglasses"></span>
+                    <span>我特喵这个类别竟然一篇博文都没写！</span>
+                </div>
+                <div ng-show="!readBlogList" class="conch_loding" layout="row" layout-align="center center">
+                    <span style="margin-right: 20px">正在加载博文列表</span>
+                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                </div>
+            </div>
+
+            <!--<div ng-show="!readBlogList" class="conch_loding" layout="row" layout-align="center center">-->
+                <!--<span style="margin-right: 20px">正在加载博文列表</span>-->
+                <!--<md-progress-circular md-mode="indeterminate"></md-progress-circular>-->
+            <!--</div>-->
+
+        </div>
+    </div>
     <!--最新动态-->
     <div class="main_title main_panel">
         <div>
@@ -37,63 +85,23 @@
                                         </md-select>
                                     </md-input-container>
                                 </div>
-                               <div flex="100" layout="column" layout-align="center end">
-                                   <!--内容-->
-                                   <md-input-container style="width: 100%;margin: 0px">
-                                       <label>正文</label>
-                                       <textarea ng-model="dynamicEdit.dynamicContext" md-maxlength="250" rows="3" md-select-on-focus required></textarea>
-                                   </md-input-container>
-                                   <md-button class="md-raised md-primary" ng-click="setDynamic()">
-                                       <span class="glyphicon glyphicon-send" style="color: white"></span>
-                                       发布动态
-                                   </md-button>
-                               </div>
+                                <div flex="100" layout="column" layout-align="center end">
+                                    <!--内容-->
+                                    <md-input-container style="width: 100%;margin: 0px">
+                                        <label>正文</label>
+                                        <textarea ng-model="dynamicEdit.dynamicContext" md-maxlength="250" rows="3" md-select-on-focus required></textarea>
+                                    </md-input-container>
+                                    <md-button class="md-raised md-primary" ng-click="setDynamic()">
+                                        <span class="glyphicon glyphicon-send" style="color: white"></span>
+                                        发布动态
+                                    </md-button>
+                                </div>
 
                             </div>
                         </md-list-item>
                     </div>
                 </md-list>
             </md-content>
-        </div>
-    </div>
-   <!-- 博文推荐-->
-    <div class="main_title main_panel">
-        <div>
-            <h3>
-                个人博文
-            </h3>
-        </div>
-        <div class="main_blog" layout="row" layout-sm="column" layout-xs="column">
-            <!--<conch-blog ng-show="readBlogList" ng-repeat="blog in blogList"></conch-blog>-->
-            <div flex-xl="20" flex-lg="20" flex-md="30" flex-sm="100" flex-xs="100" style="padding-right: 10px">
-                <md-subheader class="md-no-sticky">博文类别</md-subheader>
-                <md-list flex style="">
-                    <md-list-item class="md-1-line main_blog_item" ng-repeat="item in blogCatelist" ng-click="setQueryBlogCate(item.id)">
-                        <div class="md-list-item-text" layout="column">
-                            {{item.name}}
-                        </div>
-                    </md-list-item>
-                </md-list>
-            </div>
-            <div flex-xl="80" flex-lg="80" flex-md="70" flex-sm="100" flex-xs="100" layout="column" layout="center center">
-                <md-content>
-                    <md-tabs md-dynamic-height md-border-bottom>
-                        <md-tab ng-repeat="item in blogKind" label="{{item}}" ng-click="setQueryBlogModel($index)">
-                            <conch-blog></conch-blog>
-                        </md-tab>
-                    </md-tabs>
-                </md-content>
-                <div class="main_blog_null" ng-show="blogList.length==0">
-                    <span class="glyphicon glyphicon-sunglasses"></span>
-                    <span>我特喵这个类别竟然一篇博文都没写！</span>
-                </div>
-            </div>
-
-            <!--<div ng-show="!readBlogList" class="conch_loding" layout="row" layout-align="center center">-->
-                <!--<span style="margin-right: 20px">正在加载博文列表</span>-->
-                <!--<md-progress-circular md-mode="indeterminate"></md-progress-circular>-->
-            <!--</div>-->
-
         </div>
     </div>
     <!--个人相册-->

@@ -138,10 +138,13 @@ span{
     width: 100%;
     margin-bottom: 12px;
 }
+.blog-list-comm{
+    padding: 0px 15px 0px 15px;
+}
 .blog_commentlist{
+    margin-bottom: 15px;
     padding: 0px;
     width: 100%;
-    margin-bottom: 15px;
 }
 .blog_commentlist_list{
     height: 100%;
@@ -154,6 +157,9 @@ span{
     min-height: 80px;
     display: flex;
 }
+.blog_list_null md-icon{
+    color: black;margin-right: 10px;
+}
 .blog_commentlist_heard{
     padding: 15px 10px 15px 10px;
 }
@@ -162,6 +168,9 @@ span{
 }
 .blog_commentReply_heard span{
     color: #9E9E9E;
+}
+.blog_commentReply_heard span:nth-of-type(3){
+    color:#337ab7;
 }
 .blog_commentReply_heard{
     padding: 5px 0px 10px 0px;

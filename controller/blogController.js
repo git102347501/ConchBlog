@@ -79,7 +79,13 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
             if(param){
                 $scope.getBlog(param);
             }else{
-                $scope.loadDefaultBlog();//加载首个博文内容
+                if($scope.menulist && $scope.menulist.length>0){
+                    //默认加载首个博文
+                    var defaultlist = $scope.menulist.find(c=> c.menu && c.menu.length>0)
+                    if(defaultlist){
+                        $scope.getBlog(defaultlist.menu[0].id);
+                    }
+                }
             }
         });
         $scope.getNewBloglist();
@@ -95,16 +101,6 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
 
     };
 
-    //加载首个博文
-    $scope.loadDefaultBlog = function(){
-        if($scope.menulist && $scope.menulist.length>0){
-            //默认加载首个博文
-            var defaultlist = $scope.menulist.find(c=> c.menu && c.menu.length>0)
-            if(defaultlist){
-                $scope.getBlog(defaultlist.menu[0].id);
-            }
-        }
-    };
     //加载博文左侧列表
     $scope.getblogList=function () {
         var deferred = $q.defer();
@@ -234,6 +230,11 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         });
     };
 
+    //删除评论
+    $scope.deteComment = function(){
+
+    };
+
     //发布评论
     $scope.setComment = function(index,commentvalue){
         var commentvalidate;//评论信息对象
@@ -279,15 +280,16 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     };
 
     //编辑博文
-    $scope.editblog = function(){
+    $scope.editblog = function(model){
+        $scope.editModel = model;
         $state.go("blog.edit");
 
-        $scope.editBlog.blogID = $scope.blog.blogID;
-        $scope.editBlog.blogBody = $scope.blog.blogBatter;
-        $scope.editBlog.blogCate = $scope.blog.blogCate.split(',') ;
-        $scope.editBlog.blogTitle = $scope.blog.blogTitle;
-        $scope.editBlog.blogDate = $scope.blog.blogCreatDate;
-        $scope.editBlog.blogClass = $scope.blog.blogClass;
+        $scope.editBlog.blogID = model?"":$scope.blog.blogID;
+        $scope.editBlog.blogBody = model?"":$scope.blog.blogBatter;
+        $scope.editBlog.blogCate = model?[]:$scope.blog.blogCate.split(',') ;
+        $scope.editBlog.blogTitle = model?"":$scope.blog.blogTitle;
+        $scope.editBlog.blogDate = model?"":$scope.blog.blogCreatDate;
+        $scope.editBlog.blogClass = model?"":$scope.blog.blogClass;
 
         //等待控件加载完，载入内容
         $timeout(function(){
@@ -313,7 +315,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
                 toastr.success("保存成功！");
                 //跳转到视图
                 $scope.getblogList();
-                $scope.getBlog($scope.blog.blogID);
+                $scope.getBlog($scope.editModel?resp.data.data:$scope.blog.blogID);
             }else{
                 toastr.error("保存失败！");
             }

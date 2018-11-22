@@ -10,6 +10,8 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
     $scope.blogList=[];
     //读取博文信息进度
     $scope.readBlogList=false;
+    //读取博文类别进度
+    $scope.readBlogCate = false;
     //导航信息对象
     $scope.navlist = [
         {"name":"INDEX","url":"index"},
@@ -159,12 +161,13 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
     };
     //获取博文类别列表
     $scope.getBlogCate = function(){
-
+        $scope.readBlogCate=false;
         var response = HttpCore.PostPlus('Blog/BlogCate',null);
         response.then(function(resp){
             if(resp.data !=null && resp.data.status == 1){
                 $scope.blogCatelist = resp.data.data;
                 if($scope.blogCatelist.length>0){
+                    $scope.readBlogCate=true;
                     $scope.queryBrief.cate = $scope.blogCatelist[0].id;
                     //获取第一个类别的最新更新博文列表
                     $scope.getBlogList();

@@ -106,45 +106,52 @@
             </div>
         </div>
         <!--评论列表-->
-        <div class="col-lg-12 blog_commentlist" md-whiteframe="1">
-            <div class="blog_list_title" layout ="row" layout-align ="start center">
+        <div flex="100" layout="column" class="blog_commentlist" md-whiteframe="1">
+            <div flex="100" class="blog_list_title" layout ="row" layout-align ="start center">
                 <span><h4>评论列表</h4></span>
             </div>
             <!--无回复内容-->
-            <div class="blog_list_null" layout="row" layout-align="center center" ng-show="readBlogcommlist && commentlist.length<1">
-                <span><md-icon md-svg-src="fonts/myfonts/cry.svg" style="color: black;margin-right: 10px;"></md-icon>喵了个咪的，竟然没人回复！</span>
+            <div flex="100" class="blog_list_null" layout="row" layout-align="center center" ng-show="readBlogcommlist && commentlist.length<1">
+                <span><md-icon md-svg-src="fonts/myfonts/cry.svg"></md-icon>喵了个咪的，竟然没人回复！</span>
             </div>
             <!--评论列表-->
-            <div>
-                <div class="col-lg-12 blog_commentlist_list" ng-repeat="item in commentlist" ng-show="readBlogcommlist">
-                    <div>
-                        <div class="col-lg-12 blog_commentlist_heard">
-                            <span><img src="{{item.commentHeard}}" alt="" style="height: 40px;width:40px"></span><span style="padding-left: 20px;color:#337ab7">{{item.commentName}}</span>
-                            <span class="pull-right">
-                            <span>{{($index+1)}}楼</span>
-                            <span>{{item.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
-                            <a href="" ng-click="replyComments(replyComment[$index],item.commentID)">回复</a>
-                        </span>
+            <div flex="100" layout="column" class="blog-list-comm">
+                <div flex="100" class="blog_commentlist_list" ng-repeat="item in commentlist" ng-show="readBlogcommlist">
+                    <div flex="100" layout="column" layout-align="center stretch">
+                        <div flex="100" class="blog_commentlist_heard" layout="row" layout-align="space-between center">
+                            <div>
+                                <span><img src="{{item.commentHeard}}" alt="" style="height: 40px;width:40px"></span>
+                                <span style="padding-left: 20px;color:#337ab7">{{item.commentName}}</span>
+                            </div>
+                            <div>
+                                <span><button class="btn btn-xs btn-danger" ng-click="deteComment(item.commentID)>删除</button></span>
+                                <span>{{($index+1)}}楼</span>
+                                <span>{{item.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                                <a href="" ng-click="replyComments(replyComment[$index],item.commentID)">回复</a>
+                            </div>
                         </div>
-                        <div class="col-lg-12 blog_commentlist_content">
+                        <div flex="100" class="blog_commentlist_content">
                             <p>{{item.commentContent}}</p>
                         </div>
                     </div>
-                    <div class="col-lg-12" style="display: flex">
+                    <div flex="100" style="display: flex">
                         <div style="border-right: 2px solid #aaa;width: 20px">
 
                         </div>
                         <div class="blog_commentlist_Reply">
-                            <div ng-repeat="reply in item.commentReplyList">
-                                <div class="col-lg-12 blog_commentReply_heard">
-                                    <span><img src="{{reply.commentHeard}}" alt="" style="height: 30px;width:30px;margin-right: 10px"></span>
-                                    <span style="color:#337ab7">{{reply.commentName}}&nbsp@{{item.commentName}}</span>
-                                    <span class="pull-right">
-                                    <span>{{($index+1)}}楼</span>
-                                    <span>{{item.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
-                                </span>
+                            <div layout="column" ng-repeat="reply in item.commentReplyList">
+                                <div flex="100" class="blog_commentReply_heard" layout="row" layout-align="space-between center">
+                                    <div>
+                                        <span><img src="{{reply.commentHeard}}" alt="" style="height: 30px;width:30px;margin-right: 10px"></span>
+                                        <span>{{reply.commentName}}&nbsp@{{item.commentName}}</span>
+                                    </div>
+                                    <div>
+                                        <span><button class="btn btn-xs btn-danger" ng-click="deteComment(reply.commentID)">删除</button></span>
+                                        <span>{{($index+1)}}楼</span>
+                                        <span>{{item.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                                    </div>
                                 </div>
-                                <div class="col-lg-12 blog_commentlist_content">
+                                <div flex="100" class="blog_commentlist_content">
                                     <p>{{reply.commentContent}}</p>
                                 </div>
                             </div>
@@ -167,12 +174,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="blog_loading" layout="row" layout-align="center center" ng-if="!readBlogcommlist">
+                <div flex="100" class="blog_loading" layout="row" layout-align="center center" ng-if="!readBlogcommlist">
                     <span>正在加载评论列表</span>
                     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
                 </div>
             </div>
-
         </div>
     </div>
 
