@@ -3,10 +3,14 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/controller/indexController.min.js" />
+        <item url="file://$PROJECT_DIR$/js/canvas/canvas_index.min.js" />
+        <item url="file://$PROJECT_DIR$/js/canvas/index_vendors.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/controller/indexController.min.js" />
+      <root url="file://$PROJECT_DIR$/js/canvas/canvas_index.min.js" />
+      <root url="file://$PROJECT_DIR$/js/canvas/index_vendors.min.js" />
     </CLASSES>
     <SOURCES />
   </library>
