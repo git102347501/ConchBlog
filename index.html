@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Magical Conch</title>
-    <link rel="stylesheet" href="css/import/angular-material.min.css">
-    <link rel="stylesheet" href="css/import/animate.min.css">
-    <link rel="stylesheet" href="css/import/bootstrap.min.css">
-    <link rel="stylesheet" href="css/import/angular-toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.10/angular-material.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/2.1.1/angular-toastr.min.css">
     <link rel="stylesheet" href="css/import/index.css">
 
-    <script src="js/angular.min.js"></script>
-
-    <script src="js/angular-animate.min.js"></script>
-    <script src="js/angular-aria.min.js"></script>
-    <script src="js/angular-messages.min.js"></script>
-    <script src="js/angular-material.min.js"></script>
-    <script src="js/angular-sanitize.min.js"></script>
-    <script src="js/angular-touch.min.js"></script>
-    <script src="js/angular-cookies.min.js"></script>
-    <script src="js/angular-ui-router.js"></script>
-    <script src="js/angular-toastr.tpls.min.js"></script>
-    <script src="js/ocLazyLoad.min.js"></script>
-    <script src="js/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
-    <!-- 首页动画-->
-    <script src="js/canvas/index_vendors.js"></script>
-    <script src="js/canvas/canvas_index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.8/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.8/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.8/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.8/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.8/angular-touch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.8/angular-cookies.min.js"></script>
+    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/2.1.1/angular-toastr.tpls.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/oclazyload/1.1.0/ocLazyLoad.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
 
     <script src="directive/indexDirective.js"></script>
     <script src="service/indexService.js"></script>
@@ -71,7 +67,7 @@
     </div>
     <!--底部信息栏-->
     <div class="con_bottom" layout="column">
-        <div class="con_bottom_tail" layout="row" layout-sm="column" layout-xs="column" layout-fill flex="100">
+        <div class="con_bottom_tail" layout="row" layout-sm="column" layout-xs="column" layout-fill flex="100" ng-show="blogUser">
             <div class="con_bottom_panel" flex flex-sm>
                 <h4>联系方式</h4>
                 <p>Address：{{blogUser.userAddress}}</p>
@@ -89,11 +85,17 @@
                 <p>如果本站某些资源涉及版权，您可以通过在线留言或者邮箱联系到我，我会在第一时间进行处理。如果您有不错的建议和沟通意愿，我也很期望能和您获得进一步的交流。</p>
             </div>
         </div>
-        <div class="con_bottom_end" flex="100" layout="row" layout-align="center center">
+        <div class="con_bottom_end" flex="100" layout="row" layout-align="center center" ng-show="blogUser">
             <p>{{blogUser.userRecord}}</p>
+        </div>
+        <div ng-show="!blogUser" class="conch_loding" layout="row" layout-align="center center">
+            <span style="margin-right: 20px;color: white">正在加载博主信息</span>
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
         </div>
     </div>
 </div>
-
+<!-- 首页动画-->
+<script src="js/canvas/index_vendors.js"></script>
+<script src="js/canvas/canvas_index.js"></script>
 </body>
 </html>

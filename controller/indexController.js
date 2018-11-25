@@ -149,16 +149,19 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
             toastr.error("获取动态列表失败！");
         })
     };
+
     //设置博文查询模式
     $scope.setQueryBlogModel = function(model){
         $scope.queryBrief.model = model;
         $scope.getBlogList();
     };
+
     //设置博文查询类别
     $scope.setQueryBlogCate = function(model){
         $scope.queryBrief.cate = model;
         $scope.getBlogList();
     };
+
     //获取博文类别列表
     $scope.getBlogCate = function(){
         $scope.readBlogCate=false;

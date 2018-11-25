@@ -128,7 +128,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
             toastr.error("获取博主信息失败！");
         })
         return deferred.promise;
-    }
+    };
 
     //加载博文
     $scope.getBlog = function(index){
@@ -154,7 +154,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         },function () {
             toastr.error("读取博文失败！");
         })
-    }
+    };
 
     //加载博文推荐列表
     $scope.getcommlist = function(index){
@@ -167,7 +167,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
                 $scope.readBlogcomm = true;
             }
         });
-    }
+    };
 
     //加载最新博文列表
     $scope.getNewBloglist = function(){
@@ -180,7 +180,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
                 $scope.readBlogNew=true
             }
         })
-    }
+    };
 
     //回复评论
     $scope.replyComments= function(ev,index){
@@ -207,7 +207,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         },function () {
 
         })
-    }
+    };
 
     //获取验证码 真发表，假回复
     $scope.getValidateImg = function(model){
