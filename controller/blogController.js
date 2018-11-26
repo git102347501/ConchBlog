@@ -1,5 +1,5 @@
-conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$state','$q','$rootScope','$stateParams','DiaLog',
-    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$state,$q,$rootScope,$stateParams,DiaLog) {
+conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$state','$q','$rootScope','$stateParams','DiaLog','$cookieStore','$mdDialog',
+    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$state,$q,$rootScope,$stateParams,DiaLog,$cookieStore,$mdDialog) {
     //加载资源
     $ocLazyLoad.load([
         'css/blog/blog.css',
@@ -7,6 +7,8 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     ]);
     //当前博文
     $scope.blog;
+    //登录信息
+    $scope.user= $cookieStore.get("user");
     //编辑模式
     $scope.editModel;
     //编辑博文对象
@@ -231,8 +233,33 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     };
 
     //删除评论
-    $scope.deteComment = function(){
+    $scope.deteComment = function(ev,parent,index){
+        var confirm = $mdDialog.confirm()
+            .title('请确认要删除评论吗？')
+            .textContent('删除评论')
+            .targetEvent(ev)
+            .ok('确定')
+            .cancel('取消');
 
+        $mdDialog.show(confirm).then(function() {
+            //执行删除
+            var response =  HttpCore.PostPlus("Blog/DeteComment",{data:index?index.commentID:parent.commentID});
+            response.then(function(resp){
+                if(resp.data !=null && resp.data.status >0){
+                    toastr.success("删除评论成功！");
+                    if(index){
+                        parent.commentReplyList.splice(parent.commentReplyList.indexOf(index),1);
+                    }else{
+                        $scope.commentlist.splice($scope.commentlist.indexOf(parent),1);
+                    }
+                    return;
+                }else{
+                    toastr.error("删除评论失败！");
+                }
+            },function(){
+                toastr.error("删除评论失败！");
+            });
+        });
     };
 
     //发布评论
@@ -323,6 +350,13 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
             toastr.error("保存失败！");
         });
     };
+
+    //登录回调
+    $rootScope.$on('login',function (data,args) {
+        if(args){
+            $scope.user = $cookieStore.get("user");
+        }
+    });
 
     //注销回调
     $rootScope.$on('logon',function (data,args) {

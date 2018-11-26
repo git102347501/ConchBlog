@@ -19,7 +19,7 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         {"name":"BLOG","url":"blog"},
         {"name":"RESUME","url":"resume"},
     ];
-    $scope.blogKind=["最新更新","热门推荐","人气排行"];
+    $scope.blogKind=["最近更新","热门推荐","人气排行"];
     //首页博文查询条件
     $scope.queryBrief = {
         "model":0,

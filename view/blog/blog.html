@@ -124,10 +124,11 @@
                                 <span style="padding-left: 20px;color:#337ab7">{{item.commentName}}</span>
                             </div>
                             <div>
-                                <span><button class="btn btn-xs btn-danger" ng-click="deteComment(item.commentID)>删除</button></span>
+
                                 <span>{{($index+1)}}楼</span>
-                                <span>{{item.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
-                                <a href="" ng-click="replyComments(replyComment[$index],item.commentID)">回复</a>
+                                <span class="blog_comment_date">{{item.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                                <a style="cursor:pointer" ng-click="replyComments(replyComment[$index],item.commentID)">回复</a>
+                                <span class="blog_comment_dete" ng-if="user.userToken"><button class="btn btn-xs btn-danger" ng-click="deteComment($$event,item,null)">删除</button></span>
                             </div>
                         </div>
                         <div flex="100" class="blog_commentlist_content">
@@ -143,12 +144,13 @@
                                 <div flex="100" class="blog_commentReply_heard" layout="row" layout-align="space-between center">
                                     <div>
                                         <span><img src="{{reply.commentHeard}}" alt="" style="height: 30px;width:30px;margin-right: 10px"></span>
-                                        <span>{{reply.commentName}}&nbsp@{{item.commentName}}</span>
+                                        <span style="color: #337ab7;">{{reply.commentName}}&nbsp@{{item.commentName}}</span>
                                     </div>
                                     <div>
-                                        <span><button class="btn btn-xs btn-danger" ng-click="deteComment(reply.commentID)">删除</button></span>
+
                                         <span>{{($index+1)}}楼</span>
-                                        <span>{{item.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                                        <span class="blog_comment_date">{{reply.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                                        <span class="blog_comment_dete" ng-if="user.userToken"><button class="btn btn-xs btn-danger" ng-click="deteComment($event,item,reply)">删除</button></span>
                                     </div>
                                 </div>
                                 <div flex="100" class="blog_commentlist_content">

@@ -2,7 +2,7 @@
     <!--博文标题-->
     <div class="blog_heard" ng-show="readblog">
         <span><h3>{{blog.blogTitle}}</h3></span>
-        <span style="margin-right: 10px"><md-button class="md-raised md-mini" ng-click="editblog()">编辑博文</md-button></span>
+        <span style="margin-right: 10px" ng-if="user.userToken"><md-button class="md-raised md-mini" ng-click="editblog()">编辑博文</md-button></span>
     </div>
     <!--博文信息-->
     <div class="blog_news" ng-show="readblog">

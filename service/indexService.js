@@ -1,8 +1,8 @@
 conch.service('HttpCore',['$http','$q','$cookieStore','$state','$httpParamSerializerJQLike','toastr',
     function ($http,$q,$cookieStore,$state,$httpParamSerializerJQLike,toastr) {
     //服务地址
-    // var serviceUrl = "http://localhost:31126/api/";
-    var serviceUrl = "http://api.magicalconch.com/api/";
+    var serviceUrl = "http://localhost:31126/api/";
+    //var serviceUrl = "http://api.magicalconch.com/api/";
     this.superPost = function(url,data,success,error){
         var response = this.PostPlus(url,data);
         response.then(function (resp) {
