@@ -73,12 +73,14 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         }
     }
 
+
     //初始化
     $scope.Initialization = function () {
         $scope.getUser();
         $scope.getBlogCate();
         $scope.getPhotoList();
         $scope.getDynamicList();
+
     };
 
     //登录

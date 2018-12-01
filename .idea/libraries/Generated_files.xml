@@ -3,15 +3,23 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/controller/indexController.min.js" />
+        <item url="file://$PROJECT_DIR$/controller/lifeController.min.js" />
+        <item url="file://$PROJECT_DIR$/controller/lockController.min.js" />
+        <item url="file://$PROJECT_DIR$/controller/resumeController.min.js" />
         <item url="file://$PROJECT_DIR$/js/canvas/canvas_index.min.js" />
         <item url="file://$PROJECT_DIR$/js/canvas/index_vendors.min.js" />
+        <item url="file://$PROJECT_DIR$/router/indexRouter.min.js" />
         <item url="file://$PROJECT_DIR$/service/indexService.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/controller/indexController.min.js" />
+      <root url="file://$PROJECT_DIR$/controller/lifeController.min.js" />
+      <root url="file://$PROJECT_DIR$/controller/lockController.min.js" />
+      <root url="file://$PROJECT_DIR$/controller/resumeController.min.js" />
       <root url="file://$PROJECT_DIR$/js/canvas/canvas_index.min.js" />
       <root url="file://$PROJECT_DIR$/js/canvas/index_vendors.min.js" />
+      <root url="file://$PROJECT_DIR$/router/indexRouter.min.js" />
       <root url="file://$PROJECT_DIR$/service/indexService.min.js" />
     </CLASSES>
     <SOURCES />

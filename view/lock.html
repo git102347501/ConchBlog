@@ -1,0 +1,21 @@
+<div layout="row" layout-align="center center" id="lock">
+    <form name="lockForm">
+        <div layout="row">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>请输入{{model}}访问密码</label>
+                <input type="password" name="lockkey" ng-model="lockkey" placeholder="密码可能会是123456吗?"
+                       required ng-pattern="/^[0-9]{5}$/" md-maxlength="25">
+
+                <div ng-messages="lockForm.lockkey.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">不填想看我的小秘密？</div>
+                    <div ng-message="md-maxlength" class="my-message">
+                        拜托这么长我都记不住的!
+                    </div>
+                </div>
+            </md-input-container>
+            <md-button class="md-fab md-primary" aria-label="Comment" style="margin-bottom: 35px;background: #63B8FF">
+                <md-icon style="color: white" md-svg-src="fonts/myfonts/unclock.svg"></md-icon>
+            </md-button>
+        </div>
+    </form>
+</div>

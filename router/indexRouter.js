@@ -41,6 +41,17 @@ conch.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$ur
                 }]
             }
         })
+        .state('lock',{
+            url: '/lock',
+            params:{"modelname":null},
+            templateUrl: 'view/lock.html',
+            controller:'lockController',
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load('controller/lockController.js');
+                }]
+            }
+        })
         .state('resume',{
             url: '/resume',
             templateUrl: 'view/resume/resume.html',
