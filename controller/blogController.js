@@ -1,5 +1,5 @@
-conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$state','$q','$rootScope','$stateParams','DiaLog','$cookieStore','$mdDialog',
-    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$state,$q,$rootScope,$stateParams,DiaLog,$cookieStore,$mdDialog) {
+conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$state','$q','$rootScope','$stateParams','DiaLog','$cookieStore','$mdDialog','validate',
+    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$state,$q,$rootScope,$stateParams,DiaLog,$cookieStore,$mdDialog,validate) {
     //加载资源
     $ocLazyLoad.load([
         'css/blog/blog.css',
@@ -220,14 +220,15 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
             $scope.replyValidateImg ="";
             $scope.setreplyCommentvalue="";
         }
-        var responce = HttpCore.PostPlus("Validate/ReadImage",{"data":4});
-        responce.then(function (resp) {
-            if(resp.data && resp.data.status==1){
+        validate.get().then(function (data) {
+            if(data){
                 if(model){
-                    $scope.validateImg = resp.data.data;
+                    $scope.validateImg = data;
                 }else{
-                    $scope.replyValidateImg = resp.data.data;
+                    $scope.replyValidateImg = data;
                 }
+            }else{
+                toastr.warning("获取验证码失败！");
             }
         });
     };

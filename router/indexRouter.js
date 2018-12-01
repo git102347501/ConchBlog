@@ -33,6 +33,7 @@ conch.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$ur
         })
         .state('life',{
             url: '/life',
+            params:{check:null,date:null},
             templateUrl: 'view/life/life.html',
             controller:'lifeController',
             resolve: {
@@ -43,7 +44,7 @@ conch.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$ur
         })
         .state('lock',{
             url: '/lock',
-            params:{"modelname":null},
+            params:{model:null},
             templateUrl: 'view/lock.html',
             controller:'lockController',
             resolve: {
@@ -54,6 +55,7 @@ conch.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$ur
         })
         .state('resume',{
             url: '/resume',
+            params:{check:null,date:null},
             templateUrl: 'view/resume/resume.html',
             controller:'resumeController',
             resolve: {
