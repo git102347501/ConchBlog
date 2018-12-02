@@ -4,7 +4,7 @@ conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope
 
     $scope.Initialization = function(){
         //访问鉴权
-        $scope.checkPrower();
+        //$scope.checkPrower();
     };
     $scope.checkPrower =function(){
         var check = checkService.check('resume');

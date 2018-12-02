@@ -3,7 +3,7 @@ conch.controller('lifeController',['$scope','$ocLazyLoad','$state','$rootScope',
     $ocLazyLoad.load('css/life.css');
     $scope.Initialization = function(){
         //访问鉴权
-        $scope.checkPrower();
+        //$scope.checkPrower();
     };
     $scope.checkPrower =function(){
         var check = checkService.check('life');

@@ -14,7 +14,7 @@ conch.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$ur
             controller:'blogController',
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load('controller/blogController.js');
+                    return $ocLazyLoad.load(['controller/blogController.js','directive/blogDirective.js']);
                 }]
             }
         })
@@ -38,7 +38,7 @@ conch.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$ur
             controller:'lifeController',
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load('controller/lifeController.js');
+                    return $ocLazyLoad.load(['controller/lifeController.js','directive/lifeDirective.js']);
                 }]
             }
         })

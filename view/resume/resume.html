@@ -1,8 +1,64 @@
-<div id="resume">
-    <div id="life" style="display: flex; justify-content:center;align-items:center">
+<div id="resume" layout="row">
+    <!--<div id="life" style="display: flex; justify-content:center;align-items:center">
         <div style="text-align: center;margin: 40px;font-size: 24px">
             <span class="glyphicon glyphicon-equalizer" style="margin-right: 15px"></span>
             <span>个人简历，正在建设中......</span>
         </div>
+    </div>-->
+    <div layout="column" flex="25" md-whiteframe="3">
+        <div layout="column" flex="100" style="max-height:270px;border-bottom: 1px solid #DBDBDB">
+            <!--个人详情-->
+            <div layout="row" flex="100" style="max-height:210px;">
+                <div style="padding: 20px 10px 10px 10px" flex="45" layout="column">
+                    <div>
+                        <img class="img-thumbnail" ng-show="blogUser.userHeard" src="{{blogUser.userHeard}}" alt="博主帅照" style="width: 100%;height: 180px">
+                    </div>
+                </div>
+                <div style="padding:20px 5px 0px 5px;font-size: 16px" flex="55">
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span style="font-size: 20px;font-weight: bold">赵强强</span>
+                    </div>
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span class="glyphicon glyphicon-user" style="margin-right: 6px;color: #555555"></span>
+                        <span>25岁</span>
+                    </div>
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span class="glyphicon glyphicon-envelope" style="margin-right: 6px;color: #555555"></span>
+                        <span><a style="text-decoration: none" href="mailto:102347501@qq.com?subject=来自博客的面试邀请">102347501@qq.com</a></span>
+                    </div>
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span class="glyphicon glyphicon-phone" style="margin-right: 6px;color: #555555"></span>
+                        <span>
+                        <a style="text-decoration: none" href="tel:18661123769">18661123769</a>
+                        <a style="text-decoration: none;margin-left: 5px;color: #555555" class="glyphicon glyphicon-comment" href="sms:18661123769"></a>
+                    </span>
+                    </div>
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span  style="margin-right: 6px;">居住地:</span>
+                        <span  style="color: #3D3D3D">江苏常州</span>
+                    </div>
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span  style="margin-right: 6px;">期望地点:</span>
+                        <span v style="color: #3D3D3D">上海，深圳</span>
+                    </div>
+                </div>
+            </div>
+            <div layout="row">
+                <md-button class="md-raised"><btn-ico icostyle="glyphicon glyphicon-comment"></btn-ico>在线留言</md-button>
+                <md-button class="md-raised " onclick="window.location.href='http://wpa.qq.com/msgrd?v=3&uin=102347501&site=qq&menu=yes'">QQ交谈</md-button>
+                <md-button class="md-raised">下载简历</md-button>
+            </div>
+        </div>
+        <!--个人信息菜单-->
+        <div flex="100" style="">
+            <md-list flex>
+                <md-list-item>
+                    <span></span>
+                </md-list-item>
+            </md-list>
+        </div>
+    </div>
+    <div layout="column" flex="75" style="min-height: 800px">
+
     </div>
 </div>
