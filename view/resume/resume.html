@@ -5,7 +5,7 @@
             <span>个人简历，正在建设中......</span>
         </div>
     </div>-->
-    <div layout="column" flex="25" md-whiteframe="3">
+    <div layout="column" flex="25" md-whiteframe="3" style="margin:10px 0px 0px 5px">
         <div layout="column" flex="100" style="max-height:270px;border-bottom: 1px solid #DBDBDB">
             <!--个人详情-->
             <div layout="row" flex="100" style="max-height:210px;">
@@ -45,20 +45,158 @@
             </div>
             <div layout="row">
                 <md-button class="md-raised"><btn-ico icostyle="glyphicon glyphicon-comment"></btn-ico>在线留言</md-button>
-                <md-button class="md-raised " onclick="window.location.href='http://wpa.qq.com/msgrd?v=3&uin=102347501&site=qq&menu=yes'">QQ交谈</md-button>
-                <md-button class="md-raised">下载简历</md-button>
+                <md-button class="md-raised " onclick="window.location.href='http://wpa.qq.com/msgrd?v=3&uin=102347501&site=qq&menu=yes'">
+                    <md-icon md-svg-src="fonts/myfonts/QQ.svg" style="margin-right: 5px;"></md-icon>QQ交谈
+                </md-button>
+                <md-button class="md-raised"><btn-ico icostyle="glyphicon glyphicon-arrow-down"></btn-ico>下载简历</md-button>
             </div>
         </div>
-        <!--个人信息菜单-->
+        <!--菜单-->
         <div flex="100" style="">
             <md-list flex>
-                <md-list-item>
-                    <span></span>
+                <md-list-item ng-repeat="item in menu" ng-click="null" style="border-bottom: 1px solid #E3E3E3">
+                    <span>{{item}}</span>
                 </md-list-item>
             </md-list>
         </div>
     </div>
+    <!--内容区-->
     <div layout="column" flex="75" style="min-height: 800px">
+        <md-card>
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">求职意向</span>
+            </div>
+            <md-list class="resume-list">
+                <md-list-item>
+                    <div layout="column" flex="100" style="margin: 10px 0px 10px 0px">
+                        <div layout="row" layout-align="space-between center" style="margin: 10px" flex="100">
+                            <div layout="row" style="margin-left: 20px" flex="50">
+                                <span style="font-size: 17px">求职状态：</span>
+                                <span style="font-size: 16px">我对现有工作还算满意，如有更好的机会，我也可以考虑。</span>
+                            </div>
+                            <div layout="row" layout-align="end center" flex="50" style="margin-right: 20px">
+                                <span style="font-size: 17px">意向城市：</span>
+                                <span style="font-size: 16px">上海，深圳</span>
+                            </div>
+                        </div>
+                        <div layout="row" layout-align="space-between center" style="margin: 10px">
+                           <div layout="row" style="margin-left: 20px">
+                               <span style="font-size: 17px">期望从事行业：</span>
+                               <span style="font-size: 16px">互联网企业</span>
+                           </div>
+                            <div layout="row" layout-align="end center" flex="50" style="margin-right: 20px">
+                                <span style="font-size: 17px">期望月薪：</span>
+                                <span style="font-size: 16px">10000-12000</span>
+                            </div>
+                        </div>
+                        <div layout="row" layout-align="space-between center" style="margin: 10px" flex="100">
+                            <div layout="row" style="margin-left: 20px" flex="50">
+                                <span style="font-size: 17px">工作性质：</span>
+                                <span style="font-size: 16px">全职</span>
+                            </div>
+                            <div layout="row" layout-align="end center" flex="50" style="margin-right: 20px">
+                                <span style="font-size: 17px">从事职位：</span>
+                                <span style="font-size: 16px">Net开发</span>
+                            </div>
+                        </div>
+                    </div>
 
+                </md-list-item>
+            </md-list>
+        </md-card>
+        <md-card>
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">自我评价</span>
+            </div>
+            <md-list style="padding: 20px 0px 10px 40px">
+                <div>
+                    <div style="font-size: 16px;margin-bottom: 6px;color: #333333">1. 语言基础</div>
+                    <div><p>精通c#语言，熟练掌握面向对象开发以及设计模式，拥有两年ORACLE,SQLSERVER,MYSQL常用数据库使用经验，具备独立数据库设计能力以及调优。</p></div>
+                </div>
+                <div>
+                    <div style="font-size: 16px;margin-bottom: 6px;color: #333333">2. C/S方向</div>
+                    <div><p>拥有两年6套CS产品项目研发经验，熟练掌握前后端分离交互设计，精通DEV等大型控件库，具备独立研发能力。</p></div>
+                </div>
+                <div>
+                    <div style="font-size: 16px;margin-bottom: 6px;color: #333333">3. B/S方向</div>
+                    <div><p>拥有两套BS前端产品研发经验以及个人博客独立网站门户，熟练掌握ui-Bootstarp,AngularJS,material等前端开发框架，具备独立开发SPA网站能力。</p></div>
+                </div>
+                <div>
+                    <div style="font-size: 16px;margin-bottom: 6px;color: #333333">4. 后端能力</div>
+                    <div><p>熟练掌握WebService，WebAPI,WCF等后端交互技术，拥有一年以上NetCore(2.0-2.2)跨平台开发经验，熟练掌握在Linux平台下的后端开发和运维。</p></div>
+                </div>
+                <div>
+                    <div style="font-size: 16px;margin-bottom: 6px;color: #333333">5. 构建运维</div>
+                    <div><p>熟练掌握jenkins+git自动化构建,Docket虚拟环境测试以及代码管理等基础能力,两年WindowsServer（2008,2012）+IIS+NLB负载均衡，以及Linux（Centos7+Nginx）使用经验。</p></div>
+                </div>
+            </md-list>
+        </md-card>
+        <md-card>
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">教育经历</span>
+            </div>
+            <md-list style="margin: 20px 0px 0px 0px">
+                <md-list-item ng-repeat="item in schoolList">
+                    <div layout="row" layout-align="space-between center" flex="100" class="resume-school">
+                        <span><img src="img/school.jpg" alt=""><a
+                                href="http://www.yrcti.edu.cn/" target="view_window">{{item.name}}</a></span>
+                        <span><a href="http://www.yrcti.edu.cn/cjx/index.html" target="view_window">{{item.major}}</a></span>
+                        <span>{{item.record}}</span>
+                        <span>{{item.date}}</span>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card>
+        <md-card>
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">工作经验</span>
+            </div>
+            <md-list class="resume-list">
+                <md-list-item  ng-repeat="item in companyList" style="padding: 20px 0px 20px 0px;border-bottom: 1px solid #C9C9C9">
+                    <div layout="column" layout-align="center stretch" flex="100" class="resume-company">
+                        <div layout="row" layout-align="space-between center" class="resume-company-title">
+                            <span><a href="{{item.url}}" target="view_window">{{item.name}}</a></span><span>{{item.date}}</span>
+                        </div>
+                        <div layout="row" layout-align="start center" class="resume-company-body">
+                            <span>{{item.station}}</span><span>{{item.payment}}</span>
+                        </div>
+                        <div class="resume-company-bottom">
+                            <span>{{item.duty}}</span>
+                        </div>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card>
+        <md-card>
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">项目经验</span>
+            </div>
+            <md-list class="resume-list">
+                <md-list-item class="resume-hands-on" ng-repeat="item in resumeList">
+                    <div layout="column">
+                        <div layout="row" layou-align="space-around center" style="font-size: 18px;">
+                            <div flex="50" style="font-size: 18px">{{item.name}}</div>
+                            <div flex="50" style="color: #999999;font-size: 16px">{{item.date}}</div>
+                        </div>
+                        <div layout="row" layout-align="start center" style="margin:15px 0px 15px 0px">
+                            <span style="font-size: 17px;color: #999999">项目描述</span>
+                        </div>
+                        <div layout="row">
+                            <p style="letter-spacing:1px;line-height: 26px" ng-bind-html="item.context"></p>
+                        </div>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card>
+        <md-card>
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">个人证书</span>
+            </div>
+            <md-list>
+                <md-list-item>
+
+                </md-list-item>
+            </md-list>
+        </md-card>
     </div>
 </div>
