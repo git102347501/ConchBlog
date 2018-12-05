@@ -1,6 +1,6 @@
-conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope','$stateParams','checkService',
-    function ($scope,$ocLazyLoad,$state,$rootScope,$stateParams,checkService) {
-    $ocLazyLoad.load('css/resume.css');
+conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope','$stateParams','checkService','$location','$anchorScroll','DiaLog',
+    function ($scope,$ocLazyLoad,$state,$rootScope,$stateParams,checkService,$location,$anchorScroll,DiaLog) {
+    $ocLazyLoad.load(['css/resume.css','controller/dialog/newDialog.js']);
 
     $scope.menu = ['求职意向','教育经历','工作经验','项目经验','个人证书','自我评价'];
     $scope.schoolList = [
@@ -73,7 +73,15 @@ conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope
     $scope.Initialization = function(){
         //访问鉴权
         //$scope.checkPrower();
+        $location.hash($scope.menu[0]);
+        $anchorScroll();
     };
+    //跳转到指定锚点
+    $scope.gotoCard = function(name){
+        $location.hash(name);
+        $anchorScroll();
+    };
+    //鉴权
     $scope.checkPrower =function(){
         var check = checkService.check('resume');
         if(!check){
@@ -84,6 +92,10 @@ conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope
                 checkService.put("resume",$stateParams.date);
             }
         }
+    };
+    //打开发表留言
+    $scope.goNews = function(ev){
+        DiaLog.showAdvanced(ev,"view/resume/dialog/newInsert.html");
     };
     //注销回调
     $rootScope.$on('logon',function () {
