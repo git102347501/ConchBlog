@@ -1,10 +1,125 @@
 <div layout="row" style="margin: 5px 0px 10px 0px;">
-    <div style="height:300px;background: #2b542c;border-top:150px solid transparent;border-right:150px solid #9B703F;border-bottom: 150px solid transparent"
-         flex="75">
-
+    <div class="life-li-content" flex="75" flex-md="65" flex-sm="35" flex-xs="35">
+        <div class="life-lis-context">
+            <p hide-xs hide-sm>总有一所校园，能够让你回忆起，那些曾经在岁月年轮上奋斗的青春......</p>
+        </div>
     </div>
-    <div style="height:300px;background: #9B703F;"
-         flex="25">
-
+    <div class="life-li" flex="25">
+        <div class="life-li-card">
+            <h3 class="life-li-card-title">校园</h3>
+        </div>
     </div>
+    <style>
+        .life-li-content{
+            height:300px;background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);
+        }
+        .life-li-card{
+            border-radius: 150px;
+            height: 270px;width: 270px;
+            background-image: url('img/hignschools.jpg');float:left;z-index:1999;margin: 15px;text-align: center;cursor:pointer;position: absolute;
+            transition: All 0.4s ease-in-out;
+            -webkit-transition: All 0.4s ease-in-out;
+            -moz-transition: All 0.4s ease-in-out;
+            -o-transition: All 0.4s ease-in-out;
+        }
+        .life-li-card-title{
+            line-height: 240px;background: linear-gradient(to right, yellowgreen, red);
+            -webkit-background-clip: text;
+            color: transparent;font-size: 34px;
+        }
+        .life-li-card:hover {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+        }
+    @media screen and (max-width: 599px) {
+        .life-li{
+            height:300px;background-image: url('img/hignschool.png');border-top-left-radius:150px;
+            border-bottom-left-radius:150px; min-width:95%;z-index:1000;position: absolute;left:5%;
+        }
+        .life-li:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            box-shadow:0px 0px  100px -50px #FFFFFF;
+        }
+        .life-lis-context{
+            text-align: center;line-height: 300px;position: absolute;font-size: 18px;background: linear-gradient(to right, saddlebrown, #28C76F);
+            -webkit-background-clip: text;
+            color: transparent;
+            max-width: 5%;
+            max-height: 300px;
+        }
+    }
+    @media screen and (min-width: 600px) and (max-width: 959px){
+        .life-li{
+            height:300px;background-image: url('img/hignschool.png');border-top-left-radius:150px;
+            border-bottom-left-radius:150px; min-width: 85%;z-index:1000;position: absolute;left:15%;
+        }
+        .life-li:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            box-shadow:inset -40px 0px  100px -50px #FFFFFF;
+        }
+        .life-lis-context{
+            text-align: center;line-height: 300px;position: absolute;font-size: 18px;background: linear-gradient(to right, saddlebrown, #28C76F);
+            -webkit-background-clip: text;
+            color: transparent;
+            max-width: 15%;max-height: 300px;
+        }
+    }
+    @media screen and (min-width: 960px) and (max-width: 1279px){
+        .life-li{
+            height:300px;background-image: url('img/hignschool.png');border-top-left-radius:150px;
+            border-bottom-left-radius:150px; min-width: 55%;z-index:1000;position: absolute;left:45%;
+        }
+        .life-li:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            box-shadow:inset -80px 0px  100px -50px #FFFFFF;
+        }
+        .life-lis-context{
+            text-align: center;line-height: 300px;position: absolute;font-size: 18px;background: linear-gradient(to right, saddlebrown, #28C76F);
+            -webkit-background-clip: text;
+            color: transparent;
+            max-width: 45%;max-height: 300px;
+            padding-left: 30px;
+        }
+    }
+    @media screen and (min-width: 1280px) {
+        .life-li{
+            height:300px;background-image: url('img/hignschool.png');border-top-left-radius:150px;
+            border-bottom-left-radius:150px; min-width: 45%;z-index:1000;position: absolute;left:55%;
+        }
+        .life-li:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            box-shadow:inset -125px 0px  100px -50px #FFFFFF;
+        }
+        .life-lis-context{
+            text-align: center;line-height: 300px;position: absolute;font-size: 18px;background: linear-gradient(to right, saddlebrown, #28C76F);
+            -webkit-background-clip: text;
+            color: transparent;
+            max-width: 75%;max-height: 300px;
+            padding-left: 30px;
+        }
+    }
+</style>
 </div>
