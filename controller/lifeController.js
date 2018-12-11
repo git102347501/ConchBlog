@@ -5,6 +5,21 @@ conch.controller('lifeController',['$scope','$ocLazyLoad','$state','$rootScope',
         //访问鉴权
         //$scope.checkPrower();
     };
+
+    $scope.lifelist = [
+        {
+            context:"总有一个地方，能够让你感觉到，记忆已经沉淀了很多难以忘怀的过去......",
+            lifetitle:"故乡",
+            imgurl:{'background-image':'url(img/timg.jpg)'},
+            titleimgurl:{'background-image':'url(img/111.png)'}
+        },
+        {
+            context:"总有一所校园，能够让你回忆起，那些曾经在岁月年轮上奋斗的青春......",
+            lifetitle:"校园",
+            imgurl:{'background-image':'url(img/hignschools.jpg)'},
+            titleimgurl:{'background-image':'url(img/hignschool.png)'}
+        }
+    ];
     $scope.checkPrower =function(){
         var check = checkService.check('life');
         if(!check){

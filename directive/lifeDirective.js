@@ -1,17 +1,29 @@
 
 //生活-栏目
-conch.directive('lifeLi',function () {
+conch.directive('lifeLeft',function () {
     return{
+        scope:{
+            context:'=',
+            lifetitle:'=',
+            imgurl:'=',
+            titleimgurl:'='
+        },
         restrict:'E',
-        templateUrl:'view/life/tple/lifeLi.html',
+        templateUrl:'view/life/tple/lifeLeft.html',
         replace : true
     }
 });
 //生活-栏目
-conch.directive('lifeLis',function () {
+conch.directive('lifeRight',function () {
     return{
+        scope:{
+            context:'=',
+            lifetitle:'=',
+            imgurl:'=',
+            titleimgurl:'='
+        },
         restrict:'E',
-        templateUrl:'view/life/tple/lifeLis.html',
+        templateUrl:'view/life/tple/lifeRight.html',
         replace : true
     }
 });

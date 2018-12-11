@@ -2,3 +2,34 @@
     min-height: 440px;
     background-color: white;
 }
+.life-li-card-title{
+    -webkit-background-clip: text;
+    color: transparent;font-size: 34px;
+}
+.life-left{
+    min-width: 100%; height:300px;background-image: linear-gradient( 135deg, #0396FF 10%, #ABDCFF 100%);
+}
+.life-leftcontext{
+    text-align: center;line-height: 300px;position: absolute;left:50%;font-size: 18px;background: linear-gradient(to right, red, #0396FF);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.life-left-title{
+    background: linear-gradient(to right, saddlebrown, #28C76F);
+}
+
+.life-li-content{
+    height:300px;background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);
+}
+.life-li-card-title{
+    line-height: 240px;background: linear-gradient(to right, yellowgreen, red);
+    -webkit-background-clip: text;
+    color: transparent;font-size: 34px;
+}
+.life-li-rightcard:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+}

@@ -1,5 +1,5 @@
-conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$cookieStore','$rootScope','DiaLog',
-    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$cookieStore,$rootScope,DiaLog) {
+conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$cookieStore','$rootScope','DiaLog','$state',
+    function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$cookieStore,$rootScope,DiaLog,$state) {
     //加载控制器资源
     $ocLazyLoad.load("css/main.css");
     //登录信息
@@ -88,6 +88,10 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         DiaLog.showAdvanced(ev,'view/index/tple/login.html');
     };
 
+    //路由跳转
+    $scope.goPage = function(ev){
+        $state.go(ev);
+    };
     //获取用户信息
     $scope.getUser = function(){
         var response = HttpCore.PostPlus('Config/GetUser',null);

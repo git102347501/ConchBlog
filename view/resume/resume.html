@@ -1,6 +1,6 @@
 <div id="resume" layout="row" layout-sm="column" layout-xs="column">
-    <div layout="column" flex-xl="25" flex-lg="30" flex-md="40" flex-sm="100" flex-xs="100" md-whiteframe="3" style="margin:10px 0px 0px 5px">
-        <div layout="column" flex="100" style="border-bottom: 1px solid #DBDBDB">
+    <div layout="column" layout-align="start stretch" flex-xl="25" flex-lg="30" flex-md="40" flex-sm="100" flex-xs="100" md-whiteframe="3" style="margin:10px 0px 0px 5px">
+        <div layout="column" style="border-bottom: 1px solid #DBDBDB">
             <!--个人详情-->
             <div layout="row" style="display: flex">
                 <div style="padding: 20px 10px 10px 10px" layout="column" style="width:160px;max-width: 160px">
@@ -35,8 +35,12 @@
                 </div>
             </div>
             <div layout="row" style="margin:0px 0px 10px 10px">
-                <md-button hide-xs class="md-raised" ng-click="goNews($event)"><btn-ico icostyle="glyphicon glyphicon-comment"></btn-ico>在线留言</md-button>
-                <md-button hide-xl hide-lg hide-md hide-sm show-xs class="md-fab md-mini resume-fab" ng-click="goNews($event)"><btn-ico icostyle="glyphicon glyphicon-comment"></btn-ico></md-button>
+                <md-button hide-xs class="md-raised" ng-click="goNews($event)">
+                    <md-icon md-svg-src="fonts/myfonts/news.svg" style="margin-right: 5px;"></md-icon>在线留言
+                </md-button>
+                <md-button hide-xl hide-lg hide-md hide-sm show-xs class="md-fab md-mini resume-fab" ng-click="goNews($event)">
+                    <md-icon md-svg-src="fonts/myfonts/news.svg"></md-icon>
+                </md-button>
                 <md-button hide-xs class="md-raised " onclick="window.location.href='http://wpa.qq.com/msgrd?v=3&uin=102347501&site=qq&menu=yes'">
                     <md-icon md-svg-src="fonts/myfonts/QQ.svg" style="margin-right: 5px;"></md-icon>QQ交谈
                 </md-button>
@@ -44,15 +48,15 @@
                     <md-icon md-svg-src="fonts/myfonts/QQ.svg"></md-icon>
                 </md-button>
                 <md-button hide-xs class="md-raised" onclick="window.location.href='https://blog-1252305000.cos.ap-shanghai.myqcloud.com/common/%E8%B5%B5%E5%BC%BA%E5%BC%BA%E7%9A%84%E7%AE%80%E5%8E%86.doc'">
-                    <btn-ico icostyle="glyphicon glyphicon-arrow-down"></btn-ico>下载简历
+                    <md-icon md-svg-src="fonts/myfonts/download.svg" style="margin-right: 5px;"></md-icon>下载简历
                 </md-button>
                 <md-button hide-xl hide-lg hide-md hide-sm show-xs class="md-fab md-mini resume-fab" onclick="window.location.href='https://blog-1252305000.cos.ap-shanghai.myqcloud.com/common/%E8%B5%B5%E5%BC%BA%E5%BC%BA%E7%9A%84%E7%AE%80%E5%8E%86.doc'">
-                    <btn-ico icostyle="glyphicon glyphicon-arrow-down"></btn-ico>
+                    <md-icon md-svg-src="fonts/myfonts/download.svg"></md-icon>
                 </md-button>
             </div>
         </div>
         <!--菜单-->
-        <div flex="100" style="">
+        <div flex>
             <md-list flex>
                 <md-list-item ng-repeat="item in menu" ng-click="gotoCard(item)" style="border-bottom: 1px solid #E3E3E3">
                     <span>{{item}}</span>
@@ -195,8 +199,10 @@
                 <span class="md-title" style="font-size: 20px;">个人证书</span>
             </div>
             <md-list>
-                <md-list-item>
-
+                <md-list-item ng-repeat="item in certificate">
+                    <div style="margin:10px 0px 0px 20px;font-size: 16px">
+                        {{item}}
+                    </div>
                 </md-list-item>
             </md-list>
         </md-card>

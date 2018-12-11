@@ -5,6 +5,26 @@ body{
 canvas{
     z-index: -1;
 }
+@media screen and (max-width: 599px) {
+    html{
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 959px){
+    html{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 960px) and (max-width: 1279px){
+    html{
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    html{
+        font-size: 16px;
+    }
+}
 .md-nav-bar{
     border-color: #D4D4D4;
 }
@@ -15,6 +35,9 @@ nav{
 }
 .con_nav{
     background: whitesmoke;
+}
+.container-fluid{
+    padding: 0px;
 }
 .headline-bg.index-headline-bg {
     overflow:hidden;
@@ -88,6 +111,20 @@ nav{
 .con_bottom_panel{
     padding: 10px 25px 10px 25px;
     color:white;
+}
+@media screen and (max-width: 959px) {
+    .con_bottom_panel{
+        padding: 10px 25px 10px 25px;
+        color:white;
+        border-bottom: 1px solid #C1CDC1;
+    }
+}
+@media screen and (min-width: 960px) {
+    .con_bottom_panel{
+        padding: 10px 25px 10px 25px;
+        color:white;
+        border-right: 1px solid #C1CDC1;
+    }
 }
 .con_bottom_panel h4{
     margin-bottom: 20px;
