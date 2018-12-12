@@ -38,6 +38,9 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         "dynamicTarget":"个人动态",
         "dynamicContext":""
     };
+    //导航样式
+    $scope.navstyle ="con_nav";
+    $scope.navstyles ="navbar navbar-default";
     //友情链接列表
     $scope.shiplink=[];
     //读取友联进度
@@ -73,16 +76,34 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         }
     }
 
-
     //初始化
     $scope.Initialization = function () {
         $scope.getUser();
         $scope.getBlogCate();
         $scope.getPhotoList();
         $scope.getDynamicList();
-
+        window.onscroll = function () {
+            var t = document.documentElement.scrollTop || document.body.scrollTop;
+            console.log(t);
+            if (t > 400) {
+                if($scope.navstyle !="con_navs")
+                {
+                    $scope.$apply(function(){
+                        $scope.navstyles ="con_navs navbar navbar-default";
+                        $scope.navstyle ="con_navs";
+                    });
+                }
+            }else{
+                if($scope.navstyle !="con_nav")
+                {
+                    $scope.$apply(function(){
+                        $scope.navstyles ="navbar navbar-default";
+                        $scope.navstyle ="con_nav";
+                    });
+                }
+            }
+        }
     };
-
     //登录
     $scope.login = function (ev) {
         DiaLog.showAdvanced(ev,'view/index/tple/login.html');

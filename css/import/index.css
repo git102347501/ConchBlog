@@ -36,6 +36,9 @@ nav{
 .con_nav{
     background: whitesmoke;
 }
+.con_navs{
+    position:fixed;width:100%;left: 0px;top:0px; background: whitesmoke;z-index: 9999;max-height: 50px;
+}
 .container-fluid{
     padding: 0px;
 }
@@ -99,6 +102,13 @@ nav{
 .con_tent{
     z-index: 1;
     width: 100%;
+}
+.con_tents{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    width: 100%;
+
 }
 .con_bottom{
     padding: 15px 0px 0px 0px;

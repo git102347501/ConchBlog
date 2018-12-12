@@ -74,7 +74,7 @@ conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope
 
     $scope.Initialization = function(){
         //访问鉴权
-        //$scope.checkPrower();
+        $scope.checkPrower();
         $location.hash($scope.menu[0]);
         $anchorScroll();
     };
