@@ -75,8 +75,6 @@ conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope
     $scope.Initialization = function(){
         //访问鉴权
         $scope.checkPrower();
-        $location.hash($scope.menu[0]);
-        $anchorScroll();
     };
     //跳转到指定锚点
     $scope.gotoCard = function(name){
@@ -90,9 +88,10 @@ conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope
             //如果存在路由权限
             if(!$stateParams.check){
                 $state.go("lock",{model:{name:"我的简历",model:"resume"}});
-            }else{
-                checkService.put("resume",$stateParams.date);
             }
+        }else{
+            $location.hash($scope.menu[0]);
+            checkService.put("resume",$stateParams.date);
         }
     };
     //打开发表留言

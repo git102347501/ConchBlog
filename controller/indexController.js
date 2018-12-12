@@ -84,7 +84,6 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         $scope.getDynamicList();
         window.onscroll = function () {
             var t = document.documentElement.scrollTop || document.body.scrollTop;
-            console.log(t);
             if (t > 400) {
                 if($scope.navstyle !="con_navs")
                 {
