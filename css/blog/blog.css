@@ -1,16 +1,39 @@
 #blog{
     min-height: 500px;
-    min-width: 600px;
     width: 100%;
     display: flex;
 }
 span{
     color: black;
 }
-.menu{
-    height: 100%;
-    margin:10px 0px 10px 10px;
-    width: 300px;
+@media screen  and (max-width: 959px){
+    .label-autoheight{
+        margin: 20px 0px 20px 0px;
+    }
+    .menu{
+        height: 100%;
+        margin:10px 0px 10px 10px;
+    }
+}
+@media screen  and (max-width: 599px){
+    .blog_commDate{
+        margin: 20px 0px 10px 0px;
+    }
+}
+@media screen  and (min-width: 600px){
+    .blog_commDate{
+        margin: 0px;
+    }
+}
+@media screen  and (min-width: 960px){
+    .label-autoheight{
+        margin: 0px;
+    }
+    .menu{
+        height: 100%;
+        margin:10px 0px 10px 10px;
+        width: 300px;
+    }
 }
 .blog{
     flex: 1;
@@ -53,10 +76,9 @@ span{
 }
 .blog_news{
     width:100%;
-    height: 45px;
-    max-height: 45px;
+    min-height: 45px;
     line-height: 35px;
-    padding: 0px 0px 50px 30px;
+    padding: 0px 0px 10px 30px;
 }
 .blog_news span{
     font-size: 13px !important;
@@ -119,6 +141,7 @@ span{
 }
 .blog_comment_sub{
     height: 65px;
+    padding-left: 18px;
 }
 .blog_comment_submit{
     margin: 5px 10px 5px 5px;
@@ -178,6 +201,10 @@ span{
 .blog_commentlist_Reply{
     flex:1;
     padding: 0px 0px 0px 10px;
+}
+.md-sub{
+    background-color: #aaaaaa !important;
+    color: white !important;
 }
 .validateImg{
     border: 1px solid #aaaaaa;

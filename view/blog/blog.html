@@ -1,5 +1,6 @@
-<div id="blog">
-    <div class="menu">
+<div id="blog" layout="row" layout-sm="column" layout-xs="column">
+    <!--左侧栏-->
+    <div class="menu" flex-sm="100" flex-xs="100">
         <!--博文列表-->
         <blog-menu></blog-menu>
         <!--相关推荐-->
@@ -53,7 +54,8 @@
             </div>
         </div>
     </div>
-    <div class="blog">
+    <!--内容区-->
+    <div class="blog" flex="auto" flex-sm="100" flex-xs="100">
         <div class="blog_body" md-whiteframe="1">
             <!--博文导航-->
             <div class="blog_nav" >
@@ -98,10 +100,13 @@
                     <img src="data:image/jpg;base64,{{validateImg.img}}" alt="验证码" class="validateImg switch" ng-click="getValidateImg(true)">
                 </span>
                 <span class="blog_comment_submit">
-                     <input type="text" ng-model="setCommentValue" class="form-control" id="comment" placeholder="输入验证码，不区分大小写">
+                     <input type="text" ng-model="setCommentValue" class="form-control" id="comment" placeholder="验证码">
                 </span>
                 <span class="blog_comment_submit">
-                     <md-button class="md-raised md-primary" ng-click="setComment(-1,setCommentValue)">发表评论</md-button>
+                    <md-button hide-xs hide-sm class="md-raised md-primary" ng-click="setComment(-1,setCommentValue)">发表评论</md-button>
+                    <md-button hide-xl hide-lg hide-md show-sm show-xs class="md-fab md-mini md-sub" ng-click="setComment(-1,setCommentValue)">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </md-button>
                 </span>
             </div>
         </div>
@@ -118,13 +123,12 @@
             <div flex="100" layout="column" class="blog-list-comm">
                 <div flex="100" class="blog_commentlist_list" ng-repeat="item in commentlist" ng-show="readBlogcommlist">
                     <div flex="100" layout="column" layout-align="center stretch">
-                        <div flex="100" class="blog_commentlist_heard" layout="row" layout-align="space-between center">
-                            <div>
+                        <div flex="100" class="blog_commentlist_heard" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="space-between stretch">
+                            <div flex-xs="100">
                                 <span><img src="{{item.commentHeard}}" alt="" style="height: 40px;width:40px"></span>
                                 <span style="padding-left: 20px;color:#337ab7">{{item.commentName}}</span>
                             </div>
-                            <div>
-
+                            <div flex-xs="100" class="blog_commDate">
                                 <span>{{($index+1)}}楼</span>
                                 <span class="blog_comment_date">{{item.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
                                 <a style="cursor:pointer" ng-click="replyComments(replyComment[$index],item.commentID)">回复</a>
@@ -141,13 +145,12 @@
                         </div>
                         <div class="blog_commentlist_Reply">
                             <div layout="column" ng-repeat="reply in item.commentReplyList">
-                                <div flex="100" class="blog_commentReply_heard" layout="row" layout-align="space-between center">
+                                <div flex="100" class="blog_commentReply_heard" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="space-between stretch">
                                     <div>
                                         <span><img src="{{reply.commentHeard}}" alt="" style="height: 30px;width:30px;margin-right: 10px"></span>
                                         <span style="color: #337ab7;">{{reply.commentName}}&nbsp@{{item.commentName}}</span>
                                     </div>
-                                    <div>
-
+                                    <div class="blog_commDate">
                                         <span>{{($index+1)}}楼</span>
                                         <span class="blog_comment_date">{{reply.commentDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
                                         <span class="blog_comment_dete" ng-if="user.userToken"><button class="btn btn-xs btn-danger" ng-click="deteComment($event,item,reply)">删除</button></span>
@@ -183,6 +186,4 @@
             </div>
         </div>
     </div>
-
-
 </div>

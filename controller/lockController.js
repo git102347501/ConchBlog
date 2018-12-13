@@ -1,6 +1,8 @@
-conch.controller('lockController',['$scope','$state','$ocLazyLoad','$stateParams','validate','HttpCore','toastr','$cookies',
-    function ($scope,$state,$ocLazyLoad,$stateParams,validate,HttpCore,toastr,$cookies) {
+conch.controller('lockController',['$scope','$state','$ocLazyLoad','$stateParams','validate','HttpCore','toastr',
+    function ($scope,$state,$ocLazyLoad,$stateParams,validate,HttpCore,toastr) {
     $ocLazyLoad.load('css/lock.css');
+    //加密页
+    $scope.lockPage=['life','resume'];
     $scope.password="";
     $scope.validate={
         name:"",
@@ -10,7 +12,11 @@ conch.controller('lockController',['$scope','$state','$ocLazyLoad','$stateParams
     $scope.target = $stateParams.model;
 
     $scope.Initialization = function(){
-        $scope.getValidate();
+        if( $scope.lockPage.indexOf($scope.target)!=-1){
+            $scope.getValidate();
+        }else{
+            $state.go($scope.target);
+        }
     };
 
     //获取验证码

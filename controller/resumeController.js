@@ -73,8 +73,7 @@ conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope
     $scope.certificate =["会计从业证书","计算机二级证书"];
 
     $scope.Initialization = function(){
-        //访问鉴权
-        $scope.checkPrower();
+
     };
     //跳转到指定锚点
     $scope.gotoCard = function(name){

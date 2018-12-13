@@ -2,8 +2,7 @@ conch.controller('lifeController',['$scope','$ocLazyLoad','$state','$rootScope',
     function ($scope,$ocLazyLoad,$state,$rootScope,$stateParams,checkService) {
     $ocLazyLoad.load('css/life.css');
     $scope.Initialization = function(){
-        //访问鉴权
-        //$scope.checkPrower();
+
     };
 
     $scope.lifelist = [

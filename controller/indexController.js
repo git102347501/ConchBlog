@@ -1,7 +1,7 @@
 conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore','toastr','$cookieStore','$rootScope','DiaLog','$state',
     function ($scope,$ocLazyLoad,$timeout,HttpCore,toastr,$cookieStore,$rootScope,DiaLog,$state) {
     //加载控制器资源
-    $ocLazyLoad.load("css/main.css");
+    $ocLazyLoad.load(["css/main.css","controller/lockController.js"]);
     //登录信息
     $scope.user= $cookieStore.get("user");
     //博客个人信息
@@ -110,7 +110,7 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
 
     //路由跳转
     $scope.goPage = function(ev){
-        $state.go(ev);
+        $state.go('lock',{model:ev});
     };
     //获取用户信息
     $scope.getUser = function(){

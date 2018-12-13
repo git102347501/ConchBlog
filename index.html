@@ -56,7 +56,7 @@
                         md-no-ink-bar="disableInkBar"
                         md-selected-nav-item="currentNavItem"
                         nav-bar-aria-label="navigation links">
-                    <md-nav-item  md-nav-sref="{{me.url}}" ng-repeat="me in navlist">
+                    <md-nav-item  md-nav-click="goPage(me.url)"  ng-repeat="me in navlist">
                         {{me.name}}
                     </md-nav-item>
                 </md-nav-bar>
@@ -74,7 +74,7 @@
                 <div class="collapse navbar-collapse" id="example-navbar-collapse" style="padding: 0px 10px 0px 10px">
                     <md-list flex style="padding: 5px 10px 5px 10px">
                         <md-list-item class="md-1-line" ng-repeat="me in navlist" ng-click="goPage(me.url)">
-                            <span><a ui-sref="{{me.url}}">{{me.name}}</a></span>
+                            <span>{{me.name}}</span>
                         </md-list-item>
                     </md-list>
                 </div>
