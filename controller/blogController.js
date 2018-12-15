@@ -309,6 +309,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
 
     //编辑博文
     $scope.editblog = function(model){
+        $ocLazyLoad.load('ckeditor/ckeditor.js');
         $scope.editModel = model;
         $state.go("blog.edit");
 
