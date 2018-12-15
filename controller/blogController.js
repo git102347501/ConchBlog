@@ -92,15 +92,14 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         });
         $scope.getNewBloglist();
         $scope.getValidateImg(true);//获取验证码
+        $scope.closeEdit();
     };
 
     //编辑博文菜单
     $scope.editCate = function(ev){
-        $ocLazyLoad.load("controller/dialog/blogcateDialog.js");
-        $timeout(function () {
+        $ocLazyLoad.load("controller/dialog/blogcateDialog.js").then(function () {
             DiaLog.showAdvanced(ev,"view/blog/blogCate.html");
-        },500);
-
+        });
     };
 
     //加载博文左侧列表
@@ -309,10 +308,6 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
 
     //编辑博文
     $scope.editblog = function(model){
-        $ocLazyLoad.load('ckeditor/ckeditor.js');
-        $scope.editModel = model;
-        $state.go("blog.edit");
-
         $scope.editBlog.blogID = model?"":$scope.blog.blogID;
         $scope.editBlog.blogBody = model?"":$scope.blog.blogBatter;
         if(model && $scope.blog.blogCate){
@@ -324,11 +319,15 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         $scope.editBlog.blogDate = model?"":$scope.blog.blogCreatDate;
         $scope.editBlog.blogClass = model?"":$scope.blog.blogClass;
 
-        //等待控件加载完，载入内容
-        $timeout(function(){
-            CKEDITOR.replace('editor1');
-            CKEDITOR.instances.editor1.setData($scope.editBlog.blogBody);
-        },700);
+        $ocLazyLoad.load('ckeditor/ckeditor.js').then(function () {
+            $scope.editModel = model;
+            $state.go("blog.edit").then(function () {
+                CKEDITOR.replace('editor1');
+                CKEDITOR.instances.editor1.setData($scope.editBlog.blogBody);
+            });
+        },function (e) {
+            toastr.error("加载编辑控件失败！错误："+e);
+        });
     };
 
     //取消编辑
