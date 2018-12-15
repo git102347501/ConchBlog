@@ -54,7 +54,7 @@ nav{
 }
 .con_title{
     background: slateblue;
-    height: 400px;
+    min-height: 340px;
 }
 .conch_loding{
     justify-content:center;width: 100%;padding: 10px 0px 10px 0px;font-size: 16px;

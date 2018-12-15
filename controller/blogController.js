@@ -314,7 +314,11 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
 
         $scope.editBlog.blogID = model?"":$scope.blog.blogID;
         $scope.editBlog.blogBody = model?"":$scope.blog.blogBatter;
-        $scope.editBlog.blogCate = model?[]:$scope.blog.blogCate.split(',') ;
+        if(model && $scope.blog.blogCate){
+            $scope.editBlog.blogCate = $scope.blog.blogCate.split(',');
+        }else{
+            $scope.editBlog.blogCate = [];
+        }
         $scope.editBlog.blogTitle = model?"":$scope.blog.blogTitle;
         $scope.editBlog.blogDate = model?"":$scope.blog.blogCreatDate;
         $scope.editBlog.blogClass = model?"":$scope.blog.blogClass;
@@ -323,7 +327,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         $timeout(function(){
             CKEDITOR.replace('editor1');
             CKEDITOR.instances.editor1.setData($scope.editBlog.blogBody);
-        },400);
+        },700);
     };
 
     //取消编辑
@@ -356,6 +360,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     $rootScope.$on('login',function (data,args) {
         if(args){
             $scope.user = $cookieStore.get("user");
+            $ocLazyLoad.load('ckeditor/ckeditor.js');
         }
     });
 
