@@ -32,7 +32,9 @@
 <div ng-controller="indexController">
     <!--顶部-->
     <div class="con_title headline-bg index-headline-bg wavesWapper">
+
         <canvas id="waves" class="waves"></canvas>
+        <!--头像-->
         <div class="conchhead">
             <img ng-show="blogUser.userHeard" src="{{blogUser.userHeard}}" alt="博主帅照" ng-click="login($event)">
             <img ng-show="!blogUser.userHeard" src="fonts/myfonts/heard.svg" alt="博主帅照" ng-click="login($event)">
