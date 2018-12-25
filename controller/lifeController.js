@@ -2,7 +2,9 @@ conch.controller('lifeController',['$scope','$ocLazyLoad','$state','$rootScope',
     function ($scope,$ocLazyLoad,$state,$rootScope,$stateParams,checkService) {
     $ocLazyLoad.load('css/life.css');
     $scope.Initialization = function(){
-
+        if(!$stateParams.check){
+            $state.go("lock");
+        }
     };
 
     $scope.lifelist = [
