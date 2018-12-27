@@ -40,7 +40,6 @@ conch.service('HttpCore',['$http','$q','$cookieStore','$state','$httpParamSerial
             url: serviceUrl + url,
             data: date
         }).then(function successCallback(responce) {
-            console.log(responce);
             return deferred.resolve(responce);
         },function errorCallback(responce) {
             if(responce.status=="401"){

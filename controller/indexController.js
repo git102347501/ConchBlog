@@ -84,7 +84,6 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
         $scope.getDynamicList();
         window.onscroll = function () {
             var t = document.documentElement.scrollTop || document.body.scrollTop;
-            console.log(t);
             if (t > 345) {
                 if($scope.navstyle !="con_navs")
                 {
@@ -92,7 +91,6 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
                         $scope.navstyles ="con_navs navbar navbar-default";
                         $scope.navstyle ="con_navs";
                     });
-                    console.log("触发浮动");
                 }
             }else{
                 if($scope.navstyle !="con_nav")
@@ -101,7 +99,6 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
                         $scope.navstyles ="navbar navbar-default";
                         $scope.navstyle ="con_nav";
                     });
-                    console.log("停止浮动");
                 }
             }
         }
