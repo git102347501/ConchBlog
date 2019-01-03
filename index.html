@@ -61,14 +61,14 @@
             <div class="container-fluid">
                 <div class="navbar-header" style="padding: 0px 20px 0px 20px">
                     <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#example-navbar-collapse">
+                            data-target="#example-navbar-collapse" ng-click="showcollapse()">
                         <span class="icon-bar" ng-repeat="item in [1,2,3]"></span>
                     </button>
                     <a class="navbar-brand">导航菜单</a>
                 </div>
-                <div class="collapse navbar-collapse" id="example-navbar-collapse" style="padding: 0px 10px 0px 10px">
+                <div ng-if="collapsevisible" class="collapse navbar-collapse" id="example-navbar-collapse" style="padding: 0px 10px 0px 10px">
                     <md-list flex style="padding: 5px 10px 5px 10px">
-                        <md-list-item class="md-1-line" ng-repeat="me in navlist" ng-click="goPage(me.url)">
+                        <md-list-item class="md-1-line" ng-repeat="me in navlist" ng-click="goPage(me.url)" style="border-bottom: 1px solid #E5E5E5">
                             <span>{{me.name}}</span>
                         </md-list-item>
                     </md-list>

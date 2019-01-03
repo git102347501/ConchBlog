@@ -6,8 +6,7 @@ md-menu-item>.md-button{
     color: white;
 }
 #menu{
-    height: 100%;
-    margin-bottom: 15px;
+    margin:5px 0px 15px 0px;
     background: white;
 }
 .menuIco{
@@ -24,7 +23,6 @@ md-menu-item>.md-button{
     padding: 0px 5px 10px 5px;
 }
 .conchMenu{
-    height: 100%;
     transition:width 0.5s;
 }
 .conchMenus{

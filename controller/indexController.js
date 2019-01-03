@@ -107,11 +107,21 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
     $scope.login = function (ev) {
         DiaLog.showAdvanced(ev,'view/index/tple/login.html');
     };
-
+    $scope.collapsevisible =false;
     //路由跳转
     $scope.goPage = function(ev){
         $state.go('lock',{model:ev});
+        $scope.collapsevisible = false;
     };
+
+    $scope.showcollapse = function(){
+        if(!$scope.collapsevisible){
+            $scope.collapsevisible = true;
+        }else{
+            $scope.collapsevisible = false;
+        }
+    };
+
     //获取用户信息
     $scope.getUser = function(){
         var response = HttpCore.PostPlus('Config/GetUser',null);
