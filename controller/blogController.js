@@ -310,7 +310,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     $scope.editblog = function(model){
         $scope.editBlog.blogID = model?"":$scope.blog.blogID;
         $scope.editBlog.blogBody = model?"":$scope.blog.blogBatter;
-        if(model && $scope.blog.blogCate){
+        if(!model && $scope.blog.blogCate){
             $scope.editBlog.blogCate = $scope.blog.blogCate.split(',');
         }else{
             $scope.editBlog.blogCate = [];

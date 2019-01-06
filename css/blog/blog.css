@@ -65,6 +65,12 @@
 }
 /*layout-md-*/
 @media screen and (max-width: 1279px) and (min-width: 960px){
+    .menu{
+        min-width: 345px !important;
+        width: 345px;
+        margin: 0px;
+        padding:5px;
+    }
     .blog_news{
         width:100%;
         min-height: 45px;
@@ -78,6 +84,7 @@
         margin: 10px 15px 5px 15px;
     }
     .blog{
+        flex: 1;
         margin: 5px 10px 0px 8px;
         background-color: white;
     }
@@ -89,6 +96,12 @@
 }
 /*layout-lg-xl-*/
 @media screen and (min-width: 1280px){
+    .menu{
+        min-width: 365px !important;
+        width: 365px;
+        margin: 0px;
+        padding:5px;
+    }
     .blog_news{
         padding: 2px 0px 10px 30px !important;
     }

@@ -9,6 +9,9 @@ md-menu-item>.md-button{
     margin:5px 0px 15px 0px;
     background: white;
 }
+.menuEditbutton{
+    z-index: 2000;position:absolute;right:0px;top:0
+}
 .menuIco{
     color: #333333;
     padding: 3px;

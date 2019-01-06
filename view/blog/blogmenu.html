@@ -2,7 +2,7 @@
     <div class="conchMenu">
         <div class="blog_title" layout ="row" layout-align ="center center" style="position:relative">
             <h4>博文列表</h4>
-            <div layout="row" layout-align="center center" style="z-index: 2;position:absolute;left:245px;top:0" ng-if="user.userToken">
+            <div layout="row" layout-align="center center" class="menuEditbutton" ng-if="user.userToken">
                 <md-fab-speed-dial md-direction="down" class="md-fling" ng-cloak>
                     <md-fab-trigger>
                         <md-button class="md-fab md-warn md-mini" style="margin-top: 3px;margin-bottom: 3px" aria-label="菜单">
@@ -55,7 +55,7 @@
                                     aria-label="Cake">
                             </md-icon>
                         </span>
-                        <span>{{items.name}}</span>
+                        <span style="text-overflow: ellipsis;white-space: normal">{{items.name}}</span>
                     </md-button>
                 </md-menu-item>
             </div>
