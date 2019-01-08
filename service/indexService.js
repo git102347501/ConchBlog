@@ -1,7 +1,7 @@
 conch.service('HttpCore',['$http','$q','$cookieStore','$state','$httpParamSerializerJQLike','toastr',
     function ($http,$q,$cookieStore,$state,$httpParamSerializerJQLike,toastr) {
 
-    //var serviceUrl = "https://localhost:44357/api/";
+        //var serviceUrl = "https://localhost:44357/api/";
     var serviceUrl = "https://api.magicalconch.com/api/";
     this.superPost = function(url,data,success,error){
         var response = this.PostPlus(url,data);
@@ -20,6 +20,18 @@ conch.service('HttpCore',['$http','$q','$cookieStore','$state','$httpParamSerial
         })
     };
 
+    this.PostBaidu =function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else{
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    };
     //发送请求
     this.PostPlus = function (url,data) {
         var deferred = $q.defer(); // 声明延后执行，表示要去监控后面的执行

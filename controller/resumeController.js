@@ -1,5 +1,5 @@
-conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope','$stateParams','checkService','$location','$anchorScroll','DiaLog',
-    function ($scope,$ocLazyLoad,$state,$rootScope,$stateParams,checkService,$location,$anchorScroll,DiaLog) {
+conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope','$stateParams','checkService','$location','$anchorScroll','DiaLog','HttpCore',
+    function ($scope,$ocLazyLoad,$state,$rootScope,$stateParams,checkService,$location,$anchorScroll,DiaLog,HttpCore) {
     $ocLazyLoad.load(['css/resume.css','controller/dialog/newDialog.js']);
 
     $scope.menu = ['求职意向','教育经历','工作经验','项目经验','个人证书','自我评价'];
@@ -76,6 +76,7 @@ conch.controller('resumeController',['$scope','$ocLazyLoad','$state','$rootScope
         if(!$stateParams.check){
             $state.go("lock");
         }
+        HttpCore.PostBaidu();
     };
     //跳转到指定锚点
     $scope.gotoCard = function(name){

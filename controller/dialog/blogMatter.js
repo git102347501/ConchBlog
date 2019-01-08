@@ -10,6 +10,7 @@ conch.controller('blogMatter',['$scope','HttpCore','$mdDialog','$rootScope','$co
             if(parm){
                 $scope.getBlogs(parm);
             }
+            HttpCore.PostBaidu();
         };
 
         //读取博文
@@ -19,7 +20,7 @@ conch.controller('blogMatter',['$scope','HttpCore','$mdDialog','$rootScope','$co
             response.then(function (resp) {
                 if(resp.data && resp.data.status==1 && resp.data.data){
                     $scope.blog = resp.data.data;
-                    $rootScope.$emit('readBlogStatus',index);
+                    $rootScope.$emit('readBlogStatus',$scope.blog);
                 }else{
                     if(resp.data && resp.data.msg){
                         toastr.warning(resp.data.msg);

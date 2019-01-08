@@ -17,6 +17,7 @@ conch.controller('lockController',['$scope','$state','$ocLazyLoad','$stateParams
         }else{
             $state.go($scope.target);
         }
+        HttpCore.PostBaidu();
     };
 
     //获取验证码

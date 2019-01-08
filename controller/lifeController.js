@@ -5,6 +5,7 @@ conch.controller('lifeController',['$scope','$ocLazyLoad','$state','$rootScope',
         if(!$stateParams.check){
             $state.go("lock");
         }
+        HttpCore.PostBaidu();
     };
 
     $scope.lifelist = [

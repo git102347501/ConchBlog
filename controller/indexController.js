@@ -102,7 +102,9 @@ conch.controller('indexController',['$scope','$ocLazyLoad','$timeout','HttpCore'
                 }
             }
         }
+        HttpCore.PostBaidu();
     };
+
     //登录
     $scope.login = function (ev) {
         DiaLog.showAdvanced(ev,'view/index/tple/login.html');
