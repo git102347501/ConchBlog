@@ -9,6 +9,7 @@ conch.config(["$provide", "$compileProvider", "$controllerProvider", "$filterPro
         conch.service = $provide.service;
         conch.constant = $provide.constant;
     }]);
+
 //弹窗配置
 conch.config(function(toastrConfig) {
     angular.extend(toastrConfig, {

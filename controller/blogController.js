@@ -23,7 +23,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     //读取推荐列表
     $scope.readBlogcomm=false;
     //读取博文对象
-    $scope.readblog=false;
+    $scope.readblogID=0;
     //读取博文列表对象
     $scope.readbloglist = false;
     //读取最新列表对象
@@ -76,10 +76,13 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     //初始化
     $scope.Initialization = function(){
         var param = $stateParams.blogID;
+        var params = $state.params.id;
         //加载博文左侧列表
         $scope.getblogList().then(function () {
             if(param){
                 $scope.getBlog(param);
+            }else if (params){
+                $scope.getBlog(params);
             }else{
                 if($scope.menulist && $scope.menulist.length>0){
                     //默认加载首个博文
@@ -133,28 +136,8 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
 
     //加载博文
     $scope.getBlog = function(index){
-        //赋值读取博文正文状态，显示加载区域
-        $scope.readblog = false;
-
-        $scope.getcommlist(index);
-        $scope.getBlogCommentList(index);
-
-        var response = HttpCore.PostPlus("Blog/BlogBody",{"data":index});
-        response.then(function (resp) {
-            if(resp.data && resp.data.status==1 && resp.data.data){
-                $scope.blog = resp.data.data;
-                //赋值读取博文正文状态，显示博文
-                $scope.readblog = true;
-            }else{
-                if(resp.data && resp.data.msg){
-                    toastr.warning(resp.data.msg);
-                }else{
-                    toastr.warning("读取博文失败！");
-                }
-            }
-        },function () {
-            toastr.error("读取博文失败！");
-        })
+        $scope.readblogID = index;
+        $state.go("blog.matter",{id:$scope.readblogID});
     };
 
     //加载博文推荐列表
@@ -332,7 +315,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
 
     //取消编辑
     $scope.closeEdit = function(){
-        $state.go("blog.matter");
+        $state.go("blog.matter",{blogID:$scope.readblogID});
     };
 
     //保存博文
@@ -361,6 +344,15 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         if(args){
             $scope.user = $cookieStore.get("user");
             $ocLazyLoad.load('ckeditor/ckeditor.js');
+        }
+    });
+
+    //读取博文回调
+    $rootScope.$on('readBlogStatus',function (data,args) {
+        if(args){
+            $scope.getcommlist(args);
+            $scope.getBlogCommentList(args);
+            $scope.readblog = true;
         }
     });
 

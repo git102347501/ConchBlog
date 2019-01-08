@@ -14,12 +14,13 @@ conch.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$ur
             controller:'blogController',
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load(['controller/blogController.js','directive/blogDirective.js']);
+                    return $ocLazyLoad.load(['controller/blogController.js','directive/blogDirective.js','controller/dialog/blogMatter.js']);
                 }]
             }
         })
         .state('blog.matter',{
-            url: '/blog.matter',
+            url: '/matter/:id',
+            controller:"blogMatter",
             templateUrl: 'view/blog/blogMatter.html'
         })
         .state('blog.edit',{
