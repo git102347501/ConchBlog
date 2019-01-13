@@ -15,7 +15,7 @@ conch.controller('loginController',['$scope','HttpCore','$mdDialog','$rootScope'
         //登录
         $scope.Login = function () {
             var usvali={"name":$scope.valiValue,"index":$scope.checkimgs.index};
-            var response = HttpCore.PostPlus('User/Login', {data:{usvalidate:usvali,data:$scope.user}});
+            var response = HttpCore.PostPlus('User/Login', {data:{usvalidate:usvali,date:$scope.user}});
             response.then(function(resp){
                 if(resp.data !=null && resp.data.status ==1){
                     $cookieStore.put("user", resp.data.data);

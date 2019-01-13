@@ -151,7 +151,10 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
             if(resp.data && resp.data.status==1){
                 $scope.commlist = resp.data.data;
                 $scope.readBlogcomm = true;
+            }else{
+                toastr.warning(resp.data.msg);
             }
+            $scope.readBlogcomm = true;
         });
     };
 
@@ -269,7 +272,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         commentvalidate.commentHeard = "https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/default_tit.webp";
         commentvalidate.commentName = "匿名";
         var usvali ={"name":commentvalue,"index":commentimg.index};
-        var responce = HttpCore.PostPlus("Blog/BlogComment",{data:{ usvalidate:usvali,data:commentvalidate}});
+        var responce = HttpCore.PostPlus("Blog/BlogComment",{data:{ usvalidate:usvali,date:commentvalidate}});
         responce.then(function (resp) {
             if(resp.data && resp.data.status==1){
                 toastr.success("发表评论成功！");
@@ -353,8 +356,8 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     $rootScope.$on('readBlogStatus',function (data,args) {
         if(args){
             $scope.mainBlog = args;
-            $scope.getcommlist(args.id);
-            $scope.getBlogCommentList(args.id);
+            $scope.getcommlist(args.blogID);
+            $scope.getBlogCommentList(args.blogID);
             $scope.readblog = true;
         }
     });

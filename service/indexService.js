@@ -1,7 +1,7 @@
 conch.service('HttpCore',['$http','$q','$cookieStore','$state','$httpParamSerializerJQLike','toastr',
     function ($http,$q,$cookieStore,$state,$httpParamSerializerJQLike,toastr) {
 
-        //var serviceUrl = "https://localhost:44357/api/";
+    //var serviceUrl = "http://localhost:51738/api/";
     var serviceUrl = "https://api.magicalconch.com/api/";
     this.superPost = function(url,data,success,error){
         var response = this.PostPlus(url,data);

@@ -10,7 +10,7 @@ conch.controller('newDialog',['$scope','HttpCore','$mdDialog','$rootScope','$coo
             index:'',
             name:''
         },
-        data:{
+        date:{
             "newTitle":"",
             "newType":"其他留言",
             "newBody":"",
