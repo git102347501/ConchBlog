@@ -22,8 +22,6 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     };
     //读取推荐列表
     $scope.readBlogcomm=false;
-    //当前博文对象
-    $scope.mainBlog="";
     //读取博文列表对象
     $scope.readbloglist = false;
     //读取最新列表对象
@@ -355,7 +353,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     //读取博文回调
     $rootScope.$on('readBlogStatus',function (data,args) {
         if(args){
-            $scope.mainBlog = args;
+            $scope.blog = args;
             $scope.getcommlist(args.blogID);
             $scope.getBlogCommentList(args.blogID);
             $scope.readblog = true;
