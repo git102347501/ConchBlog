@@ -22,6 +22,8 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     };
     //读取推荐列表
     $scope.readBlogcomm=false;
+    //菜单搜索标题
+    $scope.blogQuerytitle="";
     //读取博文列表对象
     $scope.readbloglist = false;
     //读取最新列表对象
@@ -62,6 +64,8 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
     $scope.menuNavstyle =[];
     //当前博文菜单列表
     $scope.menulist=[];
+    //当前博文菜单列表
+    $scope.menuFilterlist=[];
     //展开收缩子菜单
     $scope.openNav = function (ev) {
         if(ev.height=="0px"){
@@ -82,9 +86,9 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
             }else if (params){
                 $scope.getBlog(params);
             }else{
-                if($scope.menulist && $scope.menulist.length>0){
+                if($scope.menuFilterlist && $scope.menuFilterlist.length>0){
                     //默认加载首个博文
-                    var defaultlist = $scope.menulist.find(c=> c.menu && c.menu.length>0)
+                    var defaultlist = $scope.menuFilterlist.find(c=> c.menu && c.menu.length>0)
                     if(defaultlist){
                         $scope.getBlog(defaultlist.menu[0].id);
                     }
@@ -96,6 +100,24 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         $scope.closeEdit();
         HttpCore.PostBaidu();
     };
+
+    $scope.$watch('blogQuerytitle',function () {
+
+        if(!$scope.blogQuerytitle){
+            $scope.menuFilterlist = JSON.parse(JSON.stringify($scope.menulist));
+        }else{
+            for (var i=0;i< $scope.menulist.length;i++){
+                $scope.menulist.map((item,index)=>{
+                    $scope.menuFilterlist[index].menu =[];
+                    item.menu.map((item,index)=>{
+                        if(item.name.indexOf($scope.blogQuerytitle)!=-1){
+                            $scope.menuFilterlist[index].menu.push(Object.assign({},item));
+                        }
+                    })
+                });
+            }
+        }
+    });
 
     //编辑博文菜单
     $scope.editCate = function(ev){
@@ -113,9 +135,10 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         response.then(function(resp){
             if(resp.data !=null && resp.data.status == 1){
                 $scope.menulist = resp.data.data;
+                $scope.menuFilterlist = JSON.parse(JSON.stringify($scope.menulist));
                 //赋值菜单高度样式集合
                 $scope.menuNavstyle =[];
-                for(var i=0;i< $scope.menulist.length;i++){
+                for(var i=0;i< $scope.menuFilterlist.length;i++){
                     $scope.menuNavstyle.push({"height":"0px"});
                 }
                 $scope.readbloglist =true;

@@ -28,12 +28,12 @@
         <div class="conchTool">
             <md-input-container class="menuQuery">
                 <label>搜索博文</label>
-                <input ng-model="user.title">
+                <input ng-model="blogQuerytitle">
             </md-input-container>
         </div>
         <div>
-            <div ng-show="readbloglist" ng-repeat="item in menulist">
-                <md-menu-item>
+            <div ng-show="readbloglist" ng-repeat="item in menuFilterlist">
+                <md-menu-item ng-show="item.menu.length>0">
                     <md-button ng-click="openNav(menuNavstyle[$index])">
                         <span>
                             <!--<md-tooltip md-direction="right">{{item.name}}</md-tooltip>-->
