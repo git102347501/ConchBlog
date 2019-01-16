@@ -1,15 +1,15 @@
 <div>
     <md-list-item class="md-4-line">
-        <img class="main_dynamic_tit" ng-src="https://blog-1252305000.cos.ap-shanghai.myqcloud.com/User/me.webp" class="md-avatar" hide-xs>
+        <img class="main_dynamic_tit" ng-src="{{blogUser.userHeard}}" class="md-avatar" hide-xs>
         <div class="bubble" hide-xs>
 
         </div>
         <div class="md-list-item-panel" layout="column" layout-align="center start">
-            <div style="margin-bottom: 6px" layout="row" layout-align="start center">
-                <span style="color: #483D8B;">{{item.dynamicDate|pastdate}}</span>
-                <span>{{item.dynamicAction}}{{item.dynamicTarget}}:</span>
-                <span style="color:darkred">{{item.dynamicTitle}}</span>
-            </div>
+            <p class="md-list-item-panel_title" layout="row" layout-align="start center">
+                {{item.dynamicDate|pastdate}}&nbsp
+                发布{{item.dynamicTarget}}:&nbsp
+                {{item.dynamicTitle}}
+            </p>
             <div>
                 <p ng-show="item.dynamicContext" style="font-size: 14px;font-family: 微软雅黑">{{item.dynamicContext}}</p>
             </div>

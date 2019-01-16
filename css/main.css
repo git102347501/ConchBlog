@@ -73,15 +73,17 @@ md-card{
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c6ff00', endColorstr='#538300', GradientType='0'); /* IE*/
     box-shadow: 4px 4px 5px #F4F4F4;
 }
-.md-list-item-panel span{
-    font-size: 16px;
-    padding: 5px 0px 5px 0px;
-    font-weight: bold;
+.md-list-item-panel_title{
+    margin-bottom: 6px;word-wrap:break-word;word-break:break-all;
+    font-size: 16px !important;
+    padding: 5px 0px 0px 0px !important;
+    font-weight: bold !important;
+    font-family:"微软雅黑";
     color: #3D3D3D;
 }
 .md-list-item-panel p{
     font-size: 14px;
-    padding: 8px 0px 0px 0px;
+    padding-top: 5px;
     font-family: STSong;
 }
 .md-list-item-panel span{
