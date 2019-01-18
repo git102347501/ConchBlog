@@ -326,7 +326,7 @@ conch.controller('blogController',['$scope','$ocLazyLoad','$timeout','HttpCore',
         }
         $scope.editBlog.blogTitle = model?"":$scope.blog.blogTitle;
         $scope.editBlog.blogDate = model?"":$scope.blog.blogCreatDate;
-        $scope.editBlog.blogClass = model?"":$scope.blog.blogClass;
+        $scope.editBlog.blogClass = model?"":$scope.blogCatelist.find(c=>c.name ==  $scope.blog.blogClass).id;
 
         $ocLazyLoad.load('ckeditor/ckeditor.js').then(function () {
             $scope.editModel = model;

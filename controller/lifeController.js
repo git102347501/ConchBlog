@@ -1,5 +1,5 @@
-conch.controller('lifeController',['$scope','$ocLazyLoad','$state','$rootScope','$stateParams','checkService',
-    function ($scope,$ocLazyLoad,$state,$rootScope,$stateParams,checkService) {
+conch.controller('lifeController',['$scope','$ocLazyLoad','$state','$rootScope','$stateParams','checkService','HttpCore',
+    function ($scope,$ocLazyLoad,$state,$rootScope,$stateParams,checkService,HttpCore) {
     $ocLazyLoad.load('css/life.css');
     $scope.Initialization = function(){
         if(!$stateParams.check){

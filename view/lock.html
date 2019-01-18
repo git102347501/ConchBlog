@@ -1,7 +1,7 @@
 <div layout="row" layout-align="center center" id="lock">
     <form name="lockForm">
-        <div layout="row">
-            <div layout="column">
+        <div layout="row" layout-xs="column">
+            <div layout="column" layout-xs="100" style="max-width: 250px">
                 <md-input-container style="margin: 0px">
                     <label>请输入{{target.name}}访问密码</label>
                     <input type="password" name="lockkey" ng-model="password" placeholder="密码可能会是123456吗?"
@@ -27,9 +27,12 @@
                     </md-input-container>
                 </div>
             </div>
-            <div layout="column" layout-align="center center" style="margin-left: 40px">
-                <md-button class="md-fab md-primary" aria-label="Comment" ng-click="checkLock()" style="margin-bottom: 35px;background: #63B8FF" ng-disabled="!lockForm.$valid">
+            <div layout="column" layout-xs="100" layout-align="center center" class="lock_btn">
+                <md-button hide-xs class="md-fab md-primary" aria-label="Comment" ng-click="checkLock()" style="margin-bottom: 35px;background: #63B8FF" ng-disabled="!lockForm.$valid">
                     <md-icon style="color: white" md-svg-src="fonts/myfonts/unclock.svg"></md-icon>
+                </md-button>
+                <md-button show-xs hide-sm hide-md hide-lg hide-xl class="md-raised" aria-label="Comment" ng-click="checkLock()" style="background: #63B8FF;width: 100%" ng-disabled="!lockForm.$valid">
+                    验证密码
                 </md-button>
             </div>
 

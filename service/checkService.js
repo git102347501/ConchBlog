@@ -8,7 +8,7 @@ conch.service('checkService',['$filter',function ($filter) {
     this.check=function(model){
         var result = checks.find(c=>c.model == model);
         if(result){
-            if(result.value && Comparative(result.value)){
+            if(result.value && Comparative(result.value.lockTerm)){
                 return true;
             }else{
                 return false;
