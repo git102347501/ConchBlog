@@ -1,0 +1,16 @@
+<div id="blogComm">
+    <div class="blog_comment_area">
+        <textarea ng-model="setreplyCommentValidate.commentContent" class="form-control blog_comment_discuss" rows="4" placeholder="请在此输入您的评论内容，严禁讨论敏感话题！" aria-invalid="false" style=""></textarea>
+    </div>
+    <div class="blog_comment_sub" layout="row" layout-align="end center">
+        <span class="blog_comment_submit">
+            <img src="data:image/jpg;base64,{{replyValidateImg.img}}" alt="验证码" class="validateImg switch" ng-click="getValidateImg()">
+        </span>
+        <span class="blog_comment_submit">
+             <input type="text" ng-model="setReplyCommentValue" class="form-control" id="replycomment" placeholder="输入验证码，不区分大小写">
+        </span>
+        <span class="blog_comment_submit">
+             <md-button class="md-raised md-primary" ng-click="setComment($parent.$index)">发表评论</md-button>
+        </span>
+    </div>
+</div>

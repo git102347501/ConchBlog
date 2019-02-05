@@ -1,0 +1,41 @@
+<div layout="row" layout-align="center center" id="lock">
+    <form name="lockForm">
+        <div layout="row" layout-xs="column">
+            <div layout="column" layout-xs="100" style="max-width: 250px">
+                <md-input-container style="margin: 0px">
+                    <label>请输入{{target.name}}访问密码</label>
+                    <input type="password" name="lockkey" ng-model="password" placeholder="密码可能会是123456吗?"
+                           required md-maxlength="25">
+
+                    <div ng-messages="lockForm.lockkey.$error" role="alert" multiple>
+                        <div ng-message="required" class="my-message">不填想看我的小秘密？</div>
+                        <div ng-message="md-maxlength" class="my-message">
+                            拜托这么长我都记不住的!
+                        </div>
+                    </div>
+                </md-input-container>
+                <div layout="row">
+                    <img src="data:image/jpg;base64,{{checkimg.img}}" alt="" style="margin: 20px 10px 0px 5px;max-width: 80px;height: 30px;border: 1px solid #aaaaaa" ng-click="getValidate()">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>输入验证码</label>
+                        <input name="valivalue" ng-model="validate.name"
+                               required  md-maxlength="4">
+
+                        <div ng-messages="lockForm.valivalue.$error" role="alert" multiple>
+                            <div ng-message="required" class="my-message">请输入验证码！</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="column" layout-xs="100" layout-align="center center" class="lock_btn">
+                <md-button hide-xs class="md-fab md-primary" aria-label="Comment" ng-click="checkLock()" style="margin-bottom: 35px;background: #63B8FF" ng-disabled="!lockForm.$valid">
+                    <md-icon style="color: white" md-svg-src="fonts/myfonts/unclock.svg"></md-icon>
+                </md-button>
+                <md-button show-xs hide-sm hide-md hide-lg hide-xl class="md-raised" aria-label="Comment" ng-click="checkLock()" style="background: #63B8FF;width: 100%" ng-disabled="!lockForm.$valid">
+                    验证密码
+                </md-button>
+            </div>
+
+        </div>
+    </form>
+</div>

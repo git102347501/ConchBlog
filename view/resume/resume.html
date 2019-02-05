@@ -1,0 +1,210 @@
+<div id="resume" layout="row" layout-sm="column" layout-xs="column">
+    <div layout="column" layout-align="start stretch" flex-xl="25" flex-lg="30" flex-md="40" flex-sm="100" flex-xs="100" md-whiteframe="3" style="margin:10px 0px 0px 5px">
+        <div layout="column" style="border-bottom: 1px solid #DBDBDB">
+            <!--个人详情-->
+            <div layout="row" style="display: flex">
+                <div style="padding: 20px 10px 10px 10px" layout="column" style="width:160px;max-width: 160px">
+                    <img class="img-thumbnail" ng-show="blogUser.userHeard" src="{{blogUser.userHeard}}" alt="博主帅照" style="width: 160px;height: 180px">
+                </div>
+                <div style="padding:20px 5px 0px 5px;font-size: 16px" style="flex: 1">
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span style="font-size: 20px;font-weight: bold">赵强强</span>
+                    </div>
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span hide-xs class="glyphicon glyphicon-user" style="margin-right: 6px;color: #555555"></span>
+                        <span>25岁</span>
+                    </div>
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span hide-xs class="glyphicon glyphicon-envelope" style="margin-right: 6px;color: #555555"></span>
+                        <span><a style="text-decoration: none" href="mailto:102347501@qq.com?subject=来自博客的面试邀请">102347501@qq.com</a></span>
+                    </div>
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span hide-xs class="glyphicon glyphicon-phone" style="margin-right: 6px;color: #555555"></span>
+                        <a style="text-decoration: none" href="tel:18661123769">18661123769</a>
+                        <a style="text-decoration: none;margin-left: 5px;color: #555555" class="glyphicon glyphicon-comment" href="sms:18661123769"></a>
+                    </span>
+                    </div>
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span  style="margin-right: 6px;">居住地:</span>
+                        <span  style="color: #3D3D3D">江苏常州</span>
+                    </div>
+                    <div style="margin: 0px 0px 8px 0px">
+                        <span  style="margin-right: 6px;">期望地点:</span>
+                        <span v style="color: #3D3D3D">上海，深圳</span>
+                    </div>
+                </div>
+            </div>
+            <div layout="row" style="margin:0px 0px 10px 10px">
+                <md-button hide-xs class="md-raised" ng-click="goNews($event)">
+                    <md-icon md-svg-src="fonts/myfonts/news.svg" style="margin-right: 5px;"></md-icon>在线留言
+                </md-button>
+                <md-button hide-xl hide-lg hide-md hide-sm show-xs class="md-fab md-mini resume-fab" ng-click="goNews($event)">
+                    <md-icon md-svg-src="fonts/myfonts/news.svg"></md-icon>
+                </md-button>
+                <md-button hide-xs class="md-raised " onclick="window.location.href='http://wpa.qq.com/msgrd?v=3&uin=102347501&site=qq&menu=yes'">
+                    <md-icon md-svg-src="fonts/myfonts/QQ.svg" style="margin-right: 15px;"></md-icon>QQ交谈
+                </md-button>
+                <md-button hide-xl hide-lg hide-md hide-sm show-xs class="md-fab md-mini resume-fab" onclick="window.location.href='http://wpa.qq.com/msgrd?v=3&uin=102347501&site=qq&menu=yes'">
+                    <md-icon md-svg-src="fonts/myfonts/QQ.svg"></md-icon>
+                </md-button>
+                <md-button hide-xs class="md-raised" onclick="window.location.href='https://blog-1252305000.cos.ap-shanghai.myqcloud.com/common/%E8%B5%B5%E5%BC%BA%E5%BC%BA%E7%9A%84%E7%AE%80%E5%8E%86.doc'">
+                    <md-icon md-svg-src="fonts/myfonts/download.svg" style="margin-right: 5px;"></md-icon>下载简历
+                </md-button>
+                <md-button hide-xl hide-lg hide-md hide-sm show-xs class="md-fab md-mini resume-fab" onclick="window.location.href='https://blog-1252305000.cos.ap-shanghai.myqcloud.com/common/%E8%B5%B5%E5%BC%BA%E5%BC%BA%E7%9A%84%E7%AE%80%E5%8E%86.doc'">
+                    <md-icon md-svg-src="fonts/myfonts/download.svg"></md-icon>
+                </md-button>
+            </div>
+        </div>
+        <!--菜单-->
+        <div flex>
+            <md-list flex>
+                <md-list-item ng-repeat="item in menu" ng-click="gotoCard(item)" style="border-bottom: 1px solid #E3E3E3">
+                    <span>{{item}}</span>
+                </md-list-item>
+            </md-list>
+        </div>
+    </div>
+    <!--内容区-->
+    <div layout="column" flex-xl="75" flex-lg="70" flex-md="60" flex-sm="100" flex-xs="100">
+        <md-card id="求职意向">
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">求职意向</span>
+            </div>
+            <md-list class="resume-list">
+                <md-list-item>
+                    <div layout="column" flex="100" style="margin: 20px 10px 20px 10px">
+                        <div layout="row" layout-md="column" layout-sm="column" layout-xs="column" layout-align="space-between center" layout-align-md="center start" layout-align-sm="center start" layout-align-xs="center start" style="margin-bottom:10px;" flex="100">
+                            <div layout="row" flex-md="100" flex-sm="100" flex-xs="100" flex="50">
+                                <span style="font-size: 16px">求职状态：我对现有工作还算满意，如更好机会我也可以考虑</span>
+                            </div>
+                            <div layout="row" flex-md="100" flex-sm="100" flex-xs="100" layout-align="end start" flex="50" class="resume-list-intent">
+                                <span style="font-size: 16px">意向城市：上海，深圳</span>
+                            </div>
+                        </div>
+                        <div layout="row" layout-md="column" layout-sm="column" layout-xs="column" layout-align="space-between center" layout-align-md="center start" layout-align-sm="center start" layout-align-xs="center start" style="margin-bottom:10px;">
+                           <div layout="row" flex-md="100" flex-sm="100" flex-xs="100" >
+                               <span style="font-size: 16px">期望行业：互联网企业</span>
+                           </div>
+                            <div layout="row" flex-md="100" flex-sm="100" flex-xs="100" layout-align="end center" flex="50"  class="resume-list-intent">
+                                <span style="font-size: 17px">期望月薪：</span>
+                                <span style="font-size: 16px">10000-12000</span>
+                            </div>
+                        </div>
+                        <div layout="row" layout-md="column" layout-sm="column" layout-xs="column" layout-align="space-between center" layout-align-md="center start" layout-align-sm="center start" layout-align-xs="center start" style="margin-bottom:10px;" flex="100">
+                            <div layout="row" flex-md="100" flex-sm="100" flex-xs="100" flex="50">
+                                <span style="font-size: 17px">工作性质：</span>
+                                <span style="font-size: 16px">全职</span>
+                            </div>
+                            <div layout="row" flex-md="100" flex-sm="100" flex-xs="100" layout-align="end center" flex="50"  class="resume-list-intent">
+                                <span style="font-size: 17px">从事职位：</span>
+                                <span style="font-size: 16px">Net开发</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </md-list-item>
+            </md-list>
+        </md-card>
+        <md-card id="自我评价">
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">自我评价</span>
+            </div>
+            <md-list style="padding: 20px 30px 10px 30px">
+                <div>
+                    <div style="font-size: 16px;margin-bottom: 6px;color: #333333">1. 语言基础</div>
+                    <div><p>精通c#语言，熟练掌握面向对象开发以及设计模式，拥有两年ORACLE,SQLSERVER,MYSQL常用数据库使用经验，具备独立数据库设计能力以及调优。</p></div>
+                </div>
+                <div>
+                    <div style="font-size: 16px;margin-bottom: 6px;color: #333333">2. C/S方向</div>
+                    <div><p>拥有两年6套CS产品项目研发经验，熟练掌握前后端分离交互设计，精通DEV等大型控件库，具备独立研发能力。</p></div>
+                </div>
+                <div>
+                    <div style="font-size: 16px;margin-bottom: 6px;color: #333333">3. B/S方向</div>
+                    <div><p>拥有两套BS前端产品研发经验以及个人博客独立网站门户，熟练掌握ui-Bootstarp,AngularJS,material等前端开发框架，具备独立开发SPA网站能力。</p></div>
+                </div>
+                <div>
+                    <div style="font-size: 16px;margin-bottom: 6px;color: #333333">4. 后端能力</div>
+                    <div><p>熟练掌握WebService，WebAPI,WCF等后端交互技术，拥有一年以上NetCore(2.0-2.2)跨平台开发经验，熟练掌握在Linux平台下的后端开发和运维。</p></div>
+                </div>
+                <div>
+                    <div style="font-size: 16px;margin-bottom: 6px;color: #333333">5. 构建运维</div>
+                    <div><p>熟练掌握jenkins+git自动化构建,Docket虚拟环境测试以及代码管理等基础能力,两年WindowsServer（2008,2012）+IIS+NLB负载均衡，以及Linux（Centos7+Nginx）使用经验。</p></div>
+                </div>
+            </md-list>
+        </md-card>
+        <md-card id="教育经历">
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">教育经历</span>
+            </div>
+            <md-list style="margin-top: 20px">
+                <md-list-item ng-repeat="item in schoolList">
+                    <div layout="row" layout-md="column" layout-xs="column" layout-align="space-between center" flex="100" class="resume-school">
+                        <div layout="row" layout-align="space-around center" layout-align-md="space-between center" layout-align-xs="space-between center" flex="50" flex-md="100" flex-xs="100" class="resume-school-item">
+                            <div><img src="img/school.jpg" alt=""><a
+                                    href="http://www.yrcti.edu.cn/" target="view_window">{{item.name}}</a></div>
+                            <div><a href="http://www.yrcti.edu.cn/cjx/index.html" target="view_window">{{item.major}}</a></div>
+                        </div >
+                        <div layout="row" layout-align="space-around center" layout-align-md="space-between center" layout-align-xs="space-between center" flex="50" flex-md="100" flex-xs="100" class="resume-school-item">
+                            <div>{{item.record}}</div>
+                            <div>{{item.date}}</div>
+                        </div>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card>
+        <md-card id="工作经验">
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">工作经验</span>
+            </div>
+            <md-list class="resume-list">
+                <md-list-item  ng-repeat="item in companyList" style="padding: 20px 0px 20px 0px;border-bottom: 1px solid #C9C9C9">
+                    <div layout="column" layout-align="center stretch" flex="100" class="resume-company">
+                        <div layout="row" layout-md="column" layout-xs="column" layout-align="space-between center" layout-align-md="center start" layout-align-xs="center start" class="resume-company-title">
+                            <div><a href="{{item.url}}" target="view_window">{{item.name}}</a></div>
+                            <div class="resume-company-date">{{item.date}}</div>
+                        </div>
+                        <div layout="row" layout-align="start center" class="resume-company-body">
+                            <span>{{item.station}}</span><span>{{item.payment}}</span>
+                        </div>
+                        <div class="resume-company-bottom">
+                            <span>{{item.duty}}</span>
+                        </div>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card>
+        <md-card id="项目经验">
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">项目经验</span>
+            </div>
+            <md-list class="resume-list">
+                <md-list-item class="resume-hands-on" ng-repeat="item in resumeList">
+                    <div layout="column">
+                        <div layout="row" layout-md="column" layout-sm="column" layout-xs="column" layout-align-md="center start" layout-align-sm="center start" layout-align-xs="center start" layou-align="space-around center" style="font-size: 18px;">
+                            <div flex="50" flex-md="100" flex-sm="100" flex-xs="100" style="font-size: 18px">{{item.name}}</div>
+                            <div flex="50" flex-md="100" flex-sm="100" flex-xs="100" style="color: #999999;font-size: 16px;" class="resume-hands-date">{{item.date}}</div>
+                        </div>
+                        <div layout="row" layout-align="start center" style="margin:15px 0px 15px 0px">
+                            <span style="font-size: 17px;color: #999999">项目描述</span>
+                        </div>
+                        <div layout="row">
+                            <p style="letter-spacing:1px;line-height: 26px" ng-bind-html="item.context"></p>
+                        </div>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card>
+        <md-card id="个人证书">
+            <div class="resume-list-title">
+                <span class="md-title" style="font-size: 20px;">个人证书</span>
+            </div>
+            <md-list>
+                <md-list-item ng-repeat="item in certificate">
+                    <div style="margin:10px 0px 0px 20px;font-size: 16px">
+                        {{item}}
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card>
+    </div>
+</div>

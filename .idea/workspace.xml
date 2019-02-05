@@ -1,0 +1,1363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a64b9bd2-66aa-44e5-a04a-177cfb199299" name="Default Changelist" comment="修复了关于token传递错误的问题&#10;修改了部分搜索博文逻辑" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="289056260">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="91" />
+          <entry key="project.open.time.0" value="11" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.4" value="8" />
+          <entry key="project.open.time.5" value="34" />
+          <entry key="project.open.time.6" value="19" />
+          <entry key="project.open.time.7" value="7" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="4" />
+          <entry key="project.opened" value="93" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="70" />
+          <entry key="gif" value="1" />
+          <entry key="html" value="173" />
+          <entry key="jpg" value="2" />
+          <entry key="js" value="186" />
+          <entry key="png" value="3" />
+          <entry key="svg" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="70" />
+          <entry key="HTML" value="173" />
+          <entry key="Image" value="6" />
+          <entry key="JavaScript" value="186" />
+          <entry key="SVG" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="6219" />
+          <entry key="html" value="19358" />
+          <entry key="js" value="14431" />
+          <entry key="txt" value="419" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="6219" />
+          <entry key="HTML" value="19357" />
+          <entry key="JavaScript" value="14432" />
+          <entry key="PLAIN_TEXT" value="419" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
+    </session>
+    <session id="1897332264">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="24" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="12" />
+          <entry key="project.open.time.6" value="5" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="670" />
+          <entry key="html" value="675" />
+          <entry key="js" value="1597" />
+          <entry key="txt" value="177" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="670" />
+          <entry key="HTML" value="675" />
+          <entry key="JavaScript" value="1597" />
+          <entry key="PLAIN_TEXT" value="177" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="12" />
+          <entry key="html" value="37" />
+          <entry key="jpg" value="10" />
+          <entry key="js" value="53" />
+          <entry key="png" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="12" />
+          <entry key="HTML" value="37" />
+          <entry key="Image" value="15" />
+          <entry key="JavaScript" value="53" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="1553125285">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="6" />
+          <entry key="js" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="6" />
+          <entry key="JavaScript" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="36" />
+          <entry key="js" value="151" />
+          <entry key="txt" value="29" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="36" />
+          <entry key="JavaScript" value="151" />
+          <entry key="PLAIN_TEXT" value="29" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="611">
+              <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+              <folding>
+                <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-list#0;n#div#1;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-list-item#0;n#md-list#0;n#div#1;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/dialog/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/blog/blogMatter.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/blog/blogmenu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="880">
+              <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+              <folding>
+                <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/indexService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1012">
+              <caret line="46" column="34" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/blogController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+              <folding>
+                <element signature="e#564#708#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/router/indexRouter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/blog/blogcomm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/blog/blogEdit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="682">
+              <caret line="31" column="56" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/blog/blogCate.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getblogList</find>
+      <find>getblog</find>
+      <find>readblogID</find>
+      <find>blogUser</find>
+      <find>Lock</find>
+      <find>usvalidate</find>
+      <find>正在加载博文列表</find>
+      <find>readBlogcomm</find>
+      <find>Blog/BlogCate</find>
+      <find>getBlogCate</find>
+      <find>CheckLock</find>
+      <find>readBlogStatus</find>
+      <find>getcommlist</find>
+      <find>$scope.blog</find>
+      <find>mainBlog</find>
+      <find>menulist</find>
+      <find>menuFilterlist</find>
+      <find>$scope.Clone</find>
+      <find>main_dynamic_tit</find>
+      <find>item in dynamicList</find>
+      <find>con_bottom_end</find>
+      <find>conchhead_net</find>
+      <find>con_title</find>
+      <find>main_dynamic_tit hide-xs</find>
+      <find>BLOGWEB</find>
+      <find>md-list-item-panel</find>
+      <find>取消</find>
+      <find>blog.ed</find>
+      <find>user.tokey</find>
+      <find>搜索</find>
+    </findStrings>
+    <dirStrings>
+      <dir>F:\myObject\BLOGWEB</dir>
+      <dir>F:\myObject\BLOG\BLOGWEB</dir>
+      <dir>F:\myObject\BLOG\AngularJS_WEB</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/view/index/tple/mainPhoto.html" />
+        <option value="$PROJECT_DIR$/fonts/myfonts/cry.svg" />
+        <option value="$PROJECT_DIR$/view/blog/blogcomm.html" />
+        <option value="$PROJECT_DIR$/view/blog/blogEdit.html" />
+        <option value="$PROJECT_DIR$/service/dialogService.js" />
+        <option value="$PROJECT_DIR$/controller/dialog/blogcateDialog.js" />
+        <option value="$PROJECT_DIR$/view/blog/blogCate.html" />
+        <option value="$PROJECT_DIR$/view/index/tple/mainBlog.html" />
+        <option value="$PROJECT_DIR$/js/canvas/index_vendors.js" />
+        <option value="$PROJECT_DIR$/js/canvas/canvas_index.js" />
+        <option value="$PROJECT_DIR$/service/validateService.js" />
+        <option value="$PROJECT_DIR$/view/life/tple/lifeli.html" />
+        <option value="$PROJECT_DIR$/view/life/tple/lifelis.html" />
+        <option value="$PROJECT_DIR$/directive/commonDirective.js" />
+        <option value="$PROJECT_DIR$/directive/blogDirective.js" />
+        <option value="$PROJECT_DIR$/view/resume/dialog/newInsert.html" />
+        <option value="$PROJECT_DIR$/css/resume.css" />
+        <option value="$PROJECT_DIR$/view/index/tple/login.html" />
+        <option value="$PROJECT_DIR$/view/life/tple/lifeLi.html" />
+        <option value="$PROJECT_DIR$/view/life/tple/lifeLis.html" />
+        <option value="$PROJECT_DIR$/css/life.css" />
+        <option value="$PROJECT_DIR$/directive/lifeDirective.js" />
+        <option value="$PROJECT_DIR$/view/life/life.html" />
+        <option value="$PROJECT_DIR$/view/life/tple/lifeLeft.html" />
+        <option value="$PROJECT_DIR$/view/life/tple/lifeRight.html" />
+        <option value="$PROJECT_DIR$/css/blog/blog.css" />
+        <option value="$PROJECT_DIR$/css/blog/blogmenu.css" />
+        <option value="$PROJECT_DIR$/directive/indexDirective.js" />
+        <option value="$PROJECT_DIR$/router/indexRouter.js" />
+        <option value="$PROJECT_DIR$/view/blog/blogMatter.html" />
+        <option value="$PROJECT_DIR$/controller/indexController.js" />
+        <option value="$PROJECT_DIR$/controller/resumeController.js" />
+        <option value="$PROJECT_DIR$/controller/dialog/newDialog.js" />
+        <option value="$PROJECT_DIR$/view/blog/blog.html" />
+        <option value="$PROJECT_DIR$/filter/indexFilter.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/import/index.css" />
+        <option value="$PROJECT_DIR$/view/index/tple/mainDynamic.html" />
+        <option value="$PROJECT_DIR$/controller/lifeController.js" />
+        <option value="$PROJECT_DIR$/view/resume/resume.html" />
+        <option value="$PROJECT_DIR$/service/checkService.js" />
+        <option value="$PROJECT_DIR$/controller/lockController.js" />
+        <option value="$PROJECT_DIR$/view/lock.html" />
+        <option value="$PROJECT_DIR$/css/lock.css" />
+        <option value="$PROJECT_DIR$/view/index/main.html" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/controller/dialog/blogMatter.js" />
+        <option value="$PROJECT_DIR$/controller/dialog/login.js" />
+        <option value="$PROJECT_DIR$/service/indexService.js" />
+        <option value="$PROJECT_DIR$/view/blog/blogmenu.html" />
+        <option value="$PROJECT_DIR$/controller/blogController.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="210" />
+    <option name="y" value="75" />
+    <option name="width" value="1680" />
+    <option name="height" value="830" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AngularJS_WEB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngularJS_WEB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AngularJS_WEB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngularJS_WEB" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AngularJS_WEB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngularJS_WEB" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="dialog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AngularJS_WEB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngularJS_WEB" type="462c0819:PsiDirectoryNode" />
+              <item name="router" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AngularJS_WEB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngularJS_WEB" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AngularJS_WEB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngularJS_WEB" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BLOGWEB" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\myObject\BLOG\BLOGWEB\img" />
+      <recent name="F:\myObject\BLOG\BLOGWEB\img\photo" />
+      <recent name="F:\myObject\BLOG\BLOGWEB" />
+      <recent name="F:\myObject\BLOGWEB\fonts\myfonts" />
+      <recent name="F:\myObject\BLOGWEB\img" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a64b9bd2-66aa-44e5-a04a-177cfb199299" name="Default Changelist" comment="" />
+      <created>1538806526893</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538806526893</updated>
+      <workItem from="1538806528199" duration="14497000" />
+      <workItem from="1538897359582" duration="7172000" />
+      <workItem from="1538908467489" duration="3196000" />
+      <workItem from="1539000774066" duration="4791000" />
+      <workItem from="1539095417127" duration="2388000" />
+      <workItem from="1539157882726" duration="1193000" />
+      <workItem from="1539166213493" duration="6930000" />
+      <workItem from="1539256765033" duration="10318000" />
+      <workItem from="1539304527395" duration="602000" />
+      <workItem from="1539316268186" duration="3883000" />
+      <workItem from="1539323698465" duration="595000" />
+      <workItem from="1539354802985" duration="22000" />
+      <workItem from="1539409034331" duration="643000" />
+      <workItem from="1539409704449" duration="5549000" />
+      <workItem from="1539667192509" duration="1157000" />
+      <workItem from="1539690910509" duration="2229000" />
+      <workItem from="1539874580149" duration="764000" />
+      <workItem from="1539952533509" duration="624000" />
+      <workItem from="1540005289050" duration="1033000" />
+      <workItem from="1540009552100" duration="22722000" />
+      <workItem from="1540090460356" duration="14895000" />
+      <workItem from="1540126599850" duration="2262000" />
+      <workItem from="1540210246803" duration="5253000" />
+      <workItem from="1540390071215" duration="4331000" />
+      <workItem from="1540467913122" duration="5768000" />
+      <workItem from="1540475472240" duration="3224000" />
+      <workItem from="1540479073680" duration="78000" />
+      <workItem from="1540515975292" duration="1148000" />
+      <workItem from="1540537975340" duration="1740000" />
+      <workItem from="1540602531011" duration="5283000" />
+      <workItem from="1540636012832" duration="10348000" />
+      <workItem from="1540718096588" duration="9705000" />
+      <workItem from="1540735065613" duration="208000" />
+      <workItem from="1540810723647" duration="8559000" />
+      <workItem from="1540893722535" duration="5076000" />
+      <workItem from="1540984799739" duration="12016000" />
+      <workItem from="1541071891689" duration="1279000" />
+      <workItem from="1541159201663" duration="9651000" />
+      <workItem from="1541224679704" duration="9935000" />
+      <workItem from="1541301111710" duration="3396000" />
+      <workItem from="1541317675956" duration="2045000" />
+      <workItem from="1541333926957" duration="5346000" />
+      <workItem from="1541427790989" duration="2950000" />
+      <workItem from="1541509856970" duration="5127000" />
+      <workItem from="1541586224213" duration="6989000" />
+      <workItem from="1541600244408" duration="4229000" />
+      <workItem from="1541680318531" duration="3451000" />
+      <workItem from="1541837963233" duration="9910000" />
+      <workItem from="1541926532555" duration="16777000" />
+      <workItem from="1542019663991" duration="599000" />
+      <workItem from="1542110015590" duration="8226000" />
+      <workItem from="1542204785830" duration="2027000" />
+      <workItem from="1542280593136" duration="3507000" />
+      <workItem from="1542447113696" duration="11681000" />
+      <workItem from="1542508785130" duration="20592000" />
+      <workItem from="1542633416903" duration="5107000" />
+      <workItem from="1542709459028" duration="394000" />
+      <workItem from="1542722472934" duration="4479000" />
+      <workItem from="1542802670599" duration="8045000" />
+      <workItem from="1542884591237" duration="7714000" />
+      <workItem from="1543070061720" duration="4905000" />
+      <workItem from="1543150139507" duration="4414000" />
+      <workItem from="1543238054785" duration="27000" />
+      <workItem from="1543238351112" duration="6720000" />
+      <workItem from="1543325152442" duration="86000" />
+      <workItem from="1543495113456" duration="5351000" />
+      <workItem from="1543628819944" duration="22661000" />
+      <workItem from="1543715650324" duration="17213000" />
+      <workItem from="1543833556926" duration="11220000" />
+      <workItem from="1543918069551" duration="1580000" />
+      <workItem from="1543934470514" duration="1296000" />
+      <workItem from="1544008114980" duration="11068000" />
+      <workItem from="1544090490308" duration="1202000" />
+      <workItem from="1544092492958" duration="11505000" />
+      <workItem from="1544184347782" duration="32000" />
+      <workItem from="1544405952686" duration="314000" />
+      <workItem from="1544428767500" duration="19000" />
+      <workItem from="1544528134555" duration="12469000" />
+      <workItem from="1544619932197" duration="5729000" />
+      <workItem from="1544706718067" duration="3185000" />
+      <workItem from="1544710959507" duration="783000" />
+      <workItem from="1544712107197" duration="95000" />
+      <workItem from="1544796514825" duration="1543000" />
+      <workItem from="1544841048560" duration="7779000" />
+      <workItem from="1544933080203" duration="4489000" />
+      <workItem from="1545498074362" duration="93000" />
+      <workItem from="1545498219638" duration="164000" />
+      <workItem from="1545550700514" duration="3794000" />
+      <workItem from="1545740780794" duration="2201000" />
+      <workItem from="1545751018531" duration="2291000" />
+      <workItem from="1545921757274" duration="1208000" />
+      <workItem from="1546001614483" duration="972000" />
+      <workItem from="1546098681734" duration="2815000" />
+      <workItem from="1546434526659" duration="2016000" />
+      <workItem from="1546515878943" duration="774000" />
+      <workItem from="1546518371680" duration="7386000" />
+      <workItem from="1546777122502" duration="3802000" />
+      <workItem from="1546787776369" duration="1979000" />
+      <workItem from="1546865876945" duration="7696000" />
+      <workItem from="1546876006627" duration="1806000" />
+      <workItem from="1546913215923" duration="1804000" />
+      <workItem from="1546915601658" duration="24000" />
+      <workItem from="1546951900692" duration="3146000" />
+      <workItem from="1546961868641" duration="418000" />
+      <workItem from="1547362774997" duration="5147000" />
+      <workItem from="1547387290877" duration="2875000" />
+      <workItem from="1547432441484" duration="5588000" />
+      <workItem from="1547468288517" duration="3085000" />
+      <workItem from="1547554194056" duration="1095000" />
+      <workItem from="1547563416219" duration="968000" />
+      <workItem from="1547565373022" duration="52000" />
+      <workItem from="1547639134552" duration="501000" />
+      <workItem from="1547646048845" duration="3200000" />
+      <workItem from="1547649506748" duration="462000" />
+      <workItem from="1547731322492" duration="3706000" />
+      <workItem from="1547815836937" duration="5028000" />
+      <workItem from="1548244968051" duration="2422000" />
+      <workItem from="1548331045771" duration="79000" />
+      <workItem from="1549266548899" duration="2738000" />
+      <workItem from="1549271560381" duration="278000" />
+      <workItem from="1549287254531" duration="452000" />
+    </task>
+    <task id="LOCAL-00016" summary="添加类别增删改管理功能">
+      <created>1542555046544</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1542555046544</updated>
+    </task>
+    <task id="LOCAL-00017" summary="添加首页加载等待动画">
+      <created>1542640064675</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1542640064675</updated>
+    </task>
+    <task id="LOCAL-00018" summary="添加首页博文列表DEMO">
+      <created>1542728034164</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1542728034164</updated>
+    </task>
+    <task id="LOCAL-00019" summary="完成首页博文列表获取逻辑">
+      <created>1542813916685</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1542813916685</updated>
+    </task>
+    <task id="LOCAL-00020" summary="添加增加博文流程">
+      <created>1542898848659</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1542898848659</updated>
+    </task>
+    <task id="LOCAL-00021" summary="首次上线准备">
+      <created>1543078171623</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1543078171623</updated>
+    </task>
+    <task id="LOCAL-00022" summary="首次上线准备">
+      <created>1543078776064</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1543078776064</updated>
+    </task>
+    <task id="LOCAL-00023" summary="修改首页引用，采用CDN引用">
+      <created>1543153432043</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1543153432043</updated>
+    </task>
+    <task id="LOCAL-00024" summary="修改首页引用，采用CDN引用1">
+      <created>1543153836926</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1543153836926</updated>
+    </task>
+    <task id="LOCAL-00025" summary="新增博文评论删除">
+      <created>1543245164028</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1543245164028</updated>
+    </task>
+    <task id="LOCAL-00026" summary="添加了访问验证模块">
+      <created>1543634511345</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1543634511345</updated>
+    </task>
+    <task id="LOCAL-00027" summary="验证模块逻辑完成">
+      <created>1543679116244</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1543679116244</updated>
+    </task>
+    <task id="LOCAL-00028" summary="初步设计简历页面">
+      <created>1543766942430</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1543766942430</updated>
+    </task>
+    <task id="LOCAL-00029" summary="进一步设计简历页面">
+      <created>1543845580403</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1543845580403</updated>
+    </task>
+    <task id="LOCAL-00030" summary="添加简历响应式界面">
+      <created>1544024131895</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1544024131895</updated>
+    </task>
+    <task id="LOCAL-00031" summary="添加生活页基础样式">
+      <created>1544111540587</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1544111540587</updated>
+    </task>
+    <task id="LOCAL-00032" summary="调整了首页，简历，生活部分响应式布局">
+      <created>1544541035417</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1544541035417</updated>
+    </task>
+    <task id="LOCAL-00033" summary="设置了博文导航悬挂">
+      <created>1544624620335</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1544624620335</updated>
+    </task>
+    <task id="LOCAL-00034" summary="设置了博文导航悬挂">
+      <created>1544624798211</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1544624798211</updated>
+    </task>
+    <task id="LOCAL-00035" summary="设置了博文导航悬挂">
+      <created>1544626104824</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1544626104825</updated>
+    </task>
+    <task id="LOCAL-00036" summary="添加博文响应式布局&#10;修复了加锁逻辑">
+      <created>1544709808260</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1544709808260</updated>
+    </task>
+    <task id="LOCAL-00037" summary="添加博文响应式布局&#10;修复了加锁逻辑">
+      <created>1544841558035</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1544841558035</updated>
+    </task>
+    <task id="LOCAL-00038" summary="添加博文响应式布局&#10;修复了加锁逻辑">
+      <created>1544842092792</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1544842092792</updated>
+    </task>
+    <task id="LOCAL-00039" summary="添加博文响应式布局&#10;修复了加锁逻辑">
+      <created>1544842279936</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1544842279936</updated>
+    </task>
+    <task id="LOCAL-00040" summary="添加博文响应式布局&#10;修复了加锁逻辑">
+      <created>1544842550333</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1544842550333</updated>
+    </task>
+    <task id="LOCAL-00041" summary="添加博文响应式布局&#10;修复了加锁逻辑">
+      <created>1544861592801</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1544861592802</updated>
+    </task>
+    <task id="LOCAL-00042" summary="添加博文响应式布局&#10;修复了加锁逻辑">
+      <created>1544878144043</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1544878144043</updated>
+    </task>
+    <task id="LOCAL-00043" summary="修改标题">
+      <created>1544883223426</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1544883223426</updated>
+    </task>
+    <task id="LOCAL-00044" summary="修改首页资源加载顺序">
+      <created>1544883638653</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1544883638653</updated>
+    </task>
+    <task id="LOCAL-00045" summary="修改首页资源加载顺序">
+      <created>1544933101469</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1544933101469</updated>
+    </task>
+    <task id="LOCAL-00046" summary="修改首页资源加载顺序">
+      <created>1544944774569</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1544944774569</updated>
+    </task>
+    <task id="LOCAL-00047" summary="修改首页资源加载顺序">
+      <created>1544950609892</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1544950609892</updated>
+    </task>
+    <task id="LOCAL-00048" summary="修改首页资源加载顺序">
+      <created>1544950904931</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1544950904931</updated>
+    </task>
+    <task id="LOCAL-00049" summary="修改首页资源加载顺序">
+      <created>1544951530587</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1544951530587</updated>
+    </task>
+    <task id="LOCAL-00050" summary="添加路由鉴权">
+      <created>1545751220029</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1545751220029</updated>
+    </task>
+    <task id="LOCAL-00051" summary="添加路由鉴权">
+      <created>1545753166239</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1545753166239</updated>
+    </task>
+    <task id="LOCAL-00052" summary="去除日志">
+      <created>1545922158146</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1545922158146</updated>
+    </task>
+    <task id="LOCAL-00053" summary="去除日志">
+      <created>1545922378901</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1545922378901</updated>
+    </task>
+    <task id="LOCAL-00054" summary="添加百度云安全认证文件">
+      <created>1546442126751</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1546442126751</updated>
+    </task>
+    <task id="LOCAL-00055" summary="完善了博文页部分响应式布局">
+      <created>1546525665052</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1546525665052</updated>
+    </task>
+    <task id="LOCAL-00056" summary="修改部分博客页布局">
+      <created>1546784170904</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1546784170904</updated>
+    </task>
+    <task id="LOCAL-00057" summary="修改了博文路由跳转机制">
+      <created>1546915020059</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1546915020060</updated>
+    </task>
+    <task id="LOCAL-00058" summary="添加百度链接提交API">
+      <created>1546962249752</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1546962249753</updated>
+    </task>
+    <task id="LOCAL-00059" summary="修正部分数据提交格式">
+      <created>1547379807093</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1547379807093</updated>
+    </task>
+    <task id="LOCAL-00060" summary="修正部分数据提交格式">
+      <created>1547381446952</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1547381446952</updated>
+    </task>
+    <task id="LOCAL-00061" summary="添加博文菜单筛选功能&#10;修复了关于图片显示不正确的问题">
+      <created>1547479265648</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1547479265648</updated>
+    </task>
+    <task id="LOCAL-00062" summary="修复了图片在非谷歌浏览器显示问题&#10;修复了动态标题显示换行问题">
+      <created>1547649280869</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1547649280869</updated>
+    </task>
+    <task id="LOCAL-00063" summary="修复了图片在非谷歌浏览器显示问题&#10;修复了动态标题显示换行问题">
+      <created>1547649565639</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1547649565639</updated>
+    </task>
+    <task id="LOCAL-00064" summary="修复关于访问锁的部分错误&#10;更改了锁页面部分布局">
+      <created>1547820714929</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1547820714930</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="551408000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992908" visible="true" weight="0.19088507" />
+      <window_info id="Structure" order="1" sideWeight="0.50070924" side_tool="true" weight="0.24966975" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.24680851" />
+      <window_info anchor="bottom" id="Run" internal_type="SLIDING" order="2" type="SLIDING" weight="0.32907802" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992908" visible="true" weight="0.19088507" />
+      <window_info id="Structure" order="1" sideWeight="0.50070924" side_tool="true" weight="0.24966975" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" internal_type="SLIDING" order="2" type="SLIDING" weight="0.32907802" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改首页引用，采用CDN引用" />
+    <MESSAGE value="修改首页引用，采用CDN引用1" />
+    <MESSAGE value="新增博文评论删除" />
+    <MESSAGE value="添加了访问验证模块" />
+    <MESSAGE value="验证模块逻辑完成" />
+    <MESSAGE value="初步设计简历页面" />
+    <MESSAGE value="进一步设计简历页面" />
+    <MESSAGE value="添加简历响应式界面" />
+    <MESSAGE value="添加生活页基础样式" />
+    <MESSAGE value="调整了首页，简历，生活部分响应式布局" />
+    <MESSAGE value="设置了博文导航悬挂" />
+    <MESSAGE value="添加博文响应式布局&#10;修复了加锁逻辑" />
+    <MESSAGE value="修改标题" />
+    <MESSAGE value="修改首页资源加载顺序" />
+    <MESSAGE value="添加路由鉴权" />
+    <MESSAGE value="去除日志" />
+    <MESSAGE value="添加百度云安全认证文件" />
+    <MESSAGE value="完善了博文页部分响应式布局" />
+    <MESSAGE value="修改部分博客页布局" />
+    <MESSAGE value="修改了博文路由跳转机制" />
+    <MESSAGE value="添加百度链接提交API" />
+    <MESSAGE value="修正部分数据提交格式" />
+    <MESSAGE value="添加博文菜单筛选功能&#10;修复了关于图片显示不正确的问题" />
+    <MESSAGE value="修复了图片在非谷歌浏览器显示问题&#10;修复了动态标题显示换行问题" />
+    <MESSAGE value="修复关于访问锁的部分错误&#10;更改了锁页面部分布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复关于访问锁的部分错误&#10;更改了锁页面部分布局" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controller/blogController.js</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controller/indexController.js</url>
+          <line>9</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/router/indexRouter.js</url>
+          <line>21</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ckeditor/samples/old/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-418">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ckeditor/samples/old/jquery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/blog/blogmenu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/router/indexRouter.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="98" selection-start-column="98" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directive/blogDirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directive/commonDirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/validateService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filter/indexFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/blog/blog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1452">
+          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/dialog/newDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/hignschool.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/school.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/timg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/university.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/gits.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/me.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/default_tit.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/photo/beijing.jpg" />
+    <entry file="file://$PROJECT_DIR$/img/photo/changzhou.jpg" />
+    <entry file="file://$PROJECT_DIR$/view/index/tple/mainDynamic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/baidu.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/111.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directive/lifeDirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/indexController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4092">
+          <caret line="205" column="40" selection-start-line="205" selection-start-column="32" selection-end-line="205" selection-end-column="40" />
+          <folding>
+            <element signature="e#2408#3119#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/import/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="57" column="1" lean-forward="true" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/lifeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="85" selection-start-line="1" selection-start-column="85" selection-end-line="1" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/resume/resume.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="37" column="79" lean-forward="true" selection-start-line="37" selection-start-column="79" selection-end-line="37" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/resumeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="94" column="26" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/checkService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/life.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/index/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1430">
+          <caret line="106" column="26" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/lock.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directive/indexDirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/lock.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/resume.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/blog/blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/dialogService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/lockController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/dialog/blogcateDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1229">
+          <caret line="71" column="8" lean-forward="true" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/dialog/blogMatter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/dialog/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/blog/blogMatter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/blog/blogmenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+          <folding>
+            <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/indexService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="46" column="34" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/router/indexRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/blog/blogcomm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/blog/blogEdit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/blog/blogCate.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/blogController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#564#708#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-list#0;n#div#1;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-list-item#0;n#md-list#0;n#div#1;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
